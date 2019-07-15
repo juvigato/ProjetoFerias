@@ -1,0 +1,644 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F0EC4D122D8D4CA001118AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4D022D8D4CA001118AA /* AppDelegate.swift */; };
+		0F0EC4D322D8D4CA001118AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4D222D8D4CA001118AA /* ViewController.swift */; };
+		0F0EC4D622D8D4CA001118AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F0EC4D422D8D4CA001118AA /* Main.storyboard */; };
+		0F0EC4D922D8D4CA001118AA /* ChallengeFerias.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4D722D8D4CA001118AA /* ChallengeFerias.xcdatamodeld */; };
+		0F0EC4DB22D8D4CC001118AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0EC4DA22D8D4CC001118AA /* Assets.xcassets */; };
+		0F0EC4DE22D8D4CC001118AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F0EC4DC22D8D4CC001118AA /* LaunchScreen.storyboard */; };
+		0F0EC4E922D8D4CC001118AA /* ChallengeFeriasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4E822D8D4CC001118AA /* ChallengeFeriasTests.swift */; };
+		0F0EC4F422D8D4CC001118AA /* ChallengeFeriasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4F322D8D4CC001118AA /* ChallengeFeriasUITests.swift */; };
+		0F0EC50522D8DC5D001118AA /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F0EC50422D8DC5D001118AA /* SF-Pro-Display-Semibold.otf */; };
+		0F0EC50722D8DE1F001118AA /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F0EC50622D8DE1F001118AA /* SF-Pro-Display-Bold.otf */; };
+		0F0EC50922D8DE2B001118AA /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F0EC50822D8DE2A001118AA /* SF-Pro-Display-Regular.otf */; };
+		0F0EC50F22D8F8A1001118AA /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC50E22D8F8A1001118AA /* ProgressCircleView.swift */; };
+		0F0EC51122D8FA02001118AA /* ProgressCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC51022D8FA02001118AA /* ProgressCircleViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0F0EC4E522D8D4CC001118AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F0EC4C522D8D4CA001118AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F0EC4CC22D8D4CA001118AA;
+			remoteInfo = ChallengeFerias;
+		};
+		0F0EC4F022D8D4CC001118AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F0EC4C522D8D4CA001118AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F0EC4CC22D8D4CA001118AA;
+			remoteInfo = ChallengeFerias;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F0EC4CD22D8D4CA001118AA /* ChallengeFerias.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeFerias.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F0EC4D022D8D4CA001118AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0F0EC4D222D8D4CA001118AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0F0EC4D522D8D4CA001118AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0F0EC4D822D8D4CA001118AA /* ChallengeFerias.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChallengeFerias.xcdatamodel; sourceTree = "<group>"; };
+		0F0EC4DA22D8D4CC001118AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0F0EC4DD22D8D4CC001118AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0F0EC4DF22D8D4CC001118AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F0EC4E422D8D4CC001118AA /* ChallengeFeriasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengeFeriasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F0EC4E822D8D4CC001118AA /* ChallengeFeriasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeFeriasTests.swift; sourceTree = "<group>"; };
+		0F0EC4EA22D8D4CC001118AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F0EC4EF22D8D4CC001118AA /* ChallengeFeriasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengeFeriasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F0EC4F322D8D4CC001118AA /* ChallengeFeriasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeFeriasUITests.swift; sourceTree = "<group>"; };
+		0F0EC4F522D8D4CC001118AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F0EC50422D8DC5D001118AA /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		0F0EC50622D8DE1F001118AA /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Bold.otf"; path = "../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
+		0F0EC50822D8DE2A001118AA /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Regular.otf"; path = "../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		0F0EC50E22D8F8A1001118AA /* ProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
+		0F0EC51022D8FA02001118AA /* ProgressCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0F0EC4CA22D8D4CA001118AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F0EC4E122D8D4CC001118AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F0EC4EC22D8D4CC001118AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F0EC4C422D8D4CA001118AA = {
+			isa = PBXGroup;
+			children = (
+				0F0EC4CF22D8D4CA001118AA /* ChallengeFerias */,
+				0F0EC4E722D8D4CC001118AA /* ChallengeFeriasTests */,
+				0F0EC4F222D8D4CC001118AA /* ChallengeFeriasUITests */,
+				0F0EC4CE22D8D4CA001118AA /* Products */,
+				0F0EC50422D8DC5D001118AA /* SF-Pro-Display-Semibold.otf */,
+				0F0EC50622D8DE1F001118AA /* SF-Pro-Display-Bold.otf */,
+				0F0EC50822D8DE2A001118AA /* SF-Pro-Display-Regular.otf */,
+			);
+			sourceTree = "<group>";
+		};
+		0F0EC4CE22D8D4CA001118AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0F0EC4CD22D8D4CA001118AA /* ChallengeFerias.app */,
+				0F0EC4E422D8D4CC001118AA /* ChallengeFeriasTests.xctest */,
+				0F0EC4EF22D8D4CC001118AA /* ChallengeFeriasUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0F0EC4CF22D8D4CA001118AA /* ChallengeFerias */ = {
+			isa = PBXGroup;
+			children = (
+				0F0EC50D22D8F80C001118AA /* Controllers */,
+				0F0EC50C22D8F7E5001118AA /* Views */,
+				0F0EC4D022D8D4CA001118AA /* AppDelegate.swift */,
+				0F0EC4D422D8D4CA001118AA /* Main.storyboard */,
+				0F0EC4DA22D8D4CC001118AA /* Assets.xcassets */,
+				0F0EC4DC22D8D4CC001118AA /* LaunchScreen.storyboard */,
+				0F0EC4DF22D8D4CC001118AA /* Info.plist */,
+				0F0EC4D722D8D4CA001118AA /* ChallengeFerias.xcdatamodeld */,
+			);
+			path = ChallengeFerias;
+			sourceTree = "<group>";
+		};
+		0F0EC4E722D8D4CC001118AA /* ChallengeFeriasTests */ = {
+			isa = PBXGroup;
+			children = (
+				0F0EC4E822D8D4CC001118AA /* ChallengeFeriasTests.swift */,
+				0F0EC4EA22D8D4CC001118AA /* Info.plist */,
+			);
+			path = ChallengeFeriasTests;
+			sourceTree = "<group>";
+		};
+		0F0EC4F222D8D4CC001118AA /* ChallengeFeriasUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0F0EC4F322D8D4CC001118AA /* ChallengeFeriasUITests.swift */,
+				0F0EC4F522D8D4CC001118AA /* Info.plist */,
+			);
+			path = ChallengeFeriasUITests;
+			sourceTree = "<group>";
+		};
+		0F0EC50C22D8F7E5001118AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0F0EC4D222D8D4CA001118AA /* ViewController.swift */,
+				0F0EC50E22D8F8A1001118AA /* ProgressCircleView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0F0EC50D22D8F80C001118AA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F0EC51022D8FA02001118AA /* ProgressCircleViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0F0EC4CC22D8D4CA001118AA /* ChallengeFerias */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F0EC4F822D8D4CC001118AA /* Build configuration list for PBXNativeTarget "ChallengeFerias" */;
+			buildPhases = (
+				0F0EC4C922D8D4CA001118AA /* Sources */,
+				0F0EC4CA22D8D4CA001118AA /* Frameworks */,
+				0F0EC4CB22D8D4CA001118AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChallengeFerias;
+			productName = ChallengeFerias;
+			productReference = 0F0EC4CD22D8D4CA001118AA /* ChallengeFerias.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0F0EC4E322D8D4CC001118AA /* ChallengeFeriasTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F0EC4FB22D8D4CC001118AA /* Build configuration list for PBXNativeTarget "ChallengeFeriasTests" */;
+			buildPhases = (
+				0F0EC4E022D8D4CC001118AA /* Sources */,
+				0F0EC4E122D8D4CC001118AA /* Frameworks */,
+				0F0EC4E222D8D4CC001118AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0F0EC4E622D8D4CC001118AA /* PBXTargetDependency */,
+			);
+			name = ChallengeFeriasTests;
+			productName = ChallengeFeriasTests;
+			productReference = 0F0EC4E422D8D4CC001118AA /* ChallengeFeriasTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0F0EC4EE22D8D4CC001118AA /* ChallengeFeriasUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F0EC4FE22D8D4CC001118AA /* Build configuration list for PBXNativeTarget "ChallengeFeriasUITests" */;
+			buildPhases = (
+				0F0EC4EB22D8D4CC001118AA /* Sources */,
+				0F0EC4EC22D8D4CC001118AA /* Frameworks */,
+				0F0EC4ED22D8D4CC001118AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0F0EC4F122D8D4CC001118AA /* PBXTargetDependency */,
+			);
+			name = ChallengeFeriasUITests;
+			productName = ChallengeFeriasUITests;
+			productReference = 0F0EC4EF22D8D4CC001118AA /* ChallengeFeriasUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0F0EC4C522D8D4CA001118AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Juliana Vigato Pavan";
+				TargetAttributes = {
+					0F0EC4CC22D8D4CA001118AA = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					0F0EC4E322D8D4CC001118AA = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 0F0EC4CC22D8D4CA001118AA;
+					};
+					0F0EC4EE22D8D4CC001118AA = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 0F0EC4CC22D8D4CA001118AA;
+					};
+				};
+			};
+			buildConfigurationList = 0F0EC4C822D8D4CA001118AA /* Build configuration list for PBXProject "ChallengeFerias" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0F0EC4C422D8D4CA001118AA;
+			productRefGroup = 0F0EC4CE22D8D4CA001118AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0F0EC4CC22D8D4CA001118AA /* ChallengeFerias */,
+				0F0EC4E322D8D4CC001118AA /* ChallengeFeriasTests */,
+				0F0EC4EE22D8D4CC001118AA /* ChallengeFeriasUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0F0EC4CB22D8D4CA001118AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F0EC50522D8DC5D001118AA /* SF-Pro-Display-Semibold.otf in Resources */,
+				0F0EC50722D8DE1F001118AA /* SF-Pro-Display-Bold.otf in Resources */,
+				0F0EC4DE22D8D4CC001118AA /* LaunchScreen.storyboard in Resources */,
+				0F0EC4DB22D8D4CC001118AA /* Assets.xcassets in Resources */,
+				0F0EC50922D8DE2B001118AA /* SF-Pro-Display-Regular.otf in Resources */,
+				0F0EC4D622D8D4CA001118AA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F0EC4E222D8D4CC001118AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F0EC4ED22D8D4CC001118AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0F0EC4C922D8D4CA001118AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F0EC4D922D8D4CA001118AA /* ChallengeFerias.xcdatamodeld in Sources */,
+				0F0EC50F22D8F8A1001118AA /* ProgressCircleView.swift in Sources */,
+				0F0EC4D322D8D4CA001118AA /* ViewController.swift in Sources */,
+				0F0EC51122D8FA02001118AA /* ProgressCircleViewController.swift in Sources */,
+				0F0EC4D122D8D4CA001118AA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F0EC4E022D8D4CC001118AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F0EC4E922D8D4CC001118AA /* ChallengeFeriasTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0F0EC4EB22D8D4CC001118AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F0EC4F422D8D4CC001118AA /* ChallengeFeriasUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0F0EC4E622D8D4CC001118AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0F0EC4CC22D8D4CA001118AA /* ChallengeFerias */;
+			targetProxy = 0F0EC4E522D8D4CC001118AA /* PBXContainerItemProxy */;
+		};
+		0F0EC4F122D8D4CC001118AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0F0EC4CC22D8D4CA001118AA /* ChallengeFerias */;
+			targetProxy = 0F0EC4F022D8D4CC001118AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0F0EC4D422D8D4CA001118AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0F0EC4D522D8D4CA001118AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0F0EC4DC22D8D4CC001118AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0F0EC4DD22D8D4CC001118AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0F0EC4F622D8D4CC001118AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0F0EC4F722D8D4CC001118AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0F0EC4F922D8D4CC001118AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BSH4XC9RT9;
+				INFOPLIST_FILE = ChallengeFerias/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jvp.ChallengeFerias;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0F0EC4FA22D8D4CC001118AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BSH4XC9RT9;
+				INFOPLIST_FILE = ChallengeFerias/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jvp.ChallengeFerias;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0F0EC4FC22D8D4CC001118AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BSH4XC9RT9;
+				INFOPLIST_FILE = ChallengeFeriasTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jvp.ChallengeFeriasTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChallengeFerias.app/ChallengeFerias";
+			};
+			name = Debug;
+		};
+		0F0EC4FD22D8D4CC001118AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BSH4XC9RT9;
+				INFOPLIST_FILE = ChallengeFeriasTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jvp.ChallengeFeriasTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChallengeFerias.app/ChallengeFerias";
+			};
+			name = Release;
+		};
+		0F0EC4FF22D8D4CC001118AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BSH4XC9RT9;
+				INFOPLIST_FILE = ChallengeFeriasUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jvp.ChallengeFeriasUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ChallengeFerias;
+			};
+			name = Debug;
+		};
+		0F0EC50022D8D4CC001118AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BSH4XC9RT9;
+				INFOPLIST_FILE = ChallengeFeriasUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jvp.ChallengeFeriasUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ChallengeFerias;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0F0EC4C822D8D4CA001118AA /* Build configuration list for PBXProject "ChallengeFerias" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F0EC4F622D8D4CC001118AA /* Debug */,
+				0F0EC4F722D8D4CC001118AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0F0EC4F822D8D4CC001118AA /* Build configuration list for PBXNativeTarget "ChallengeFerias" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F0EC4F922D8D4CC001118AA /* Debug */,
+				0F0EC4FA22D8D4CC001118AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0F0EC4FB22D8D4CC001118AA /* Build configuration list for PBXNativeTarget "ChallengeFeriasTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F0EC4FC22D8D4CC001118AA /* Debug */,
+				0F0EC4FD22D8D4CC001118AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0F0EC4FE22D8D4CC001118AA /* Build configuration list for PBXNativeTarget "ChallengeFeriasUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F0EC4FF22D8D4CC001118AA /* Debug */,
+				0F0EC50022D8D4CC001118AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0F0EC4D722D8D4CA001118AA /* ChallengeFerias.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0F0EC4D822D8D4CA001118AA /* ChallengeFerias.xcdatamodel */,
+			);
+			currentVersion = 0F0EC4D822D8D4CA001118AA /* ChallengeFerias.xcdatamodel */;
+			path = ChallengeFerias.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 0F0EC4C522D8D4CA001118AA /* Project object */;
+}
