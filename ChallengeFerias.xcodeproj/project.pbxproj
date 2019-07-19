@@ -15,11 +15,11 @@
 		0F0EC4DE22D8D4CC001118AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F0EC4DC22D8D4CC001118AA /* LaunchScreen.storyboard */; };
 		0F0EC4E922D8D4CC001118AA /* ChallengeFeriasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4E822D8D4CC001118AA /* ChallengeFeriasTests.swift */; };
 		0F0EC4F422D8D4CC001118AA /* ChallengeFeriasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4F322D8D4CC001118AA /* ChallengeFeriasUITests.swift */; };
-		0F0EC50522D8DC5D001118AA /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F0EC50422D8DC5D001118AA /* SF-Pro-Display-Semibold.otf */; };
-		0F0EC50722D8DE1F001118AA /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F0EC50622D8DE1F001118AA /* SF-Pro-Display-Bold.otf */; };
-		0F0EC50922D8DE2B001118AA /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F0EC50822D8DE2A001118AA /* SF-Pro-Display-Regular.otf */; };
 		0F0EC50F22D8F8A1001118AA /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC50E22D8F8A1001118AA /* ProgressCircleView.swift */; };
 		0F0EC51122D8FA02001118AA /* ProgressCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC51022D8FA02001118AA /* ProgressCircleViewController.swift */; };
+		0F90D02A22E1F50300999EBD /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F90D02922E1F50300999EBD /* SF-Pro-Display-Bold.otf */; };
+		0F90D02C22E1F51400999EBD /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F90D02B22E1F51400999EBD /* SF-Pro-Display-Semibold.otf */; };
+		0F90D02E22E1F52100999EBD /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F90D02D22E1F52100999EBD /* SF-Pro-Display-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,11 +54,11 @@
 		0F0EC4EF22D8D4CC001118AA /* ChallengeFeriasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengeFeriasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F0EC4F322D8D4CC001118AA /* ChallengeFeriasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeFeriasUITests.swift; sourceTree = "<group>"; };
 		0F0EC4F522D8D4CC001118AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F0EC50422D8DC5D001118AA /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
-		0F0EC50622D8DE1F001118AA /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Bold.otf"; path = "../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
-		0F0EC50822D8DE2A001118AA /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Regular.otf"; path = "../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		0F0EC50E22D8F8A1001118AA /* ProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
 		0F0EC51022D8FA02001118AA /* ProgressCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleViewController.swift; sourceTree = "<group>"; };
+		0F90D02922E1F50300999EBD /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Bold.otf"; path = "../../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
+		0F90D02B22E1F51400999EBD /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		0F90D02D22E1F52100999EBD /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Regular.otf"; path = "../../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,9 +93,9 @@
 				0F0EC4E722D8D4CC001118AA /* ChallengeFeriasTests */,
 				0F0EC4F222D8D4CC001118AA /* ChallengeFeriasUITests */,
 				0F0EC4CE22D8D4CA001118AA /* Products */,
-				0F0EC50422D8DC5D001118AA /* SF-Pro-Display-Semibold.otf */,
-				0F0EC50622D8DE1F001118AA /* SF-Pro-Display-Bold.otf */,
-				0F0EC50822D8DE2A001118AA /* SF-Pro-Display-Regular.otf */,
+				0F90D02922E1F50300999EBD /* SF-Pro-Display-Bold.otf */,
+				0F90D02B22E1F51400999EBD /* SF-Pro-Display-Semibold.otf */,
+				0F90D02D22E1F52100999EBD /* SF-Pro-Display-Regular.otf */,
 			);
 			sourceTree = "<group>";
 		};
@@ -263,11 +263,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F0EC50522D8DC5D001118AA /* SF-Pro-Display-Semibold.otf in Resources */,
-				0F0EC50722D8DE1F001118AA /* SF-Pro-Display-Bold.otf in Resources */,
 				0F0EC4DE22D8D4CC001118AA /* LaunchScreen.storyboard in Resources */,
 				0F0EC4DB22D8D4CC001118AA /* Assets.xcassets in Resources */,
-				0F0EC50922D8DE2B001118AA /* SF-Pro-Display-Regular.otf in Resources */,
+				0F90D02C22E1F51400999EBD /* SF-Pro-Display-Semibold.otf in Resources */,
+				0F90D02A22E1F50300999EBD /* SF-Pro-Display-Bold.otf in Resources */,
+				0F90D02E22E1F52100999EBD /* SF-Pro-Display-Regular.otf in Resources */,
 				0F0EC4D622D8D4CA001118AA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
