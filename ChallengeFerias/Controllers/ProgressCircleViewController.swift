@@ -11,13 +11,12 @@ import UIKit
 
 class ProgressCircleViewController:UIViewController{
     
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        self.progressCircle?.circleWidth = 30.0
+    }
     
     @IBOutlet weak var progressCircle: ProgressCircleView?
-    
-    override func viewDidLoad() {
-        self.progressCircle?.circleWidth = 30.0
-        
-    }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
