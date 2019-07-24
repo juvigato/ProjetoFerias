@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+import UserNotifications
 
 class timelineMemoriasController: UITableViewController{
     
@@ -21,6 +22,7 @@ class timelineMemoriasController: UITableViewController{
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         tableView.dataSource = self
         tableView.delegate = self
+        notificacao()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,5 +78,31 @@ class timelineMemoriasController: UITableViewController{
         }
     }
     
-    
+    func notificacao(){
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.getNotificationSettings{ (settings) in
+            if settings.authorizationStatus == .authorized{
+                let content = UNMutableNotificationContent()
+                content.title = NSString.localizedUserNotificationString(forKey: "Opa, você não se esqueceu de mim, certo?", arguments: nil)
+                content.body = NSString.localizedUserNotificationString(forKey: "Lembre-se de adicionar mais memórias!", arguments: nil)
+                content.sound = UNNotificationSound.default
+                
+                let date = Date(timeIntervalSinceNow: 3600)
+                let triggerDiario = Calendar.current.dateComponents([.hour,.minute,.second], from: date)
+                
+                let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDiario, repeats: false)
+                
+                let request = UNNotificationRequest(identifier: "diario", content: content, trigger: trigger)
+                
+                let center = UNUserNotificationCenter.current()
+                center.add(request) { (error: Error?) in
+                    if let error = error{
+                        print(error.localizedDescription)
+                    }
+                }
+            } else {
+                print("Permissão negada - notificações desativadas")
+            }
+        }
+    }
 }
