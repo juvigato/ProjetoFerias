@@ -15,6 +15,12 @@ class NovaMemoriaViewController: UIViewController, UITableViewDataSource, UITabl
     
     @IBOutlet weak var tableViewLista: UITableView!
     
+    @IBOutlet weak var proximoBotao: UIBarButtonItem!
+    
+    @IBOutlet weak var imagemEmocao: UIImageView!
+    
+    var emocoesClicadas:[String] = Array()
+    
     var lista:[String] = Array()
     
     var linhaSelecionada:Int = 0
@@ -33,6 +39,7 @@ class NovaMemoriaViewController: UIViewController, UITableViewDataSource, UITabl
         tableViewLista.dataSource = self
         tableViewLista.delegate = self
         tableViewLista.rowHeight = 43.5
+//        proximoBotao.isEnabled = false
     }
     
     
@@ -46,15 +53,16 @@ class NovaMemoriaViewController: UIViewController, UITableViewDataSource, UITabl
         cell.lblTitle.text = lista[indexPath.row]
         cell.selectionStyle = .none
         cell.btnCheckMark.addTarget(self, action: #selector(checkMarkButtonClicked(sender:)), for: .touchUpInside)
+        
         return cell
     }
       
     
-    @objc func checkMarkButtonClicked ( sender: UIButton) {
+    @objc func checkMarkButtonClicked ( sender: UIButton ) {
 //        print("button presed")
         
         if sender.isSelected {
-            //botao selecionaco
+            //botao selecionado
             //botao está ficando nao selecionado
             contadorBotoesSelecionados = contadorBotoesSelecionados - 1
             sender.isSelected = false
@@ -70,6 +78,8 @@ class NovaMemoriaViewController: UIViewController, UITableViewDataSource, UITabl
         }
 //        print(contadorBotoesSelecionados)
     }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 

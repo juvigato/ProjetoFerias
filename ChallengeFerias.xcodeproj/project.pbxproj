@@ -22,8 +22,10 @@
 		0F5803D522E654090013EC62 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F5803D422E654080013EC62 /* SF-Pro-Display-Semibold.otf */; };
 		0F5803E022E659AB0013EC62 /* CheckMarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5803DE22E659AB0013EC62 /* CheckMarkCell.swift */; };
 		0F5803E122E659AB0013EC62 /* CheckMarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F5803DF22E659AB0013EC62 /* CheckMarkCell.xib */; };
+		0F58042022E78F350013EC62 /* timelineMemoriasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58041F22E78F350013EC62 /* timelineMemoriasController.swift */; };
+		0F58042222E792B20013EC62 /* EditarMemoriaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58042122E792B20013EC62 /* EditarMemoriaController.swift */; };
+		0F58042422E7A2730013EC62 /* EditarSituacaoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58042322E7A2730013EC62 /* EditarSituacaoController.swift */; };
 		0F90D03022E2052F00999EBD /* NovaMemoriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90D02F22E2052F00999EBD /* NovaMemoriaViewController.swift */; };
-		0F90D03622E21CAC00999EBD /* SituacaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90D03522E21CAC00999EBD /* SituacaoViewController.swift */; };
 		0F90D03922E2239000999EBD /* Memoria+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90D03822E2239000999EBD /* Memoria+CoreDataClass.swift */; };
 		0F90D03B22E2240000999EBD /* Memoria+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90D03A22E2240000999EBD /* Memoria+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
@@ -67,8 +69,10 @@
 		0F5803D422E654080013EC62 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		0F5803DE22E659AB0013EC62 /* CheckMarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarkCell.swift; sourceTree = "<group>"; };
 		0F5803DF22E659AB0013EC62 /* CheckMarkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckMarkCell.xib; sourceTree = "<group>"; };
+		0F58041F22E78F350013EC62 /* timelineMemoriasController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timelineMemoriasController.swift; sourceTree = "<group>"; };
+		0F58042122E792B20013EC62 /* EditarMemoriaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarMemoriaController.swift; sourceTree = "<group>"; };
+		0F58042322E7A2730013EC62 /* EditarSituacaoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarSituacaoController.swift; sourceTree = "<group>"; };
 		0F90D02F22E2052F00999EBD /* NovaMemoriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaMemoriaViewController.swift; sourceTree = "<group>"; };
-		0F90D03522E21CAC00999EBD /* SituacaoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SituacaoViewController.swift; sourceTree = "<group>"; };
 		0F90D03822E2239000999EBD /* Memoria+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memoria+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0F90D03A22E2240000999EBD /* Memoria+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memoria+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,7 +175,9 @@
 				0F0EC51022D8FA02001118AA /* ProgressCircleViewController.swift */,
 				0F0EC4D222D8D4CA001118AA /* TableViewController.swift */,
 				0F90D02F22E2052F00999EBD /* NovaMemoriaViewController.swift */,
-				0F90D03522E21CAC00999EBD /* SituacaoViewController.swift */,
+				0F58041F22E78F350013EC62 /* timelineMemoriasController.swift */,
+				0F58042122E792B20013EC62 /* EditarMemoriaController.swift */,
+				0F58042322E7A2730013EC62 /* EditarSituacaoController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -321,12 +327,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F0EC4D922D8D4CA001118AA /* ChallengeFerias.xcdatamodeld in Sources */,
-				0F90D03622E21CAC00999EBD /* SituacaoViewController.swift in Sources */,
 				0F0EC50F22D8F8A1001118AA /* ProgressCircleView.swift in Sources */,
 				0F5803E022E659AB0013EC62 /* CheckMarkCell.swift in Sources */,
+				0F58042422E7A2730013EC62 /* EditarSituacaoController.swift in Sources */,
 				0F0EC4D322D8D4CA001118AA /* TableViewController.swift in Sources */,
 				0F90D03922E2239000999EBD /* Memoria+CoreDataClass.swift in Sources */,
 				0F90D03B22E2240000999EBD /* Memoria+CoreDataProperties.swift in Sources */,
+				0F58042222E792B20013EC62 /* EditarMemoriaController.swift in Sources */,
+				0F58042022E78F350013EC62 /* timelineMemoriasController.swift in Sources */,
 				0F0EC51122D8FA02001118AA /* ProgressCircleViewController.swift in Sources */,
 				0F90D03022E2052F00999EBD /* NovaMemoriaViewController.swift in Sources */,
 				0F0EC4D122D8D4CA001118AA /* AppDelegate.swift in Sources */,

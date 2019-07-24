@@ -16,4 +16,8 @@ extension Memoria{
     }
     
     @NSManaged public var situacao: String
+    @NSManaged public var pensamentos: String
+    @NSManaged public var atitude: String
+    @NSManaged public var resultado: String
+    @NSManaged public var id: String
 }
