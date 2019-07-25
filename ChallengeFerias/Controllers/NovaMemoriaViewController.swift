@@ -10,8 +10,17 @@
 // add no CBL: fonte - https://www.youtube.com/watch?v=WDQkjOcrbQE
 
 import UIKit
+import CoreData
 
-class NovaMemoriaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class NovaMemoriaViewController: UITableViewController{
+    
+//    var goingForwards:Bool = false
+    
+    var context:NSManagedObjectContext?
+    
+    var novaMemoria:Memoria?
+    
+    var sentimentos:[String] = []
     
     @IBOutlet weak var tableViewLista: UITableView!
     
@@ -19,71 +28,90 @@ class NovaMemoriaViewController: UIViewController, UITableViewDataSource, UITabl
     
     @IBOutlet weak var imagemEmocao: UIImageView!
     
-    var emocoesClicadas:[String] = Array()
     
-    var lista:[String] = Array()
+    @IBOutlet weak var alegriaBotao: UIButton!
     
-    var linhaSelecionada:Int = 0
-    
+//    var linhaSelecionada:Int = 0
+//
     var contadorBotoesSelecionados:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lista.append("Alegria")
-        lista.append("Tristeza")
-        lista.append("Raiva")
-        lista.append("Medo")
-        lista.append("Aversão")
-        tableViewLista.register(UINib.init(nibName: "CheckMarkCell", bundle: nil), forCellReuseIdentifier: "CheckListIdentifier")
-        tableViewLista.dataSource = self
-        tableViewLista.delegate = self
-        tableViewLista.rowHeight = 43.5
+        context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+    
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
 //        proximoBotao.isEnabled = false
-    }
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return lista.count
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CheckListIdentifier") as! CheckMarkCell
-        cell.lblTitle.text = lista[indexPath.row]
-        cell.selectionStyle = .none
-        cell.btnCheckMark.addTarget(self, action: #selector(checkMarkButtonClicked(sender:)), for: .touchUpInside)
         
-        return cell
+        sentimentos = []
     }
-      
     
-    @objc func checkMarkButtonClicked ( sender: UIButton ) {
-//        print("button presed")
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 6
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    @IBAction func alegriaBotao(_ sender: Any){
+        sentimentos.append("alegria")
+//        var contadorAlegria:Int = 0
+//        if contadorAlegria == 0{
+//            alegriaBotao.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+//            sentimentos.append("alegria")
+//            contadorAlegria = contadorAlegria + 1
+//        } else {
+//            alegriaBotao.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//            if let index = sentimentos.index(of: "alegria") {
+//                sentimentos.remove(at: index)
+//            }
+//            contadorAlegria = contadorAlegria - 1
+//        }
+//
         
-        if sender.isSelected {
-            //botao selecionado
-            //botao está ficando nao selecionado
-            contadorBotoesSelecionados = contadorBotoesSelecionados - 1
-            sender.isSelected = false
-            sender.setImage(#imageLiteral(resourceName: "UnChecked"), for: .normal)
-        } else {
-            //botao nao selecionado
-            if contadorBotoesSelecionados < 2{
-                //botao ficando selecionado
-                contadorBotoesSelecionados = contadorBotoesSelecionados + 1
-                sender.isSelected = true
-                sender.setImage(#imageLiteral(resourceName: "Checked"), for: .normal)
+    }
+
+    @IBAction func tristezaBotao(_ sender: Any){
+        sentimentos.append("tristeza")
+    }
+    
+    @IBAction func raivaBotao(_ sender: Any){
+        sentimentos.append("raiva")
+    }
+    
+    @IBAction func medoBotao(_ sender: Any){
+        sentimentos.append("medo")
+    }
+    
+    @IBAction func aversaoBotao(_ sender: Any){
+        sentimentos.append("aversao")
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if let context = context{
+            novaMemoria = (NSEntityDescription.insertNewObject(forEntityName: "Memoria", into: context) as! Memoria)
+            
+            for x in sentimentos{
+                let sentimento = (NSEntityDescription.insertNewObject(forEntityName: "Sentimento", into: context) as! Sentimento)
+                sentimento.nome = x
+                novaMemoria?.addToTem(sentimento)
             }
+            (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+            return true
         }
-//        print(contadorBotoesSelecionados)
+        return false
     }
-
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        if !goingForwards {
+//            context?.delete(novaMemoria!)
+//
+//        }
+//    }
     
     
 }

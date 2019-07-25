@@ -14,9 +14,11 @@ class EditarSituacaoController:UIViewController{
     
     public var memoria:Memoria?
     
-    public var memoriaVC:timelineMemoriasController?
-    
     var context:NSManagedObjectContext?
+    
+    public var memoriaTVC:MemoriaTableViewController?
+    
+    var situacaoText:String?
     
     @IBOutlet weak var situacaoTextField: UITextField!
     
@@ -25,38 +27,32 @@ class EditarSituacaoController:UIViewController{
         
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        if let memoria = memoria {
-            situacaoTextField.text = memoria.situacao
-            //            navigationItem.title = aula.nome
-        } else {
-            //            navigationItem.title = "Criar Aula"
-        }
+        situacaoTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
+
     
-    @IBAction func salvarSituacaoBotao(_ sender: Any) {
-        var novaSituacao:String = "Situacao"
-        
-        if situacaoTextField.text != nil, situacaoTextField.text!.count > 0 {
-            novaSituacao = situacaoTextField.text!
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if situacaoTextField.text != nil,
+            situacaoTextField.text!.count > 0 {
+            situacaoText = situacaoTextField.text!
         }
-        
-        
-        if let _ = memoria {
-            memoria!.situacao = novaSituacao
-            (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        } else {
-            if let memoriaVC = memoriaVC {
+        if situacaoText != nil {
+            if let _ = memoriaTVC {
                 if let context = context {
-                    var novaMemoria = NSEntityDescription.insertNewObject(forEntityName: "Memoria", into: context) as! Memoria
-                    novaMemoria.situacao = novaSituacao
-                    memoriaVC.memorias.append(novaMemoria)
-                    (UIApplication.shared.delegate as! AppDelegate).saveContext()
+                    if let novaSituacao = situacaoText {
+                        memoria?.situacao = novaSituacao
+                    }
+                   
                 }
             }
+            (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+            return true
         }
-        navigationController?.popViewController(animated: true)
+        return false
     }
     
+    @IBAction func textFieldDidChange(_ sender: Any) {
+    }
 }
 

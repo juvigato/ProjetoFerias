@@ -284,13 +284,13 @@
         <!--Memoria-->
         <scene sceneID="Bal-H5-Nt5">
             <objects>
-                <tableViewController title="Memoria" id="nNh-Tc-IMl" customClass="timelineMemoriasController" customModule="ChallengeFerias" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Memoria" id="nNh-Tc-IMl" customClass="TimelineMemoriasController" customModule="ChallengeFerias" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dOu-P8-gbF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="171" id="CWd-OD-JlJ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celula" rowHeight="171" id="CWd-OD-JlJ" customClass="MemoriaTableViewCelula" customModule="ChallengeFerias" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="171"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CWd-OD-JlJ" id="I8m-6N-WcE">
@@ -327,7 +327,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="vu5-Vp-2Xl" kind="show" identifier="editarMemoria" id="P3d-5p-3kO"/>
+                                    <outlet property="emocaoMemoriaTimeline" destination="N5Y-Bb-EJc" id="Jhv-Rf-0f7"/>
+                                    <outlet property="imgMemoriaTimeline" destination="Br0-mK-3NQ" id="uSR-5p-YVj"/>
+                                    <outlet property="situacaoMemoriaTimeline" destination="vxj-Ne-gGQ" id="IUS-h6-y5p"/>
+                                    <segue destination="vu5-Vp-2Xl" kind="show" identifier="detalhesMemoria" id="P3d-5p-3kO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -339,7 +342,7 @@
                     <navigationItem key="navigationItem" title="Timeline" id="bye-gW-2tp">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vKe-Ae-rKg">
                             <connections>
-                                <segue destination="3hn-9o-8h5" kind="show" identifier="criarMemoria" id="CQB-c4-vX2"/>
+                                <segue destination="81T-Yj-nSj" kind="show" id="hhU-AP-RGL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -529,13 +532,13 @@ o</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que você está sentindo?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJg-cb-Dyx">
-                                <rect key="frame" x="20" y="108" width="309" height="33"/>
+                                <rect key="frame" x="20" y="64" width="309" height="33"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96K-Jw-9sc">
-                                <rect key="frame" x="20" y="151" width="178" height="20"/>
+                                <rect key="frame" x="20" y="107" width="178" height="20"/>
                                 <string key="text">Selecione até 2 opções
 o</string>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
@@ -543,7 +546,7 @@ o</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OIz-tQ-doD">
-                                <rect key="frame" x="0.0" y="536" width="414" height="325"/>
+                                <rect key="frame" x="0.0" y="492" width="414" height="325"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OIz-tQ-doD" secondAttribute="height" multiplier="414:325" id="Q8a-cf-3p7"/>
@@ -560,7 +563,7 @@ o</string>
                                 </prototypes>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alegria-Tristeza – 4" translatesAutoresizingMaskIntoConstraints="NO" id="qdc-1B-aQw">
-                                <rect key="frame" x="29" y="191" width="356" height="325"/>
+                                <rect key="frame" x="29" y="147" width="356" height="325"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="325" id="2ba-gf-9Hc"/>
                                     <constraint firstAttribute="width" constant="356" id="aVs-b5-npG"/>
@@ -582,11 +585,7 @@ o</string>
                         <viewLayoutGuide key="safeArea" id="154-Ce-UAK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nova Memória" id="t9B-fX-gQi">
-                        <barButtonItem key="rightBarButtonItem" title="Próximo" id="9B8-dQ-PTo">
-                            <connections>
-                                <segue destination="vu5-Vp-2Xl" kind="show" id="RZw-1O-dh6"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="9B8-dQ-PTo"/>
                     </navigationItem>
                     <connections>
                         <outlet property="imagemEmocao" destination="qdc-1B-aQw" id="Jl8-EX-D8b"/>
@@ -596,7 +595,191 @@ o</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSH-wn-t2T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2380" y="-762"/>
+            <point key="canvasLocation" x="1603" y="-1235"/>
+        </scene>
+        <!--Nova Memória-->
+        <scene sceneID="7bt-wf-u5v">
+            <objects>
+                <tableViewController id="81T-Yj-nSj" customClass="NovaMemoriaViewController" customModule="ChallengeFerias" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SRG-OU-DKg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="fLs-j4-TNe">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="423" id="gfK-L5-Q5k">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="423"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gfK-L5-Q5k" id="uUX-iu-I5b">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="422.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que você está sentindo?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlE-zy-FPA">
+                                                    <rect key="frame" x="20" y="21" width="309" height="33"/>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="28"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alegria-Tristeza – 4" translatesAutoresizingMaskIntoConstraints="NO" id="qgm-DD-9cb">
+                                                    <rect key="frame" x="29" y="94" width="356" height="325"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="356" id="IYY-Fa-XIJ"/>
+                                                        <constraint firstAttribute="height" constant="325" id="krO-to-XYp"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWL-FR-8XA">
+                                                    <rect key="frame" x="20" y="64" width="178.5" height="20"/>
+                                                    <string key="text">Selecione até 2 opções
+o</string>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LWL-FR-8XA" firstAttribute="leading" secondItem="uUX-iu-I5b" secondAttribute="leadingMargin" id="3qM-yF-wA5"/>
+                                                <constraint firstItem="XlE-zy-FPA" firstAttribute="leading" secondItem="uUX-iu-I5b" secondAttribute="leadingMargin" id="B6a-FZ-KAZ"/>
+                                                <constraint firstItem="qgm-DD-9cb" firstAttribute="centerX" secondItem="uUX-iu-I5b" secondAttribute="centerX" id="HU2-ji-LMv"/>
+                                                <constraint firstItem="XlE-zy-FPA" firstAttribute="top" secondItem="uUX-iu-I5b" secondAttribute="topMargin" constant="10" id="ctx-lT-HbP"/>
+                                                <constraint firstItem="qgm-DD-9cb" firstAttribute="top" secondItem="LWL-FR-8XA" secondAttribute="bottom" constant="10" id="ddi-x4-ypv"/>
+                                                <constraint firstItem="LWL-FR-8XA" firstAttribute="top" secondItem="XlE-zy-FPA" secondAttribute="bottom" constant="10" id="lMB-Xl-BMz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="  " id="nyp-eX-ouE">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="38" id="hEd-tX-ta2">
+                                        <rect key="frame" x="0.0" y="451" width="414" height="38"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hEd-tX-ta2" id="Cj2-ky-8P5">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zi7-7G-aj1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Alegria"/>
+                                                    <connections>
+                                                        <action selector="alegriaBotao:" destination="81T-Yj-nSj" eventType="touchUpInside" id="ZIl-52-xMP"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle=" " id="0Gc-3o-hWK">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="38" id="8qi-y5-Cds">
+                                        <rect key="frame" x="0.0" y="517" width="414" height="38"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8qi-y5-Cds" id="w8S-38-Za7">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvk-c7-q7p">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Tristeza"/>
+                                                    <connections>
+                                                        <action selector="tristezaBotao:" destination="81T-Yj-nSj" eventType="touchUpInside" id="Weu-ax-j32"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle=" " id="6JL-nN-S0Q">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="38" id="2MD-0i-JAM">
+                                        <rect key="frame" x="0.0" y="583" width="414" height="38"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2MD-0i-JAM" id="kTB-mr-iVl">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0Q-we-LGq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Raiva"/>
+                                                    <connections>
+                                                        <action selector="raivaBotao:" destination="81T-Yj-nSj" eventType="touchUpInside" id="7ka-IG-Jct"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle=" " id="4yl-on-BfX">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="38" id="fwb-Va-hqF">
+                                        <rect key="frame" x="0.0" y="649" width="414" height="38"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fwb-Va-hqF" id="SBd-uQ-uNJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXa-GX-APx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Medo"/>
+                                                    <connections>
+                                                        <action selector="medoBotao:" destination="81T-Yj-nSj" eventType="touchUpInside" id="Oka-0b-RuP"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle=" " id="bcx-yk-CfZ">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="38" id="xBY-dG-wT1">
+                                        <rect key="frame" x="0.0" y="715" width="414" height="38"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xBY-dG-wT1" id="UEG-0M-PPb">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDx-un-wdP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Aversão"/>
+                                                    <connections>
+                                                        <action selector="aversaoBotao:" destination="81T-Yj-nSj" eventType="touchUpInside" id="6ly-UF-QcY"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="81T-Yj-nSj" id="xU7-bt-Mz6"/>
+                            <outlet property="delegate" destination="81T-Yj-nSj" id="dHw-2j-rTa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Nova Memória" id="02U-Bw-Csy">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="xAU-nx-W1m">
+                            <connections>
+                                <segue destination="TVp-iO-oRW" kind="unwind" unwindAction="addMemoria:" id="0py-5K-0pJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="alegriaBotao" destination="Zi7-7G-aj1" id="Bzd-xD-kxg"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mnH-wC-PpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="TVp-iO-oRW" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2479.7101449275365" y="-804.24107142857144"/>
         </scene>
         <!--Item-->
         <scene sceneID="YAX-hh-neC">
@@ -636,7 +819,7 @@ o</string>
         <!--Memória-->
         <scene sceneID="oKL-2G-jnV">
             <objects>
-                <tableViewController storyboardIdentifier="Memoria" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vu5-Vp-2Xl" customClass="TableViewController" customModule="ChallengeFerias" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Memoria" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vu5-Vp-2Xl" customClass="MemoriaTableViewController" customModule="ChallengeFerias" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XnM-lJ-kGC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -706,7 +889,7 @@ o</string>
                                         </tableViewCellContentView>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <segue destination="mFs-oC-dG3" kind="show" identifier="showSituacao" trigger="accessoryAction" id="4is-9O-h6h"/>
+                                            <segue destination="mFs-oC-dG3" kind="show" identifier="editarSituacao" trigger="accessoryAction" id="4is-9O-h6h"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="70" id="y1L-xb-4xj">
@@ -813,17 +996,12 @@ o</string>
                             <outlet property="delegate" destination="vu5-Vp-2Xl" id="l8q-HV-7Kb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Memória" id="MZ4-eA-oLh">
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="eQo-n9-xSM"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Memória" id="MZ4-eA-oLh"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="botaoSalvarMemoria" destination="eQo-n9-xSM" id="kxJ-gO-tYu"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sS6-Bx-xSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3148" y="-445"/>
+            <point key="canvasLocation" x="2480" y="5"/>
         </scene>
         <!--Situação-->
         <scene sceneID="ABS-m9-NBV">
@@ -856,6 +1034,9 @@ o</string>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldDidChange:" destination="mFs-oC-dG3" eventType="editingDidEnd" id="E7q-Fa-TuX"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -870,10 +1051,18 @@ o</string>
                         <viewLayoutGuide key="safeArea" id="YX7-6f-hhh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Situação" id="8Q1-3V-Rjl">
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="uIE-Ii-wZW"/>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="uIE-Ii-wZW">
+                            <connections>
+                                <segue destination="ag4-Up-Q0J" kind="unwind" unwindAction="salvarSituacao:" id="f3c-m3-uye"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="situacaoTextField" destination="0nI-PR-83k" id="v2J-6E-HTm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="boz-bx-KfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ag4-Up-Q0J" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3966.666666666667" y="-1439.0625"/>
         </scene>
@@ -926,15 +1115,8 @@ o</string>
                         <viewLayoutGuide key="safeArea" id="l7i-ag-AnI"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pensamentos" id="boC-Lj-E51">
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="sa0-6H-mdA">
-                            <connections>
-                                <action selector="salvarSituacaoBotao:" destination="MSb-x1-BLn" id="cHs-p5-16a"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="sa0-6H-mdA"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="situacaoTextField" destination="QSJ-DM-RB3" id="pEP-Oz-b9Q"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ISE-ce-zry" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1051,7 +1233,4 @@ o</string>
     <resources>
         <image name="Alegria-Tristeza – 4" width="356" height="377"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="P3d-5p-3kO"/>
-    </inferredMetricsTieBreakers>
 </document>

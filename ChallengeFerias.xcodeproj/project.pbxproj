@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F0EC4D122D8D4CA001118AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4D022D8D4CA001118AA /* AppDelegate.swift */; };
-		0F0EC4D322D8D4CA001118AA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4D222D8D4CA001118AA /* TableViewController.swift */; };
+		0F0EC4D322D8D4CA001118AA /* MemoriaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4D222D8D4CA001118AA /* MemoriaTableViewController.swift */; };
 		0F0EC4D622D8D4CA001118AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F0EC4D422D8D4CA001118AA /* Main.storyboard */; };
 		0F0EC4D922D8D4CA001118AA /* ChallengeFerias.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4D722D8D4CA001118AA /* ChallengeFerias.xcdatamodeld */; };
 		0F0EC4DB22D8D4CC001118AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0EC4DA22D8D4CC001118AA /* Assets.xcassets */; };
@@ -17,17 +17,19 @@
 		0F0EC4F422D8D4CC001118AA /* ChallengeFeriasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4F322D8D4CC001118AA /* ChallengeFeriasUITests.swift */; };
 		0F0EC50F22D8F8A1001118AA /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC50E22D8F8A1001118AA /* ProgressCircleView.swift */; };
 		0F0EC51122D8FA02001118AA /* ProgressCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC51022D8FA02001118AA /* ProgressCircleViewController.swift */; };
+		0F37FF4022EA3435002BFE02 /* Sentimento+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF3C22EA3435002BFE02 /* Sentimento+CoreDataClass.swift */; };
+		0F37FF4122EA3435002BFE02 /* Sentimento+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF3D22EA3435002BFE02 /* Sentimento+CoreDataProperties.swift */; };
+		0F37FF4822EA493F002BFE02 /* Memoria+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF4622EA493F002BFE02 /* Memoria+CoreDataClass.swift */; };
+		0F37FF4922EA493F002BFE02 /* Memoria+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF4722EA493F002BFE02 /* Memoria+CoreDataProperties.swift */; };
 		0F5803D122E653F30013EC62 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F5803D022E653F30013EC62 /* SF-Pro-Display-Bold.otf */; };
 		0F5803D322E653FC0013EC62 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F5803D222E653FC0013EC62 /* SF-Pro-Display-Regular.otf */; };
 		0F5803D522E654090013EC62 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F5803D422E654080013EC62 /* SF-Pro-Display-Semibold.otf */; };
 		0F5803E022E659AB0013EC62 /* CheckMarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5803DE22E659AB0013EC62 /* CheckMarkCell.swift */; };
 		0F5803E122E659AB0013EC62 /* CheckMarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F5803DF22E659AB0013EC62 /* CheckMarkCell.xib */; };
-		0F58042022E78F350013EC62 /* timelineMemoriasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58041F22E78F350013EC62 /* timelineMemoriasController.swift */; };
-		0F58042222E792B20013EC62 /* EditarMemoriaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58042122E792B20013EC62 /* EditarMemoriaController.swift */; };
 		0F58042422E7A2730013EC62 /* EditarSituacaoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58042322E7A2730013EC62 /* EditarSituacaoController.swift */; };
-		0F58042722E7E46F0013EC62 /* Memoria+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58042522E7E46F0013EC62 /* Memoria+CoreDataClass.swift */; };
-		0F58042822E7E46F0013EC62 /* Memoria+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58042622E7E46F0013EC62 /* Memoria+CoreDataProperties.swift */; };
 		0F90D03022E2052F00999EBD /* NovaMemoriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90D02F22E2052F00999EBD /* NovaMemoriaViewController.swift */; };
+		0F9CD3B122E907AA006E8AA3 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9CD3B022E907AA006E8AA3 /* TimelineTableViewController.swift */; };
+		0FA2228422E95F6500DDCA4E /* MemoriaTableViewCelula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA2228322E95F6500DDCA4E /* MemoriaTableViewCelula.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +52,7 @@
 /* Begin PBXFileReference section */
 		0F0EC4CD22D8D4CA001118AA /* ChallengeFerias.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeFerias.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F0EC4D022D8D4CA001118AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0F0EC4D222D8D4CA001118AA /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		0F0EC4D222D8D4CA001118AA /* MemoriaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriaTableViewController.swift; sourceTree = "<group>"; };
 		0F0EC4D522D8D4CA001118AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F0EC4D822D8D4CA001118AA /* ChallengeFerias.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChallengeFerias.xcdatamodel; sourceTree = "<group>"; };
 		0F0EC4DA22D8D4CC001118AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,17 +66,19 @@
 		0F0EC4F522D8D4CC001118AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F0EC50E22D8F8A1001118AA /* ProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
 		0F0EC51022D8FA02001118AA /* ProgressCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleViewController.swift; sourceTree = "<group>"; };
+		0F37FF3C22EA3435002BFE02 /* Sentimento+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sentimento+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0F37FF3D22EA3435002BFE02 /* Sentimento+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sentimento+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0F37FF4622EA493F002BFE02 /* Memoria+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memoria+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0F37FF4722EA493F002BFE02 /* Memoria+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memoria+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0F5803D022E653F30013EC62 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Bold.otf"; path = "../../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		0F5803D222E653FC0013EC62 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Regular.otf"; path = "../../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		0F5803D422E654080013EC62 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		0F5803DE22E659AB0013EC62 /* CheckMarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarkCell.swift; sourceTree = "<group>"; };
 		0F5803DF22E659AB0013EC62 /* CheckMarkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckMarkCell.xib; sourceTree = "<group>"; };
-		0F58041F22E78F350013EC62 /* timelineMemoriasController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timelineMemoriasController.swift; sourceTree = "<group>"; };
-		0F58042122E792B20013EC62 /* EditarMemoriaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarMemoriaController.swift; sourceTree = "<group>"; };
 		0F58042322E7A2730013EC62 /* EditarSituacaoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarSituacaoController.swift; sourceTree = "<group>"; };
-		0F58042522E7E46F0013EC62 /* Memoria+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memoria+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0F58042622E7E46F0013EC62 /* Memoria+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memoria+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0F90D02F22E2052F00999EBD /* NovaMemoriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaMemoriaViewController.swift; sourceTree = "<group>"; };
+		0F9CD3B022E907AA006E8AA3 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
+		0FA2228322E95F6500DDCA4E /* MemoriaTableViewCelula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriaTableViewCelula.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +109,6 @@
 		0F0EC4C422D8D4CA001118AA = {
 			isa = PBXGroup;
 			children = (
-				0F58042522E7E46F0013EC62 /* Memoria+CoreDataClass.swift */,
-				0F58042622E7E46F0013EC62 /* Memoria+CoreDataProperties.swift */,
 				0F0EC4CF22D8D4CA001118AA /* ChallengeFerias */,
 				0F0EC4E722D8D4CC001118AA /* ChallengeFeriasTests */,
 				0F0EC4F222D8D4CC001118AA /* ChallengeFeriasUITests */,
@@ -134,11 +136,8 @@
 				0F0EC50D22D8F80C001118AA /* Controllers */,
 				0F0EC50C22D8F7E5001118AA /* Views */,
 				0F0EC4D022D8D4CA001118AA /* AppDelegate.swift */,
-				0F0EC4D422D8D4CA001118AA /* Main.storyboard */,
 				0F0EC4DA22D8D4CC001118AA /* Assets.xcassets */,
-				0F0EC4DC22D8D4CC001118AA /* LaunchScreen.storyboard */,
 				0F0EC4DF22D8D4CC001118AA /* Info.plist */,
-				0F0EC4D722D8D4CA001118AA /* ChallengeFerias.xcdatamodeld */,
 			);
 			path = ChallengeFerias;
 			sourceTree = "<group>";
@@ -165,8 +164,11 @@
 			isa = PBXGroup;
 			children = (
 				0F0EC50E22D8F8A1001118AA /* ProgressCircleView.swift */,
+				0FA2228322E95F6500DDCA4E /* MemoriaTableViewCelula.swift */,
 				0F5803DE22E659AB0013EC62 /* CheckMarkCell.swift */,
 				0F5803DF22E659AB0013EC62 /* CheckMarkCell.xib */,
+				0F0EC4D422D8D4CA001118AA /* Main.storyboard */,
+				0F0EC4DC22D8D4CC001118AA /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,12 +176,11 @@
 		0F0EC50D22D8F80C001118AA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0F0EC51022D8FA02001118AA /* ProgressCircleViewController.swift */,
-				0F0EC4D222D8D4CA001118AA /* TableViewController.swift */,
+				0F9CD3B022E907AA006E8AA3 /* TimelineTableViewController.swift */,
 				0F90D02F22E2052F00999EBD /* NovaMemoriaViewController.swift */,
-				0F58041F22E78F350013EC62 /* timelineMemoriasController.swift */,
-				0F58042122E792B20013EC62 /* EditarMemoriaController.swift */,
+				0F0EC4D222D8D4CA001118AA /* MemoriaTableViewController.swift */,
 				0F58042322E7A2730013EC62 /* EditarSituacaoController.swift */,
+				0F0EC51022D8FA02001118AA /* ProgressCircleViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -187,6 +188,11 @@
 		0F90D03722E2229200999EBD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0F37FF4622EA493F002BFE02 /* Memoria+CoreDataClass.swift */,
+				0F37FF4722EA493F002BFE02 /* Memoria+CoreDataProperties.swift */,
+				0F37FF3C22EA3435002BFE02 /* Sentimento+CoreDataClass.swift */,
+				0F37FF3D22EA3435002BFE02 /* Sentimento+CoreDataProperties.swift */,
+				0F0EC4D722D8D4CA001118AA /* ChallengeFerias.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -326,17 +332,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F37FF4922EA493F002BFE02 /* Memoria+CoreDataProperties.swift in Sources */,
+				0F37FF4022EA3435002BFE02 /* Sentimento+CoreDataClass.swift in Sources */,
+				0FA2228422E95F6500DDCA4E /* MemoriaTableViewCelula.swift in Sources */,
 				0F0EC4D922D8D4CA001118AA /* ChallengeFerias.xcdatamodeld in Sources */,
+				0F37FF4122EA3435002BFE02 /* Sentimento+CoreDataProperties.swift in Sources */,
+				0F37FF4822EA493F002BFE02 /* Memoria+CoreDataClass.swift in Sources */,
 				0F0EC50F22D8F8A1001118AA /* ProgressCircleView.swift in Sources */,
 				0F5803E022E659AB0013EC62 /* CheckMarkCell.swift in Sources */,
 				0F58042422E7A2730013EC62 /* EditarSituacaoController.swift in Sources */,
-				0F0EC4D322D8D4CA001118AA /* TableViewController.swift in Sources */,
-				0F58042722E7E46F0013EC62 /* Memoria+CoreDataClass.swift in Sources */,
-				0F58042222E792B20013EC62 /* EditarMemoriaController.swift in Sources */,
-				0F58042022E78F350013EC62 /* timelineMemoriasController.swift in Sources */,
+				0F0EC4D322D8D4CA001118AA /* MemoriaTableViewController.swift in Sources */,
+				0F9CD3B122E907AA006E8AA3 /* TimelineTableViewController.swift in Sources */,
 				0F0EC51122D8FA02001118AA /* ProgressCircleViewController.swift in Sources */,
 				0F90D03022E2052F00999EBD /* NovaMemoriaViewController.swift in Sources */,
-				0F58042822E7E46F0013EC62 /* Memoria+CoreDataProperties.swift in Sources */,
 				0F0EC4D122D8D4CA001118AA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

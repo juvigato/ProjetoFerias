@@ -1,8 +1,8 @@
 //
-//  Memoria+CoreDataClass.swift
+//  Sentimento+CoreDataClass.swift
 //  ChallengeFerias
 //
-//  Created by Juliana Vigato Pavan on 23/07/19.
+//  Created by Juliana Vigato Pavan on 25/07/19.
 //  Copyright © 2019 Juliana Vigato Pavan. All rights reserved.
 //
 //
@@ -11,6 +11,6 @@ import Foundation
 import CoreData
 
 
-public class Memoria: NSManagedObject {
+public class Sentimento: NSManagedObject {
 
 }

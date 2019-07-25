@@ -6,8 +6,13 @@
         <attribute name="pensamentos" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="resultado" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="situacao" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tem" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Sentimento" syncable="YES"/>
+    </entity>
+    <entity name="Sentimento" representedClassName=".Sentimento" syncable="YES">
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Memoria" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Memoria" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Sentimento" positionX="-63" positionY="18" width="128" height="60"/>
     </elements>
 </model>
