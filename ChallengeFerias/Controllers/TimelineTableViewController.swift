@@ -60,7 +60,7 @@ class TimelineMemoriasController: UITableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath) as! MemoriaTableViewCelula
 //        celula.emocaoMemoriaTimeline.text = memorias[indexPath.row].sentimentos
-        celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-Tristeza – 4")
+        celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-Tristeza")
 //        celula.emocaoMemoriaTimeline.text = "lala"
 //        celula.situacaoMemoriaTimeline.text = memorias[indexPath.row].situacao
         celula.situacaoMemoriaTimeline.text = "haha"

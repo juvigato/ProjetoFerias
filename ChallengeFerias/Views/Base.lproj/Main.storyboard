@@ -601,8 +601,6 @@ o</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imagemEmocao" destination="qdc-1B-aQw" id="Jl8-EX-D8b"/>
-                        <outlet property="proximoBotao" destination="9B8-dQ-PTo" id="DYb-Vj-c97"/>
                         <outlet property="tableViewLista" destination="OIz-tQ-doD" id="UD3-te-j6S"/>
                     </connections>
                 </viewController>
@@ -771,9 +769,6 @@ o</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="alegriaBotao" destination="Zi7-7G-aj1" id="Bzd-xD-kxg"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mnH-wC-PpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="TVp-iO-oRW" userLabel="Exit" sceneMemberID="exit"/>
@@ -826,7 +821,7 @@ o</string>
                         <sections>
                             <tableViewSection id="bac-kJ-ibr">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="441" id="xcu-l4-hcW">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="441" id="xcu-l4-hcW">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="441"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xcu-l4-hcW" id="qKL-RW-2Ja">
@@ -842,7 +837,7 @@ o</string>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alegria-Tristeza – 4" translatesAutoresizingMaskIntoConstraints="NO" id="Xc5-Zl-fTR">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vazio" translatesAutoresizingMaskIntoConstraints="NO" id="Xc5-Zl-fTR">
                                                     <rect key="frame" x="20" y="106" width="374" height="325"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="325" id="YRe-z9-B2u"/>
@@ -1000,7 +995,7 @@ o</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sS6-Bx-xSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2480" y="5"/>
+            <point key="canvasLocation" x="2479.7101449275365" y="4.6875"/>
         </scene>
         <!--Situação-->
         <scene sceneID="ABS-m9-NBV">
@@ -1294,10 +1289,6 @@ o</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="imagemEmocao" destination="JoW-tw-a3V" id="WMk-Ca-xtS"/>
-                        <outlet property="proximoBotao" destination="BMm-tI-Vu5" id="AaG-95-DmT"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w34-Gh-bJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="JsT-HY-jiR" userLabel="Exit" sceneMemberID="exit"/>
@@ -1323,7 +1314,7 @@ o</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que você está sentindo?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qiy-MA-gbQ">
-                                                    <rect key="frame" x="20" y="31" width="309" height="33"/>
+                                                    <rect key="frame" x="20" y="31" width="336.5" height="33"/>
                                                     <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="28"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1336,20 +1327,42 @@ o</string>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alegria-Tristeza – 4" translatesAutoresizingMaskIntoConstraints="NO" id="RLn-b2-EF9">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vazio" translatesAutoresizingMaskIntoConstraints="NO" id="RLn-b2-EF9">
                                                     <rect key="frame" x="29" y="104" width="356" height="325"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="325" id="CUO-VB-Emx"/>
                                                         <constraint firstAttribute="width" constant="356" id="sTK-4p-WDo"/>
                                                     </constraints>
                                                 </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checked" translatesAutoresizingMaskIntoConstraints="NO" id="Hh7-4z-gFK">
+                                                    <rect key="frame" x="71" y="163" width="267" height="172"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="172" id="ivV-kN-Qao"/>
+                                                        <constraint firstAttribute="width" constant="267" id="zPC-mY-Opj"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alegriaBaixo" translatesAutoresizingMaskIntoConstraints="NO" id="dd0-85-OHr">
+                                                    <rect key="frame" x="56" y="163" width="297" height="172"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="297" id="9Nm-cI-Dq5"/>
+                                                        <constraint firstAttribute="height" constant="172" id="nR5-da-htB"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Hh7-4z-gFK" secondAttribute="trailing" constant="56" id="0jy-y7-D9x"/>
+                                                <constraint firstItem="Hh7-4z-gFK" firstAttribute="top" secondItem="QwT-bZ-d1x" secondAttribute="bottom" constant="69" id="3Kw-Q1-dqZ"/>
+                                                <constraint firstItem="Hh7-4z-gFK" firstAttribute="leading" secondItem="7j0-ds-vbd" secondAttribute="leadingMargin" constant="51" id="8gg-J1-8dC"/>
                                                 <constraint firstItem="Qiy-MA-gbQ" firstAttribute="leading" secondItem="7j0-ds-vbd" secondAttribute="leadingMargin" id="Fjx-Ly-Eur"/>
                                                 <constraint firstItem="RLn-b2-EF9" firstAttribute="top" secondItem="QwT-bZ-d1x" secondAttribute="bottom" constant="10" id="Ml3-vr-rci"/>
                                                 <constraint firstItem="RLn-b2-EF9" firstAttribute="centerX" secondItem="7j0-ds-vbd" secondAttribute="centerX" id="SNU-cG-IvP"/>
                                                 <constraint firstItem="QwT-bZ-d1x" firstAttribute="top" secondItem="Qiy-MA-gbQ" secondAttribute="bottom" constant="10" id="UWD-1J-boV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="dd0-85-OHr" secondAttribute="trailing" constant="41" id="WQL-21-Tor"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="dd0-85-OHr" secondAttribute="bottom" constant="113" id="jmP-gc-GMe"/>
                                                 <constraint firstItem="Qiy-MA-gbQ" firstAttribute="top" secondItem="7j0-ds-vbd" secondAttribute="topMargin" constant="20" id="l2c-o4-Sjp"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Hh7-4z-gFK" secondAttribute="bottom" constant="113" id="lIp-wI-UMr"/>
+                                                <constraint firstItem="dd0-85-OHr" firstAttribute="top" secondItem="QwT-bZ-d1x" secondAttribute="bottom" constant="69" id="r0q-ZU-fbZ"/>
+                                                <constraint firstItem="dd0-85-OHr" firstAttribute="leading" secondItem="7j0-ds-vbd" secondAttribute="leadingMargin" constant="36" id="wJc-Xs-0ze"/>
                                                 <constraint firstItem="QwT-bZ-d1x" firstAttribute="leading" secondItem="7j0-ds-vbd" secondAttribute="leadingMargin" id="zIz-ws-iWl"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1454,6 +1467,10 @@ o</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imagemEmocao" destination="Hh7-4z-gFK" id="DuA-NO-Syl"/>
+                        <outlet property="imagemEmocaoBaixo" destination="dd0-85-OHr" id="B0g-fT-Ken"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwF-qa-L2x" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="zIH-cV-KJz" userLabel="Exit" sceneMemberID="exit"/>
@@ -1463,5 +1480,8 @@ o</string>
     </scenes>
     <resources>
         <image name="Alegria-Tristeza – 4" width="356" height="377"/>
+        <image name="Checked" width="32" height="32"/>
+        <image name="alegriaBaixo" width="305" height="197"/>
+        <image name="vazio" width="356" height="377"/>
     </resources>
 </document>

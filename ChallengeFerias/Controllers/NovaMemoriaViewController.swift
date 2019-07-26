@@ -22,11 +22,15 @@ class NovaMemoriaViewController: UITableViewController{
     
     var sentimentos:[String] = []
     
+
+    
     @IBOutlet weak var tableViewLista: UITableView!
     
-    @IBOutlet weak var proximoBotao: UIBarButtonItem!
+//    @IBOutlet weak var proximoBotao: UIBarButtonItem!
     
-    @IBOutlet weak var imagemEmocao: UIImageView!
+    @IBOutlet weak var imagemEmocao: UIImageView?
+    
+    @IBOutlet weak var imagemEmocaoBaixo: UIImageView?
     
     @IBOutlet weak var alegriaBotao: UIButton!
     
@@ -65,6 +69,7 @@ class NovaMemoriaViewController: UITableViewController{
                         sentimentos.append("aversao")
                     }
 //                    print(sentimentos[0])
+                    mudarImagem()
                 }
             }
         }
@@ -98,43 +103,43 @@ class NovaMemoriaViewController: UITableViewController{
                         sentimentos.remove(at: index)
                     }
                 }
+                mudarImagem()
             }
         }
     }
     
-//    @IBAction func alegriaBotao(_ sender: Any){
-//        sentimentos.append("alegria")
-////        var contadorAlegria:Int = 0
-////        if contadorAlegria == 0{
-////            alegriaBotao.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-////            sentimentos.append("alegria")
-////            contadorAlegria = contadorAlegria + 1
-////        } else {
-////            alegriaBotao.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-////            if let index = sentimentos.index(of: "alegria") {
-////                sentimentos.remove(at: index)
-////            }
-////            contadorAlegria = contadorAlegria - 1
-////        }
-////
-//
-//    }
-//
-//    @IBAction func tristezaBotao(_ sender: Any){
-//        sentimentos.append("tristeza")
-//    }
-//
-//    @IBAction func raivaBotao(_ sender: Any){
-//        sentimentos.append("raiva")
-//    }
-//
-//    @IBAction func medoBotao(_ sender: Any){
-//        sentimentos.append("medo")
-//    }
-//
-//    @IBAction func aversaoBotao(_ sender: Any){
-//        sentimentos.append("aversao")
-//    }
+    func mudarImagem(){
+        var sentimento1:String = ""
+        var sentimento2:String = ""
+        
+        if let index = sentimentos.firstIndex(of: "alegria"){
+            if sentimento1 == "" || (sentimento1 == "alegria" && sentimento2 == "alegria") || (sentimento1 == "" && sentimento2 == "alegria"){
+                sentimento1 = "alegria"
+                imagemEmocao?.image = #imageLiteral(resourceName: "alegria")
+            } else {
+                sentimento2 = "alegria"
+                imagemEmocaoBaixo?.image = #imageLiteral(resourceName: "alegriaBaixo")
+            }
+        }
+        if let index = sentimentos.firstIndex(of: "tristeza"){
+            if sentimento1 == ""{
+                sentimento1 = "tristeza"
+                imagemEmocao?.image = #imageLiteral(resourceName: "tristeza")
+            } else {
+                sentimento2 = "tristeza"
+                imagemEmocaoBaixo?.image = #imageLiteral(resourceName: "tristezaBaixo")
+            }
+        }
+        if let index = sentimentos.firstIndex(of: "raiva"){
+            if sentimento1 == ""{
+                sentimento1 = "raiva"
+                imagemEmocao?.image = #imageLiteral(resourceName: "raiva")
+            } else {
+                sentimento2 = "raiva"
+                imagemEmocaoBaixo?.image = #imageLiteral(resourceName: "raivaBaixo")
+            }
+        }
+    }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if let context = context{
