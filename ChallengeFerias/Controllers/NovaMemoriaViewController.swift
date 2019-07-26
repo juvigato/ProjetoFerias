@@ -113,30 +113,63 @@ class NovaMemoriaViewController: UITableViewController{
         var sentimento2:String = ""
         
         if let index = sentimentos.firstIndex(of: "alegria"){
-            if sentimento1 == "" || (sentimento1 == "alegria" && sentimento2 == "alegria") || (sentimento1 == "" && sentimento2 == "alegria"){
+            if (sentimento1 == ""){
                 sentimento1 = "alegria"
                 imagemEmocao?.image = #imageLiteral(resourceName: "alegria")
+                if (sentimento1 == "alegria" && sentimento2 == ""){
+                    imagemEmocaoBaixo?.image = #imageLiteral(resourceName: "alegriaBaixo")
+                }
             } else {
                 sentimento2 = "alegria"
                 imagemEmocaoBaixo?.image = #imageLiteral(resourceName: "alegriaBaixo")
             }
         }
         if let index = sentimentos.firstIndex(of: "tristeza"){
-            if sentimento1 == ""{
+            if (sentimento1 == ""){
                 sentimento1 = "tristeza"
                 imagemEmocao?.image = #imageLiteral(resourceName: "tristeza")
+                if (sentimento1 == "tristeza" && sentimento2 == ""){
+                    imagemEmocaoBaixo?.image = #imageLiteral(resourceName: "tristezaBaixo")
+                }
             } else {
                 sentimento2 = "tristeza"
                 imagemEmocaoBaixo?.image = #imageLiteral(resourceName: "tristezaBaixo")
             }
         }
         if let index = sentimentos.firstIndex(of: "raiva"){
-            if sentimento1 == ""{
+            if (sentimento1 == ""){
                 sentimento1 = "raiva"
                 imagemEmocao?.image = #imageLiteral(resourceName: "raiva")
+                if (sentimento1 == "raiva" && sentimento2 == ""){
+                    imagemEmocaoBaixo?.image = #imageLiteral(resourceName: "raivaBaixo")
+                }
             } else {
                 sentimento2 = "raiva"
                 imagemEmocaoBaixo?.image = #imageLiteral(resourceName: "raivaBaixo")
+            }
+        }
+        if let index = sentimentos.firstIndex(of: "medo"){
+            if (sentimento1 == ""){
+                sentimento1 = "medo"
+                imagemEmocao?.image = #imageLiteral(resourceName: "medo")
+                if (sentimento1 == "medo" && sentimento2 == ""){
+                    imagemEmocaoBaixo?.image = #imageLiteral(resourceName: "medoBaixo")
+                }
+            } else {
+                sentimento2 = "medo"
+                imagemEmocaoBaixo?.image = #imageLiteral(resourceName: "medoBaixo")
+            }
+        }
+        if let index = sentimentos.firstIndex(of: "aversao"){
+            if (sentimento1 == ""){
+                sentimento1 = "aversao"
+                imagemEmocao?.image = #imageLiteral(resourceName: "aversao")
+                if (sentimento1 == "aversao" && sentimento2 == ""){
+                    imagemEmocaoBaixo?.image = #imageLiteral(resourceName: "aversaoBaixo")
+                }
+            } else {
+                sentimento2 = "aversao"
+                imagemEmocaoBaixo?.image = #imageLiteral(resourceName: "aversaoBaixo")
             }
         }
     }
