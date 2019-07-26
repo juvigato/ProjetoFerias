@@ -1,8 +1,8 @@
 //
-//  EditarSituacaoController.swift
+//  EditarAtitudeController.swift
 //  ChallengeFerias
 //
-//  Created by Juliana Vigato Pavan on 23/07/19.
+//  Created by Juliana Vigato Pavan on 26/07/19.
 //  Copyright © 2019 Juliana Vigato Pavan. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class EditarSituacaoController:UIViewController{
+class EditarAtitudeController:UIViewController{
     
     public var memoria:Memoria?
     
@@ -18,9 +18,10 @@ class EditarSituacaoController:UIViewController{
     
     public var memoriaTVC:MemoriaTableViewController?
     
-    var situacaoText:String?
+    var atitudeText:String?
     
-    @IBOutlet weak var situacaoTextField: UITextField!
+    @IBOutlet weak var atitudeTextField: UITextField!
+    //iboutlet
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,21 +29,20 @@ class EditarSituacaoController:UIViewController{
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         if let memoria = memoria{
-            situacaoTextField.text = memoria.situacao
+            atitudeTextField.text = memoria.atitude
         }
     }
-
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if situacaoTextField.text != nil,
-            situacaoTextField.text!.count > 0 {
-            situacaoText = situacaoTextField.text!
+        if atitudeTextField.text != nil, atitudeTextField.text!.count > 0{
+            atitudeText = atitudeTextField.text
         }
-        if situacaoText != nil {
-            if let _ = memoriaTVC {
-                if let context = context {
-                    if let novaSituacao = situacaoText {
-                        memoria?.situacao = novaSituacao
+        
+        if atitudeText != nil {
+            if let _ = memoriaTVC{
+                if let context = context{
+                    if let novaAtitude = atitudeText{
+                        memoria?.atitude = novaAtitude
                     }
                 }
             }
@@ -52,4 +52,3 @@ class EditarSituacaoController:UIViewController{
         return false
     }
 }
-

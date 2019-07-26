@@ -921,7 +921,7 @@ o</string>
                                         </tableViewCellContentView>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <segue destination="MSb-x1-BLn" kind="show" identifier="showPensamentos" trigger="accessoryAction" id="7xt-GT-mSl"/>
+                                            <segue destination="cmP-P1-z7x" kind="show" identifier="editarPensamentos" id="KBU-tE-5zU"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="70" id="jXW-8y-lZ2">
@@ -953,7 +953,7 @@ o</string>
                                         </tableViewCellContentView>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <segue destination="e7U-np-sGU" kind="show" identifier="showAtitude" trigger="accessoryAction" id="9iE-CU-DhR"/>
+                                            <segue destination="e7U-np-sGU" kind="show" identifier="editarAtitude" trigger="accessoryAction" id="9iE-CU-DhR"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="70" id="d0E-fc-bvN">
@@ -985,7 +985,7 @@ o</string>
                                         </tableViewCellContentView>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <segue destination="3xF-KR-G1k" kind="show" identifier="showResultado" trigger="accessoryAction" id="XGH-hW-cFs"/>
+                                            <segue destination="3xF-KR-G1k" kind="show" identifier="editarResultado" trigger="accessoryAction" id="XGH-hW-cFs"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1012,13 +1012,13 @@ o</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que você estava fazendo?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMw-IP-2SD">
-                                <rect key="frame" x="20" y="108" width="328.5" height="33.5"/>
+                                <rect key="frame" x="20" y="108" width="357.5" height="33"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escreva o que você estava fazendo, com quem e onde quando voce sentiu a emoção anotada" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvx-Fe-cts">
-                                <rect key="frame" x="20" y="151.5" width="374" height="41"/>
+                                <rect key="frame" x="20" y="151" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="5II-jC-KA9"/>
                                 </constraints>
@@ -1027,16 +1027,13 @@ o</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escreva aqui..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0nI-PR-83k">
-                                <rect key="frame" x="20" y="212.5" width="374" height="30"/>
+                                <rect key="frame" x="20" y="211" width="374" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="YOU-bL-1LT"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="textFieldDidChange:" destination="mFs-oC-dG3" eventType="editingDidEnd" id="E7q-Fa-TuX"/>
-                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1053,12 +1050,12 @@ o</string>
                     <navigationItem key="navigationItem" title="Situação" id="8Q1-3V-Rjl">
                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="uIE-Ii-wZW">
                             <connections>
-                                <segue destination="ag4-Up-Q0J" kind="unwind" unwindAction="salvarSituacao:" id="f3c-m3-uye"/>
+                                <segue destination="ag4-Up-Q0J" kind="unwind" unwindAction="salvarBotao:" id="hVd-BA-dj8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="situacaoTextField" destination="0nI-PR-83k" id="v2J-6E-HTm"/>
+                        <outlet property="situacaoTextField" destination="0nI-PR-83k" id="NoS-Un-XEG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="boz-bx-KfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1066,66 +1063,10 @@ o</string>
             </objects>
             <point key="canvasLocation" x="3966.666666666667" y="-1439.0625"/>
         </scene>
-        <!--Pensamentos-->
-        <scene sceneID="m4h-r2-G5x">
-            <objects>
-                <viewController id="MSb-x1-BLn" userLabel="Pensamentos" customClass="EditarMemoriaController" customModule="ChallengeFerias" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dPH-Nw-He5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que passou pela sua cabeça?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7l-hV-42V">
-                                <rect key="frame" x="20" y="108" width="370" height="33.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="370" id="M1s-dB-Kdj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqh-gQ-xQU">
-                                <rect key="frame" x="20" y="151.5" width="374" height="61"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="fW1-VC-fhh"/>
-                                </constraints>
-                                <string key="text">Reflita um pouco sobre quais foram seus pensamentos quando você sentiu aquela emoção e em quanto você acredita nesses pensamentos</string>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escreva aqui..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QSJ-DM-RB3">
-                                <rect key="frame" x="20" y="232.5" width="374" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="zyd-ws-ExO"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="QSJ-DM-RB3" firstAttribute="top" secondItem="Qqh-gQ-xQU" secondAttribute="bottom" constant="20" id="Lis-hx-XZe"/>
-                            <constraint firstItem="QSJ-DM-RB3" firstAttribute="leading" secondItem="l7i-ag-AnI" secondAttribute="leading" constant="20" id="TGd-z1-sCg"/>
-                            <constraint firstItem="Qqh-gQ-xQU" firstAttribute="top" secondItem="G7l-hV-42V" secondAttribute="bottom" constant="10" id="ahe-UJ-pRj"/>
-                            <constraint firstItem="G7l-hV-42V" firstAttribute="top" secondItem="l7i-ag-AnI" secondAttribute="top" constant="20" id="gnf-I7-a4g"/>
-                            <constraint firstItem="Qqh-gQ-xQU" firstAttribute="leading" secondItem="l7i-ag-AnI" secondAttribute="leading" constant="20" id="gsd-5G-hrB"/>
-                            <constraint firstItem="G7l-hV-42V" firstAttribute="leading" secondItem="l7i-ag-AnI" secondAttribute="leading" constant="20" id="z9s-pp-hRM"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="l7i-ag-AnI"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Pensamentos" id="boC-Lj-E51">
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="sa0-6H-mdA"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ISE-ce-zry" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4112" y="-748"/>
-        </scene>
         <!--Atitude Tomada-->
         <scene sceneID="BSZ-KL-bnQ">
             <objects>
-                <viewController id="e7U-np-sGU" sceneMemberID="viewController">
+                <viewController id="e7U-np-sGU" customClass="EditarAtitudeController" customModule="ChallengeFerias" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1VR-lm-UeU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1170,17 +1111,25 @@ o</string>
                         <viewLayoutGuide key="safeArea" id="Bec-5v-cea"/>
                     </view>
                     <navigationItem key="navigationItem" title="Atitude Tomada" id="KTy-Q6-q5q">
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="ytY-vt-gMd"/>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="ytY-vt-gMd">
+                            <connections>
+                                <segue destination="fbU-eK-EcP" kind="unwind" unwindAction="salvarBotao:" id="xXd-pt-Xul"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="atitudeTextField" destination="3UY-UE-xLR" id="ocw-hk-AgN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhP-Py-4se" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fbU-eK-EcP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4112" y="-56"/>
         </scene>
         <!--Resultados-->
         <scene sceneID="hyd-4E-V8d">
             <objects>
-                <viewController id="3xF-KR-G1k" sceneMemberID="viewController">
+                <viewController id="3xF-KR-G1k" customClass="EditarResultadoController" customModule="ChallengeFerias" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZBx-Rv-xUJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1222,12 +1171,81 @@ o</string>
                         <viewLayoutGuide key="safeArea" id="Ukz-0j-yuF"/>
                     </view>
                     <navigationItem key="navigationItem" title="Resultados" id="dvb-bj-uxe">
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="ZVd-pt-1H8"/>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="ZVd-pt-1H8">
+                            <connections>
+                                <segue destination="Hc4-cZ-wl1" kind="unwind" unwindAction="salvarBotao:" id="qxD-Mg-c3w"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="resultadoTextField" destination="Sgl-kf-15F" id="g1Y-Bn-kju"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V1P-vm-ahN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Hc4-cZ-wl1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3966.666666666667" y="626.78571428571422"/>
+        </scene>
+        <!--Pensamentos-->
+        <scene sceneID="I8f-Pg-PPt">
+            <objects>
+                <viewController storyboardIdentifier="Pensamentos" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cmP-P1-z7x" customClass="EditarPensamentosController" customModule="ChallengeFerias" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TPC-b9-Edu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que passou pela sua cabeça?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhU-CY-i4l">
+                                <rect key="frame" x="20" y="108" width="370" height="33.5"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVp-dX-rls">
+                                <rect key="frame" x="20" y="151.5" width="374" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="L3v-jb-ofj"/>
+                                </constraints>
+                                <string key="text">Reflita um pouco sobre quais foram seus pensamentos quando você sentiu aquela emoção e em quanto você acredita nesses pensamentos</string>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escreva aqui..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3dP-qp-gXN">
+                                <rect key="frame" x="20" y="232.5" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="RMh-Gk-GVQ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3dP-qp-gXN" firstAttribute="leading" secondItem="83U-mb-UA7" secondAttribute="leading" constant="20" id="ALE-KF-ROZ"/>
+                            <constraint firstItem="3dP-qp-gXN" firstAttribute="top" secondItem="aVp-dX-rls" secondAttribute="bottom" constant="20" id="MPJ-NV-Wqu"/>
+                            <constraint firstItem="aVp-dX-rls" firstAttribute="leading" secondItem="83U-mb-UA7" secondAttribute="leading" constant="20" id="Z3y-9a-Anc"/>
+                            <constraint firstItem="aVp-dX-rls" firstAttribute="top" secondItem="hhU-CY-i4l" secondAttribute="bottom" constant="10" id="ohe-KO-UNX"/>
+                            <constraint firstItem="hhU-CY-i4l" firstAttribute="top" secondItem="83U-mb-UA7" secondAttribute="top" constant="20" id="x2S-sy-oPu"/>
+                            <constraint firstItem="hhU-CY-i4l" firstAttribute="leading" secondItem="83U-mb-UA7" secondAttribute="leading" constant="20" id="zrY-OB-IJz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="83U-mb-UA7"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pensamentos" id="wtf-xw-lSS">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="Dnl-Bp-urL">
+                            <connections>
+                                <segue destination="xHB-4n-0cS" kind="unwind" unwindAction="salvarBotao:" id="Ha7-ud-psP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pensamentosTextField" destination="3dP-qp-gXN" id="XkE-q4-zz3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="isv-jA-9eH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xHB-4n-0cS" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4078" y="-745"/>
         </scene>
     </scenes>
     <resources>

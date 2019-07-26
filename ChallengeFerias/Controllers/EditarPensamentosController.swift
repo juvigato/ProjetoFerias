@@ -1,8 +1,8 @@
 //
-//  EditarSituacaoController.swift
+//  EditarPensamentosController.swift
 //  ChallengeFerias
 //
-//  Created by Juliana Vigato Pavan on 23/07/19.
+//  Created by Juliana Vigato Pavan on 25/07/19.
 //  Copyright © 2019 Juliana Vigato Pavan. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class EditarSituacaoController:UIViewController{
+class EditarPensamentosController:UIViewController{
     
     public var memoria:Memoria?
     
@@ -18,9 +18,9 @@ class EditarSituacaoController:UIViewController{
     
     public var memoriaTVC:MemoriaTableViewController?
     
-    var situacaoText:String?
+    var pensamentosText:String?
     
-    @IBOutlet weak var situacaoTextField: UITextField!
+    @IBOutlet weak var pensamentosTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,21 +28,19 @@ class EditarSituacaoController:UIViewController{
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         if let memoria = memoria{
-            situacaoTextField.text = memoria.situacao
+            pensamentosTextField.text = memoria.pensamentos
         }
     }
-
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if situacaoTextField.text != nil,
-            situacaoTextField.text!.count > 0 {
-            situacaoText = situacaoTextField.text!
+        if pensamentosTextField.text != nil, pensamentosTextField.text!.count > 0{
+            pensamentosText = pensamentosTextField.text
         }
-        if situacaoText != nil {
-            if let _ = memoriaTVC {
-                if let context = context {
-                    if let novaSituacao = situacaoText {
-                        memoria?.situacao = novaSituacao
+        if pensamentosText != nil {
+            if let _ = memoriaTVC{
+                if let context = context{
+                    if let novoPensamento = pensamentosText{
+                        memoria?.pensamentos = novoPensamento
                     }
                 }
             }
@@ -51,5 +49,5 @@ class EditarSituacaoController:UIViewController{
         }
         return false
     }
+    
 }
-

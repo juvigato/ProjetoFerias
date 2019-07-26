@@ -1,8 +1,8 @@
 //
-//  EditarSituacaoController.swift
+//  EditarResultadoController.swift
 //  ChallengeFerias
 //
-//  Created by Juliana Vigato Pavan on 23/07/19.
+//  Created by Juliana Vigato Pavan on 26/07/19.
 //  Copyright © 2019 Juliana Vigato Pavan. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class EditarSituacaoController:UIViewController{
+class EditarResultadoController:UIViewController{
     
     public var memoria:Memoria?
     
@@ -18,9 +18,9 @@ class EditarSituacaoController:UIViewController{
     
     public var memoriaTVC:MemoriaTableViewController?
     
-    var situacaoText:String?
+    var resultadoText:String?
     
-    @IBOutlet weak var situacaoTextField: UITextField!
+    @IBOutlet weak var resultadoTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,21 +28,20 @@ class EditarSituacaoController:UIViewController{
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         if let memoria = memoria{
-            situacaoTextField.text = memoria.situacao
+            resultadoTextField.text = memoria.resultado
         }
     }
-
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if situacaoTextField.text != nil,
-            situacaoTextField.text!.count > 0 {
-            situacaoText = situacaoTextField.text!
+        if resultadoTextField.text != nil, resultadoTextField.text!.count > 0{
+            resultadoText = resultadoTextField.text
         }
-        if situacaoText != nil {
-            if let _ = memoriaTVC {
-                if let context = context {
-                    if let novaSituacao = situacaoText {
-                        memoria?.situacao = novaSituacao
+        
+        if resultadoText != nil{
+            if let _ = memoriaTVC{
+                if let context = context{
+                    if let novoResultado = resultadoText{
+                        memoria?.resultado = novoResultado
                     }
                 }
             }
@@ -52,4 +51,3 @@ class EditarSituacaoController:UIViewController{
         return false
     }
 }
-

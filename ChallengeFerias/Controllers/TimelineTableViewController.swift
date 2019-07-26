@@ -111,12 +111,6 @@ class TimelineMemoriasController: UITableViewController{
         }
     }
     
-    func scheduleNotification(notificationType: String){
-        let content = UNMutableNotificationContent()
-        content.title = NSString.localizedUserNotificationString(forKey: "Opa, você não se esqueceu de mim, certo?", arguments: nil)
-        content.body = NSString.localizedUserNotificationString(forKey: "Lembre-se de adicionar mais memórias!", arguments: nil)
-        content.sound = UNNotificationSound.default
-        
-    }
+
 }
 
