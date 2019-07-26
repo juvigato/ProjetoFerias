@@ -28,11 +28,8 @@ class NovaMemoriaViewController: UITableViewController{
     
     @IBOutlet weak var imagemEmocao: UIImageView!
     
-    
     @IBOutlet weak var alegriaBotao: UIButton!
     
-//    var linhaSelecionada:Int = 0
-//
     var contadorBotoesSelecionados:Int = 0
     
     override func viewDidLoad() {
@@ -48,48 +45,96 @@ class NovaMemoriaViewController: UITableViewController{
         sentimentos = []
     }
     
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 6
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    @IBAction func alegriaBotao(_ sender: Any){
-        sentimentos.append("alegria")
-//        var contadorAlegria:Int = 0
-//        if contadorAlegria == 0{
-//            alegriaBotao.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-//            sentimentos.append("alegria")
-//            contadorAlegria = contadorAlegria + 1
-//        } else {
-//            alegriaBotao.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//            if let index = sentimentos.index(of: "alegria") {
-//                sentimentos.remove(at: index)
-//            }
-//            contadorAlegria = contadorAlegria - 1
-//        }
-//
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row != 0{
+            if let cell = tableView.cellForRow(at: indexPath) {
+                if cell.accessoryType == .none && contadorBotoesSelecionados < 2{
+                    cell.accessoryType = .checkmark
+                    contadorBotoesSelecionados = contadorBotoesSelecionados + 1
+                    
+                    if indexPath.row == 1{
+                        sentimentos.append("alegria")
+                    } else if indexPath.row == 2{
+                        sentimentos.append("tristeza")
+                    } else if indexPath.row == 3{
+                        sentimentos.append("raiva")
+                    } else if indexPath.row == 4{
+                        sentimentos.append("medo")
+                    } else {
+                        sentimentos.append("aversao")
+                    }
+//                    print(sentimentos[0])
+                }
+            }
+        }
         
     }
-
-    @IBAction func tristezaBotao(_ sender: Any){
-        sentimentos.append("tristeza")
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath){
+            if cell.accessoryType == .checkmark{
+                cell.accessoryType = .none
+                contadorBotoesSelecionados = contadorBotoesSelecionados - 1
+                
+                if indexPath.row == 1{
+                    if let index = sentimentos.firstIndex(of: "alegria") {
+                        sentimentos.remove(at: index)
+                    }
+                } else if indexPath.row == 2{
+                    if let index = sentimentos.firstIndex(of: "tristeza") {
+                        sentimentos.remove(at: index)
+                    }
+                } else if indexPath.row == 3{
+                    if let index = sentimentos.firstIndex(of: "raiva") {
+                        sentimentos.remove(at: index)
+                    }
+                } else if indexPath.row == 4{
+                    if let index = sentimentos.firstIndex(of: "medo") {
+                        sentimentos.remove(at: index)
+                    }
+                } else {
+                    if let index = sentimentos.firstIndex(of: "aversao") {
+                        sentimentos.remove(at: index)
+                    }
+                }
+            }
+        }
     }
     
-    @IBAction func raivaBotao(_ sender: Any){
-        sentimentos.append("raiva")
-    }
-    
-    @IBAction func medoBotao(_ sender: Any){
-        sentimentos.append("medo")
-    }
-    
-    @IBAction func aversaoBotao(_ sender: Any){
-        sentimentos.append("aversao")
-    }
+//    @IBAction func alegriaBotao(_ sender: Any){
+//        sentimentos.append("alegria")
+////        var contadorAlegria:Int = 0
+////        if contadorAlegria == 0{
+////            alegriaBotao.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+////            sentimentos.append("alegria")
+////            contadorAlegria = contadorAlegria + 1
+////        } else {
+////            alegriaBotao.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+////            if let index = sentimentos.index(of: "alegria") {
+////                sentimentos.remove(at: index)
+////            }
+////            contadorAlegria = contadorAlegria - 1
+////        }
+////
+//
+//    }
+//
+//    @IBAction func tristezaBotao(_ sender: Any){
+//        sentimentos.append("tristeza")
+//    }
+//
+//    @IBAction func raivaBotao(_ sender: Any){
+//        sentimentos.append("raiva")
+//    }
+//
+//    @IBAction func medoBotao(_ sender: Any){
+//        sentimentos.append("medo")
+//    }
+//
+//    @IBAction func aversaoBotao(_ sender: Any){
+//        sentimentos.append("aversao")
+//    }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if let context = context{

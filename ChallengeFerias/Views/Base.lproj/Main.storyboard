@@ -342,7 +342,7 @@
                     <navigationItem key="navigationItem" title="Timeline" id="bye-gW-2tp">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vKe-Ae-rKg">
                             <connections>
-                                <segue destination="81T-Yj-nSj" kind="show" id="hhU-AP-RGL"/>
+                                <segue destination="ttI-Cu-MHu" kind="show" id="lCE-7p-Tx2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -558,6 +558,15 @@ o</string>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nvd-EA-KrW" id="hCS-cG-aWW">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sentimento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ynn-We-Wz2">
+                                                    <rect key="frame" x="20" y="11" width="88" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -585,7 +594,11 @@ o</string>
                         <viewLayoutGuide key="safeArea" id="154-Ce-UAK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nova Memória" id="t9B-fX-gQi">
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="9B8-dQ-PTo"/>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="9B8-dQ-PTo">
+                            <connections>
+                                <segue destination="CcR-8B-1qf" kind="unwind" unwindAction="addMemoria:" id="zkD-vs-6QE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imagemEmocao" destination="qdc-1B-aQw" id="Jl8-EX-D8b"/>
@@ -594,8 +607,9 @@ o</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSH-wn-t2T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="CcR-8B-1qf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1603" y="-1235"/>
+            <point key="canvasLocation" x="777" y="-1341"/>
         </scene>
         <!--Nova Memória-->
         <scene sceneID="7bt-wf-u5v">
@@ -662,9 +676,6 @@ o</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Alegria"/>
-                                                    <connections>
-                                                        <action selector="alegriaBotao:" destination="81T-Yj-nSj" eventType="touchUpInside" id="ZIl-52-xMP"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -684,9 +695,6 @@ o</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Tristeza"/>
-                                                    <connections>
-                                                        <action selector="tristezaBotao:" destination="81T-Yj-nSj" eventType="touchUpInside" id="Weu-ax-j32"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -706,9 +714,6 @@ o</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Raiva"/>
-                                                    <connections>
-                                                        <action selector="raivaBotao:" destination="81T-Yj-nSj" eventType="touchUpInside" id="7ka-IG-Jct"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -728,9 +733,6 @@ o</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Medo"/>
-                                                    <connections>
-                                                        <action selector="medoBotao:" destination="81T-Yj-nSj" eventType="touchUpInside" id="Oka-0b-RuP"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -750,9 +752,6 @@ o</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Aversão"/>
-                                                    <connections>
-                                                        <action selector="aversaoBotao:" destination="81T-Yj-nSj" eventType="touchUpInside" id="6ly-UF-QcY"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -779,7 +778,7 @@ o</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mnH-wC-PpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="TVp-iO-oRW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2479.7101449275365" y="-804.24107142857144"/>
+            <point key="canvasLocation" x="-100" y="-1341"/>
         </scene>
         <!--Item-->
         <scene sceneID="YAX-hh-neC">
@@ -1012,13 +1011,13 @@ o</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que você estava fazendo?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMw-IP-2SD">
-                                <rect key="frame" x="20" y="108" width="357.5" height="33"/>
+                                <rect key="frame" x="20" y="108" width="328.5" height="33.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escreva o que você estava fazendo, com quem e onde quando voce sentiu a emoção anotada" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvx-Fe-cts">
-                                <rect key="frame" x="20" y="151" width="374" height="40"/>
+                                <rect key="frame" x="20" y="151.5" width="374" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="5II-jC-KA9"/>
                                 </constraints>
@@ -1027,7 +1026,7 @@ o</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escreva aqui..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0nI-PR-83k">
-                                <rect key="frame" x="20" y="211" width="374" height="30"/>
+                                <rect key="frame" x="20" y="212.5" width="374" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="YOU-bL-1LT"/>
                                 </constraints>
@@ -1246,6 +1245,220 @@ o</string>
                 <exit id="xHB-4n-0cS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4078" y="-745"/>
+        </scene>
+        <!--Nova Memória-->
+        <scene sceneID="8H8-3Z-gaO">
+            <objects>
+                <viewController id="XGa-wL-hvq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6EJ-mr-FXK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que você está sentindo?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfJ-1K-TWT">
+                                <rect key="frame" x="20" y="64" width="309" height="33"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ctk-xe-6Or">
+                                <rect key="frame" x="20" y="107" width="178" height="20"/>
+                                <string key="text">Selecione até 2 opções
+o</string>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alegria-Tristeza – 4" translatesAutoresizingMaskIntoConstraints="NO" id="JoW-tw-a3V">
+                                <rect key="frame" x="29" y="147" width="356" height="325"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="325" id="LoP-J6-8nk"/>
+                                    <constraint firstAttribute="width" constant="356" id="dPf-Cj-pka"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lfJ-1K-TWT" firstAttribute="leading" secondItem="oh4-Vc-Usu" secondAttribute="leading" constant="20" id="AeA-Ri-JcF"/>
+                            <constraint firstItem="lfJ-1K-TWT" firstAttribute="top" secondItem="oh4-Vc-Usu" secondAttribute="top" constant="20" id="Gz8-2q-Qup"/>
+                            <constraint firstItem="Ctk-xe-6Or" firstAttribute="leading" secondItem="oh4-Vc-Usu" secondAttribute="leading" constant="20" id="Vpq-jv-yXD"/>
+                            <constraint firstItem="Ctk-xe-6Or" firstAttribute="top" secondItem="lfJ-1K-TWT" secondAttribute="bottom" constant="10" id="WdP-fb-dyr"/>
+                            <constraint firstItem="JoW-tw-a3V" firstAttribute="centerX" secondItem="6EJ-mr-FXK" secondAttribute="centerX" id="aFI-FD-7Ul"/>
+                            <constraint firstItem="JoW-tw-a3V" firstAttribute="top" secondItem="Ctk-xe-6Or" secondAttribute="bottom" constant="20" id="fdY-2f-BNI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oh4-Vc-Usu"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Nova Memória" id="ttY-hG-VJs">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="BMm-tI-Vu5">
+                            <connections>
+                                <segue destination="JsT-HY-jiR" kind="unwind" unwindAction="addMemoria:" id="UTQ-mb-GQh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imagemEmocao" destination="JoW-tw-a3V" id="WMk-Ca-xtS"/>
+                        <outlet property="proximoBotao" destination="BMm-tI-Vu5" id="AaG-95-DmT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w34-Gh-bJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="JsT-HY-jiR" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1603" y="-1341"/>
+        </scene>
+        <!--Nova Memória-->
+        <scene sceneID="a8q-YP-EZs">
+            <objects>
+                <tableViewController id="ttI-Cu-MHu" customClass="NovaMemoriaViewController" customModule="ChallengeFerias" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4rH-vh-b7G">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="jeV-Wo-B6Y">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="459" id="5GC-DR-Fml">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="459"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5GC-DR-Fml" id="7j0-ds-vbd">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="458.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que você está sentindo?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qiy-MA-gbQ">
+                                                    <rect key="frame" x="20" y="31" width="309" height="33"/>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="28"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwT-bZ-d1x">
+                                                    <rect key="frame" x="20" y="74" width="178" height="20"/>
+                                                    <string key="text">Selecione até 2 opções
+o</string>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alegria-Tristeza – 4" translatesAutoresizingMaskIntoConstraints="NO" id="RLn-b2-EF9">
+                                                    <rect key="frame" x="29" y="104" width="356" height="325"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="325" id="CUO-VB-Emx"/>
+                                                        <constraint firstAttribute="width" constant="356" id="sTK-4p-WDo"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Qiy-MA-gbQ" firstAttribute="leading" secondItem="7j0-ds-vbd" secondAttribute="leadingMargin" id="Fjx-Ly-Eur"/>
+                                                <constraint firstItem="RLn-b2-EF9" firstAttribute="top" secondItem="QwT-bZ-d1x" secondAttribute="bottom" constant="10" id="Ml3-vr-rci"/>
+                                                <constraint firstItem="RLn-b2-EF9" firstAttribute="centerX" secondItem="7j0-ds-vbd" secondAttribute="centerX" id="SNU-cG-IvP"/>
+                                                <constraint firstItem="QwT-bZ-d1x" firstAttribute="top" secondItem="Qiy-MA-gbQ" secondAttribute="bottom" constant="10" id="UWD-1J-boV"/>
+                                                <constraint firstItem="Qiy-MA-gbQ" firstAttribute="top" secondItem="7j0-ds-vbd" secondAttribute="topMargin" constant="20" id="l2c-o4-Sjp"/>
+                                                <constraint firstItem="QwT-bZ-d1x" firstAttribute="leading" secondItem="7j0-ds-vbd" secondAttribute="leadingMargin" id="zIz-ws-iWl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="7bw-GV-8I6">
+                                        <rect key="frame" x="0.0" y="459" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7bw-GV-8I6" id="e8t-uD-ikd">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alegria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMH-ZA-WoU">
+                                                    <rect key="frame" x="20" y="11" width="50" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="13g-13-NHO">
+                                        <rect key="frame" x="0.0" y="503" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="13g-13-NHO" id="eB9-v7-8aH">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tristeza" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2I-NE-k24">
+                                                    <rect key="frame" x="20" y="11" width="55" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="92r-fn-aN8">
+                                        <rect key="frame" x="0.0" y="547" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="92r-fn-aN8" id="Mt3-3z-tKf">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Raiva" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5H-s8-ga4">
+                                                    <rect key="frame" x="20" y="11" width="39" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="yv8-kX-zYr">
+                                        <rect key="frame" x="0.0" y="591" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yv8-kX-zYr" id="85I-ZR-hYQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Medo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNf-OA-Brx">
+                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="wgn-Mi-uqW">
+                                        <rect key="frame" x="0.0" y="635" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wgn-Mi-uqW" id="MzH-Hy-rQs">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aversão" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Dd-gJ-dZX">
+                                                    <rect key="frame" x="20" y="11" width="58" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="ttI-Cu-MHu" id="qCK-Gn-ib9"/>
+                            <outlet property="delegate" destination="ttI-Cu-MHu" id="f6J-x0-IZS"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Nova Memória" id="Mlz-aH-8Dn">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="RrD-1l-EXl">
+                            <connections>
+                                <segue destination="zIH-cV-KJz" kind="unwind" unwindAction="addMemoria:" id="jsV-ts-Nr0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kwF-qa-L2x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zIH-cV-KJz" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2479.7101449275365" y="-953.57142857142856"/>
         </scene>
     </scenes>
     <resources>
