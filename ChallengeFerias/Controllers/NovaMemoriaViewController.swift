@@ -34,6 +34,7 @@ class NovaMemoriaViewController: UITableViewController{
     
     @IBOutlet weak var alegriaBotao: UIButton!
     
+    @IBOutlet weak var salvarBotaoNM: UIBarButtonItem!
     var contadorBotoesSelecionados:Int = 0
     
     override func viewDidLoad() {
@@ -47,6 +48,7 @@ class NovaMemoriaViewController: UITableViewController{
 //        proximoBotao.isEnabled = false
         
         sentimentos = []
+        salvarBotaoNM.isEnabled = false
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -72,6 +74,10 @@ class NovaMemoriaViewController: UITableViewController{
                     mudarImagem()
                 }
             }
+        }
+        
+        if sentimentos.count > 0{
+            salvarBotaoNM.isEnabled = true
         }
         
     }
@@ -106,6 +112,10 @@ class NovaMemoriaViewController: UITableViewController{
                 mudarImagem()
             }
         }
+        if sentimentos.count == 0{
+            salvarBotaoNM.isEnabled = false
+        }
+ 
     }
     
     func mudarImagem(){
@@ -171,6 +181,10 @@ class NovaMemoriaViewController: UITableViewController{
                 sentimento2 = "aversao"
                 imagemEmocaoBaixo?.image = #imageLiteral(resourceName: "aversaoBaixo")
             }
+        }
+        if sentimento1 == "" && sentimento2 == ""{
+            imagemEmocaoBaixo?.image = #imageLiteral(resourceName: "vazioBaixo")
+            imagemEmocao?.image = #imageLiteral(resourceName: "vazioSolo")
         }
     }
     
