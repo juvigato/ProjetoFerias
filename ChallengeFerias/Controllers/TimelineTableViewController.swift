@@ -17,6 +17,7 @@ class TimelineMemoriasController: UITableViewController{
     
     var context:NSManagedObjectContext?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -25,6 +26,7 @@ class TimelineMemoriasController: UITableViewController{
         tableView.rowHeight = 171
         carregarMemorias()
         notificacao()
+//        tableView.reloadData()
     }
     
     //pegar as memorias que existem
@@ -59,14 +61,87 @@ class TimelineMemoriasController: UITableViewController{
     //carregar as células
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath) as! MemoriaTableViewCelula
-//        celula.emocaoMemoriaTimeline.text = memorias[indexPath.row].sentimentos
-        celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-Tristeza")
-//        celula.emocaoMemoriaTimeline.text = "lala"
-//        celula.situacaoMemoriaTimeline.text = memorias[indexPath.row].situacao
-        celula.situacaoMemoriaTimeline.text = "haha"
+
+        celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-Tristeza – 4")
+        celula.situacaoMemoriaTimeline.text = memorias[indexPath.row].situacao
+//        for i in 0..<(memorias[indexPath.row].tem!.count) {
+//            let s:Sentimento = memorias[indexPath.row].tem![i] as! Sentimento
+////            sentimentosTVC.sentimentos.append(s.nome!)
+//        }
+//        let s:Sentimento = memorias[indexPath.row].tem![0] as! Sentimento
+//        celula.emocaoMemoriaTimeline.text = s.nome
+        
+        
+        var titulo:String = ""
+        
+        let x:Sentimento = memorias[indexPath.row].tem![0] as! Sentimento
+        let y:Sentimento = memorias[indexPath.row].tem![1] as! Sentimento
+        
+        if (x.nome != nil || y.nome != nil){
+            if x.nome == "Alegria" && y.nome == "tristeza"{
+                titulo = "Alegria/Tristeza"
+                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-TristezaT")
+            } else if x.nome == "Alegria" && y.nome == "raiva"{
+                titulo = "Alegria/Raiva"
+                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-RaivaT")
+            } else if x.nome == "Alegria" && y.nome == "medo"{
+                titulo = "Alegria/Medo"
+                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-MedoT")
+            } else if x.nome == "Alegria" && y.nome == "aversao"{
+                titulo = "Alegria/Aversão"
+                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-AversaoT")
+            } else if x.nome == "tristeza" && y.nome == "raiva"{
+                titulo = "Tristeza/Raiva"
+                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Tristeza-RaivaT")
+            } else if x.nome == "tristeza" && y.nome == "medo"{
+                titulo = "Tristeza/Medo"
+                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Tristeza-MedoT")
+            } else if x.nome == "tristeza" && y.nome == "aversão"{
+                titulo = "Tristeza/Aversão"
+                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Tristeza-AversaoT")
+            } else if x.nome == "raiva" && y.nome == "medo"{
+                titulo = "Raiva/Medo"
+                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Raiva-MedoT")
+            } else if x.nome == "raiva" && y.nome == "aversao"{
+                titulo = "Raiva/Aversão"
+                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Raiva-AversaoT")
+            } else if x.nome == "medo" && y.nome == "aversao"{
+                titulo = "Medo/Aversão"
+                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Medo-AversaoT")
+            }
+        }
+        if (y.nome == nil){
+            if x.nome == "Alegria" {
+                titulo = "Alegria"
+                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "alegriaT")
+            } else if x.nome == "tristeza" {
+                titulo = "Tristeza"
+                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "tristezaT")
+            } else if x.nome == "raiva" {
+                titulo = "Raiva"
+                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "raivaT")
+            } else if x.nome == "medo" {
+                titulo = "Medo"
+                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "medoT")
+            } else if x.nome == "aversao" {
+                titulo = "Aversão"
+                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "aversaoT")
+            }
+        }
+        
+        celula.emocaoMemoriaTimeline.text = titulo
+
+        
+        
         
         
         return celula
+    }
+    
+    func prepararTitulo(indexPath:IndexPath){
+        
+        
+//        memorias[indexPath.row]
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -80,6 +155,8 @@ class TimelineMemoriasController: UITableViewController{
             }
         }
     }
+    
+    
     
     //notificacoes
     func notificacao(){

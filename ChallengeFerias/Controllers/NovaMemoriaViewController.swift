@@ -6,9 +6,6 @@
 //  Copyright © 2019 Juliana Vigato Pavan. All rights reserved.
 //
 
-
-// add no CBL: fonte - https://www.youtube.com/watch?v=WDQkjOcrbQE
-
 import UIKit
 import CoreData
 
@@ -21,8 +18,6 @@ class NovaMemoriaViewController: UITableViewController{
     var novaMemoria:Memoria?
     
     var sentimentos:[String] = []
-    
-
     
     @IBOutlet weak var tableViewLista: UITableView!
     
@@ -60,7 +55,7 @@ class NovaMemoriaViewController: UITableViewController{
                     contadorBotoesSelecionados = contadorBotoesSelecionados + 1
                     
                     if indexPath.row == 1{
-                        sentimentos.append("alegria")
+                        sentimentos.append("Alegria")
                     } else if indexPath.row == 2{
                         sentimentos.append("tristeza")
                     } else if indexPath.row == 3{
@@ -89,7 +84,7 @@ class NovaMemoriaViewController: UITableViewController{
                 contadorBotoesSelecionados = contadorBotoesSelecionados - 1
                 
                 if indexPath.row == 1{
-                    if let index = sentimentos.firstIndex(of: "alegria") {
+                    if let index = sentimentos.firstIndex(of: "Alegria") {
                         sentimentos.remove(at: index)
                     }
                 } else if indexPath.row == 2{
@@ -122,15 +117,15 @@ class NovaMemoriaViewController: UITableViewController{
         var sentimento1:String = ""
         var sentimento2:String = ""
         
-        if let index = sentimentos.firstIndex(of: "alegria"){
+        if let index = sentimentos.firstIndex(of: "Alegria"){
             if (sentimento1 == ""){
-                sentimento1 = "alegria"
+                sentimento1 = "Alegria"
                 imagemEmocao?.image = #imageLiteral(resourceName: "alegria")
-                if (sentimento1 == "alegria" && sentimento2 == ""){
+                if (sentimento1 == "Alegria" && sentimento2 == ""){
                     imagemEmocaoBaixo?.image = #imageLiteral(resourceName: "alegriaBaixo")
                 }
             } else {
-                sentimento2 = "alegria"
+                sentimento2 = "Alegria"
                 imagemEmocaoBaixo?.image = #imageLiteral(resourceName: "alegriaBaixo")
             }
         }

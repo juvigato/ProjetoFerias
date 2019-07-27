@@ -112,5 +112,9 @@ class MemoriaTableViewController: UITableViewController {
         }
 
     }
+    
+//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+////        if 
+//    }
 }
 
