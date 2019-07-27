@@ -16,7 +16,7 @@ class TimelineMemoriasController: UITableViewController{
     public var memorias:[Memoria] = []
     
     var context:NSManagedObjectContext?
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,53 +64,48 @@ class TimelineMemoriasController: UITableViewController{
 
         celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-Tristeza – 4")
         celula.situacaoMemoriaTimeline.text = memorias[indexPath.row].situacao
-//        for i in 0..<(memorias[indexPath.row].tem!.count) {
-//            let s:Sentimento = memorias[indexPath.row].tem![i] as! Sentimento
-////            sentimentosTVC.sentimentos.append(s.nome!)
-//        }
-//        let s:Sentimento = memorias[indexPath.row].tem![0] as! Sentimento
-//        celula.emocaoMemoriaTimeline.text = s.nome
-        
         
         var titulo:String = ""
         
         let x:Sentimento = memorias[indexPath.row].tem![0] as! Sentimento
-        let y:Sentimento = memorias[indexPath.row].tem![1] as! Sentimento
+
         
-        if (x.nome != nil || y.nome != nil){
-            if x.nome == "Alegria" && y.nome == "tristeza"{
-                titulo = "Alegria/Tristeza"
-                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-TristezaT")
-            } else if x.nome == "Alegria" && y.nome == "raiva"{
-                titulo = "Alegria/Raiva"
-                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-RaivaT")
-            } else if x.nome == "Alegria" && y.nome == "medo"{
-                titulo = "Alegria/Medo"
-                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-MedoT")
-            } else if x.nome == "Alegria" && y.nome == "aversao"{
-                titulo = "Alegria/Aversão"
-                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-AversaoT")
-            } else if x.nome == "tristeza" && y.nome == "raiva"{
-                titulo = "Tristeza/Raiva"
-                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Tristeza-RaivaT")
-            } else if x.nome == "tristeza" && y.nome == "medo"{
-                titulo = "Tristeza/Medo"
-                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Tristeza-MedoT")
-            } else if x.nome == "tristeza" && y.nome == "aversão"{
-                titulo = "Tristeza/Aversão"
-                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Tristeza-AversaoT")
-            } else if x.nome == "raiva" && y.nome == "medo"{
-                titulo = "Raiva/Medo"
-                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Raiva-MedoT")
-            } else if x.nome == "raiva" && y.nome == "aversao"{
-                titulo = "Raiva/Aversão"
-                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Raiva-AversaoT")
-            } else if x.nome == "medo" && y.nome == "aversao"{
-                titulo = "Medo/Aversão"
-                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Medo-AversaoT")
+        if (memorias[indexPath.row].tem!.count) > 1 {
+            let y:Sentimento = memorias[indexPath.row].tem![1] as! Sentimento
+            if (x.nome != nil || y.nome != nil){
+                if x.nome == "Alegria" && y.nome == "tristeza"{
+                    titulo = "Alegria/Tristeza"
+                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-TristezaT")
+                } else if x.nome == "Alegria" && y.nome == "raiva"{
+                    titulo = "Alegria/Raiva"
+                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-RaivaT")
+                } else if x.nome == "Alegria" && y.nome == "medo"{
+                    titulo = "Alegria/Medo"
+                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-MedoT")
+                } else if x.nome == "Alegria" && y.nome == "aversao"{
+                    titulo = "Alegria/Aversão"
+                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-AversaoT")
+                } else if x.nome == "tristeza" && y.nome == "raiva"{
+                    titulo = "Tristeza/Raiva"
+                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Tristeza-RaivaT")
+                } else if x.nome == "tristeza" && y.nome == "medo"{
+                    titulo = "Tristeza/Medo"
+                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Tristeza-MedoT")
+                } else if x.nome == "tristeza" && y.nome == "aversão"{
+                    titulo = "Tristeza/Aversão"
+                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Tristeza-AversaoT")
+                } else if x.nome == "raiva" && y.nome == "medo"{
+                    titulo = "Raiva/Medo"
+                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Raiva-MedoT")
+                } else if x.nome == "raiva" && y.nome == "aversao"{
+                    titulo = "Raiva/Aversão"
+                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Raiva-AversaoT")
+                } else if x.nome == "medo" && y.nome == "aversao"{
+                    titulo = "Medo/Aversão"
+                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Medo-AversaoT")
+                }
             }
-        }
-        if (y.nome == nil){
+        } else{
             if x.nome == "Alegria" {
                 titulo = "Alegria"
                 celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "alegriaT")
@@ -127,14 +122,10 @@ class TimelineMemoriasController: UITableViewController{
                 titulo = "Aversão"
                 celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "aversaoT")
             }
+
         }
         
         celula.emocaoMemoriaTimeline.text = titulo
-
-        
-        
-        
-        
         return celula
     }
     
