@@ -72,39 +72,40 @@ class TimelineMemoriasController: UITableViewController{
         if (memorias[indexPath.row].tem!.count) > 1 {
             let y:Sentimento = memorias[indexPath.row].tem![1] as! Sentimento
             if (x.nome != nil || y.nome != nil){
-                if x.nome == "Alegria" && y.nome == "tristeza"{
+                if (x.nome == "Alegria" && y.nome == "tristeza") || (x.nome == "tristeza" && y.nome == "Alegria"){
                     titulo = "Alegria/Tristeza"
                     celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-TristezaT")
-                } else if x.nome == "Alegria" && y.nome == "raiva"{
+                } else if (x.nome == "Alegria" && y.nome == "raiva") || (x.nome == "raiva" && y.nome == "Alegria") {
                     titulo = "Alegria/Raiva"
                     celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-RaivaT")
-                } else if x.nome == "Alegria" && y.nome == "medo"{
+                } else if (x.nome == "Alegria" && y.nome == "medo") || (x.nome == "medo" && y.nome == "Alegria"){
                     titulo = "Alegria/Medo"
                     celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-MedoT")
-                } else if x.nome == "Alegria" && y.nome == "aversao"{
+                } else if x.nome == "Alegria" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "Alegria"){
                     titulo = "Alegria/Aversão"
                     celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-AversaoT")
-                } else if x.nome == "tristeza" && y.nome == "raiva"{
+                } else if x.nome == "tristeza" && y.nome == "raiva" || (x.nome == "raiva" && y.nome == "tristeza"){
                     titulo = "Tristeza/Raiva"
                     celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Tristeza-RaivaT")
-                } else if x.nome == "tristeza" && y.nome == "medo"{
+                } else if x.nome == "tristeza" && y.nome == "medo" || (x.nome == "medo" && y.nome == "tristeza"){
                     titulo = "Tristeza/Medo"
                     celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Tristeza-MedoT")
-                } else if x.nome == "tristeza" && y.nome == "aversão"{
+                } else if x.nome == "tristeza" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "tristeza"){
                     titulo = "Tristeza/Aversão"
                     celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Tristeza-AversaoT")
-                } else if x.nome == "raiva" && y.nome == "medo"{
+                } else if x.nome == "raiva" && y.nome == "medo" || (x.nome == "medo" && y.nome == "raiva"){
                     titulo = "Raiva/Medo"
                     celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Raiva-MedoT")
-                } else if x.nome == "raiva" && y.nome == "aversao"{
+                } else if x.nome == "raiva" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "raiva"){
                     titulo = "Raiva/Aversão"
                     celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Raiva-AversaoT")
-                } else if x.nome == "medo" && y.nome == "aversao"{
+                } else if x.nome == "medo" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "medo"){
                     titulo = "Medo/Aversão"
                     celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Medo-AversaoT")
                 }
             }
-        } else{
+        }
+        if (memorias[indexPath.row].tem!.count) == 1{
             if x.nome == "Alegria" {
                 titulo = "Alegria"
                 celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "alegriaT")
