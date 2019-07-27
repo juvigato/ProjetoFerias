@@ -69,7 +69,6 @@ class TimelineMemoriasController: UITableViewController{
         
         let x:Sentimento = memorias[indexPath.row].tem![0] as! Sentimento
 
-        
         if (memorias[indexPath.row].tem!.count) > 1 {
             let y:Sentimento = memorias[indexPath.row].tem![1] as! Sentimento
             if (x.nome != nil || y.nome != nil){
@@ -124,15 +123,10 @@ class TimelineMemoriasController: UITableViewController{
             }
 
         }
-        
+        memorias[indexPath.row].titulo = titulo
+        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
         celula.emocaoMemoriaTimeline.text = titulo
         return celula
-    }
-    
-    func prepararTitulo(indexPath:IndexPath){
-        
-        
-//        memorias[indexPath.row]
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -146,8 +140,6 @@ class TimelineMemoriasController: UITableViewController{
             }
         }
     }
-    
-    
     
     //notificacoes
     func notificacao(){

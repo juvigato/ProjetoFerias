@@ -19,11 +19,11 @@
 		0F0EC51122D8FA02001118AA /* ProgressCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC51022D8FA02001118AA /* ProgressCircleViewController.swift */; };
 		0F37FF4022EA3435002BFE02 /* Sentimento+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF3C22EA3435002BFE02 /* Sentimento+CoreDataClass.swift */; };
 		0F37FF4122EA3435002BFE02 /* Sentimento+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF3D22EA3435002BFE02 /* Sentimento+CoreDataProperties.swift */; };
-		0F37FF4822EA493F002BFE02 /* Memoria+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF4622EA493F002BFE02 /* Memoria+CoreDataClass.swift */; };
-		0F37FF4922EA493F002BFE02 /* Memoria+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF4722EA493F002BFE02 /* Memoria+CoreDataProperties.swift */; };
 		0F37FF4B22EA9ED7002BFE02 /* EditarPensamentosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF4A22EA9ED7002BFE02 /* EditarPensamentosController.swift */; };
 		0F37FF4D22EAA61D002BFE02 /* EditarAtitudeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF4C22EAA61D002BFE02 /* EditarAtitudeController.swift */; };
 		0F37FF4F22EAA992002BFE02 /* EditarResultadoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF4E22EAA992002BFE02 /* EditarResultadoController.swift */; };
+		0F37FF5222EBFB3E002BFE02 /* Memoria+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF5022EBFB3E002BFE02 /* Memoria+CoreDataClass.swift */; };
+		0F37FF5322EBFB3E002BFE02 /* Memoria+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF5122EBFB3E002BFE02 /* Memoria+CoreDataProperties.swift */; };
 		0F5803D122E653F30013EC62 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F5803D022E653F30013EC62 /* SF-Pro-Display-Bold.otf */; };
 		0F5803D322E653FC0013EC62 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F5803D222E653FC0013EC62 /* SF-Pro-Display-Regular.otf */; };
 		0F5803D522E654090013EC62 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F5803D422E654080013EC62 /* SF-Pro-Display-Semibold.otf */; };
@@ -71,11 +71,11 @@
 		0F0EC51022D8FA02001118AA /* ProgressCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleViewController.swift; sourceTree = "<group>"; };
 		0F37FF3C22EA3435002BFE02 /* Sentimento+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sentimento+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0F37FF3D22EA3435002BFE02 /* Sentimento+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sentimento+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0F37FF4622EA493F002BFE02 /* Memoria+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memoria+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0F37FF4722EA493F002BFE02 /* Memoria+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memoria+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0F37FF4A22EA9ED7002BFE02 /* EditarPensamentosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPensamentosController.swift; sourceTree = "<group>"; };
 		0F37FF4C22EAA61D002BFE02 /* EditarAtitudeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarAtitudeController.swift; sourceTree = "<group>"; };
 		0F37FF4E22EAA992002BFE02 /* EditarResultadoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarResultadoController.swift; sourceTree = "<group>"; };
+		0F37FF5022EBFB3E002BFE02 /* Memoria+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memoria+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0F37FF5122EBFB3E002BFE02 /* Memoria+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memoria+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0F5803D022E653F30013EC62 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Bold.otf"; path = "../../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		0F5803D222E653FC0013EC62 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Regular.otf"; path = "../../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		0F5803D422E654080013EC62 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
@@ -197,8 +197,8 @@
 		0F90D03722E2229200999EBD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0F37FF4622EA493F002BFE02 /* Memoria+CoreDataClass.swift */,
-				0F37FF4722EA493F002BFE02 /* Memoria+CoreDataProperties.swift */,
+				0F37FF5022EBFB3E002BFE02 /* Memoria+CoreDataClass.swift */,
+				0F37FF5122EBFB3E002BFE02 /* Memoria+CoreDataProperties.swift */,
 				0F37FF3C22EA3435002BFE02 /* Sentimento+CoreDataClass.swift */,
 				0F37FF3D22EA3435002BFE02 /* Sentimento+CoreDataProperties.swift */,
 				0F0EC4D722D8D4CA001118AA /* ChallengeFerias.xcdatamodeld */,
@@ -341,16 +341,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F37FF4922EA493F002BFE02 /* Memoria+CoreDataProperties.swift in Sources */,
 				0F37FF4B22EA9ED7002BFE02 /* EditarPensamentosController.swift in Sources */,
+				0F37FF5322EBFB3E002BFE02 /* Memoria+CoreDataProperties.swift in Sources */,
 				0F37FF4022EA3435002BFE02 /* Sentimento+CoreDataClass.swift in Sources */,
 				0FA2228422E95F6500DDCA4E /* MemoriaTableViewCelula.swift in Sources */,
 				0F0EC4D922D8D4CA001118AA /* ChallengeFerias.xcdatamodeld in Sources */,
 				0F37FF4D22EAA61D002BFE02 /* EditarAtitudeController.swift in Sources */,
 				0F37FF4122EA3435002BFE02 /* Sentimento+CoreDataProperties.swift in Sources */,
-				0F37FF4822EA493F002BFE02 /* Memoria+CoreDataClass.swift in Sources */,
 				0F0EC50F22D8F8A1001118AA /* ProgressCircleView.swift in Sources */,
 				0F5803E022E659AB0013EC62 /* CheckMarkCell.swift in Sources */,
+				0F37FF5222EBFB3E002BFE02 /* Memoria+CoreDataClass.swift in Sources */,
 				0F58042422E7A2730013EC62 /* EditarSituacaoController.swift in Sources */,
 				0F0EC4D322D8D4CA001118AA /* MemoriaTableViewController.swift in Sources */,
 				0F37FF4F22EAA992002BFE02 /* EditarResultadoController.swift in Sources */,

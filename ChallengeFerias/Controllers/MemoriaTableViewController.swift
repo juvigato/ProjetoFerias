@@ -16,9 +16,14 @@ class MemoriaTableViewController: UITableViewController {
     
     public var timelineTVC: TimelineMemoriasController?
     
-    var context: NSManagedObjectContext? 
+    var context: NSManagedObjectContext?
+    
+    @IBOutlet weak var imagemMemoria: UIImageView!
+    
+    
     
     override func viewDidLoad() {
+        carregarImgMemoria()
         super.viewDidLoad()
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     }
@@ -34,6 +39,7 @@ class MemoriaTableViewController: UITableViewController {
             performSegue(withIdentifier: "editarResultado", sender: nil)
         }
     }
+    
     
     @IBAction func salvarBotao(_ sender: UIStoryboardSegue){
         if sender.source is EditarSituacaoController{
@@ -113,8 +119,38 @@ class MemoriaTableViewController: UITableViewController {
 
     }
     
-//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-////        if 
-//    }
+    func carregarImgMemoria(){
+        if memoria?.titulo == "Alegria"{
+            imagemMemoria.image = #imageLiteral(resourceName: "alegriaT")
+        } else if memoria?.titulo == "Tristeza"{
+            imagemMemoria.image = #imageLiteral(resourceName: "tristezaT")
+        } else if memoria?.titulo == "Raiva"{
+            imagemMemoria.image = #imageLiteral(resourceName: "raivaT")
+        } else if memoria?.titulo == "Medo"{
+            imagemMemoria.image = #imageLiteral(resourceName: "medoT")
+        } else if memoria?.titulo == "Aversão"{
+            imagemMemoria.image = #imageLiteral(resourceName: "aversaoT")
+        } else if memoria?.titulo == "Alegria/Tristeza"{
+            imagemMemoria.image = #imageLiteral(resourceName: "Alegria-TristezaT")
+        } else if memoria?.titulo == "Alegria/Raiva"{
+            imagemMemoria.image = #imageLiteral(resourceName: "Alegria-RaivaT")
+        } else if memoria?.titulo == "Alegria/Medo"{
+            imagemMemoria.image = #imageLiteral(resourceName: "Alegria-MedoT")
+        } else if memoria?.titulo == "Alegria/Aversão"{
+            imagemMemoria.image = #imageLiteral(resourceName: "Alegria-AversaoT")
+        } else if memoria?.titulo == "Tristeza/Raiva"{
+            imagemMemoria.image = #imageLiteral(resourceName: "Tristeza-RaivaT")
+        } else if memoria?.titulo == "Tristeza/Medo"{
+            imagemMemoria.image = #imageLiteral(resourceName: "Tristeza-MedoT")
+        } else if memoria?.titulo == "Tristeza/Aversão"{
+            imagemMemoria.image = #imageLiteral(resourceName: "Tristeza-AversaoT")
+        } else if memoria?.titulo == "Raiva/Medo"{
+            imagemMemoria.image = #imageLiteral(resourceName: "Raiva-MedoT")
+        } else if memoria?.titulo == "Raiva/Aversão"{
+            imagemMemoria.image = #imageLiteral(resourceName: "Raiva-AversaoT")
+        } else if memoria?.titulo == "Medo/Aversão"{
+            imagemMemoria.image = #imageLiteral(resourceName: "Medo-AversaoT")
+        }
+    }
 }
 
