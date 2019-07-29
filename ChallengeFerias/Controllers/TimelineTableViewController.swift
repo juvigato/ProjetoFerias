@@ -26,7 +26,7 @@ class TimelineMemoriasController: UITableViewController{
         tableView.rowHeight = 171
         carregarMemorias()
         notificacao()
-//        tableView.reloadData()
+        tableView.reloadData()
     }
     
     //pegar as memorias que existem
@@ -153,8 +153,8 @@ class TimelineMemoriasController: UITableViewController{
                 content.sound = UNNotificationSound.default
     
                 let date = Date(timeIntervalSinceNow: 3600 )
-                let triggerDiario = Calendar.current.dateComponents([.day, .hour,.minute,.second], from: date)
-                let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDiario, repeats: true)
+                let triggerDiario = Calendar.current.dateComponents([.hour,.minute,.second], from: date)
+                let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDiario, repeats: false)
                 
 //                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 86400, repeats: false)
     

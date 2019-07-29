@@ -152,5 +152,24 @@ class MemoriaTableViewController: UITableViewController {
             imagemMemoria.image = #imageLiteral(resourceName: "Medo-AversaoT")
         }
     }
+    
+//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+//        if situacaoTextField.text != nil,
+//            situacaoTextField.text!.count > 0 {
+//            situacaoText = situacaoTextField.text!
+//        }
+//        if situacaoText != nil {
+//            if let _ = memoriaTVC {
+//                if let context = context {
+//                    if let novaSituacao = situacaoText {
+//                        memoria?.situacao = novaSituacao
+//                    }
+//                }
+//            }
+//            (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+//            return true
+//        }
+//        return false
+//    }
 }
 

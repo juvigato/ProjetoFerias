@@ -32,6 +32,12 @@ class NovaMemoriaViewController: UITableViewController{
     @IBOutlet weak var salvarBotaoNM: UIBarButtonItem!
     var contadorBotoesSelecionados:Int = 0
     
+//    let date = NSDate()
+//    let calendar = NSCalendar.current
+//    let year = calendar.component(.year, from: date)
+//    let month = calendar.component(.month, from: date)
+//    let day = calendar.component(.day, from: date)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
