@@ -20,7 +20,7 @@ class MemoriaTableViewController: UITableViewController {
     
     @IBOutlet weak var imagemMemoria: UIImageView!
     
-    
+    var situacaoText:String = "Adicione mais detalhes..."
     
     override func viewDidLoad() {
         carregarImgMemoria()
@@ -154,15 +154,12 @@ class MemoriaTableViewController: UITableViewController {
     }
     
 //    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-//        if situacaoTextField.text != nil,
-//            situacaoTextField.text!.count > 0 {
-//            situacaoText = situacaoTextField.text!
-//        }
+//
 //        if situacaoText != nil {
-//            if let _ = memoriaTVC {
+//            if let _ = timelineTVC {
 //                if let context = context {
-//                    if let novaSituacao = situacaoText {
-//                        memoria?.situacao = novaSituacao
+//                    if let situacao = situacaoText {
+//                        memoria?.situacao = situacao
 //                    }
 //                }
 //            }

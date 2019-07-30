@@ -26,7 +26,11 @@ class TimelineMemoriasController: UITableViewController{
         tableView.rowHeight = 171
         carregarMemorias()
         notificacao()
-        tableView.reloadData()
+//        tableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        carregarMemorias()
     }
     
     //pegar as memorias que existem
@@ -125,8 +129,9 @@ class TimelineMemoriasController: UITableViewController{
 
         }
         memorias[indexPath.row].titulo = titulo
-        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        
         celula.emocaoMemoriaTimeline.text = titulo
+        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
         return celula
     }
     

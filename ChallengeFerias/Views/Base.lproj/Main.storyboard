@@ -311,7 +311,11 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxj-Ne-gGQ">
-                                            <rect key="frame" x="207" y="90" width="39.5" height="20"/>
+                                            <rect key="frame" x="207" y="95" width="187" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="0D0-ak-gcs"/>
+                                                <constraint firstAttribute="width" constant="187" id="NHD-Se-5cj"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -322,7 +326,7 @@
                                         <constraint firstItem="Br0-mK-3NQ" firstAttribute="top" secondItem="I8m-6N-WcE" secondAttribute="topMargin" constant="10" id="DJk-3n-b1u"/>
                                         <constraint firstItem="N5Y-Bb-EJc" firstAttribute="top" secondItem="I8m-6N-WcE" secondAttribute="topMargin" constant="45" id="Hza-bQ-KYK"/>
                                         <constraint firstItem="vxj-Ne-gGQ" firstAttribute="leading" secondItem="Br0-mK-3NQ" secondAttribute="trailing" constant="20" id="Sx6-jf-jfL"/>
-                                        <constraint firstItem="vxj-Ne-gGQ" firstAttribute="top" secondItem="N5Y-Bb-EJc" secondAttribute="bottom" constant="10" id="pR2-F9-gO1"/>
+                                        <constraint firstItem="vxj-Ne-gGQ" firstAttribute="top" secondItem="N5Y-Bb-EJc" secondAttribute="bottom" constant="15" id="pR2-F9-gO1"/>
                                         <constraint firstItem="N5Y-Bb-EJc" firstAttribute="leading" secondItem="Br0-mK-3NQ" secondAttribute="trailing" constant="20" id="u2C-J9-YUz"/>
                                     </constraints>
                                 </tableViewCellContentView>
