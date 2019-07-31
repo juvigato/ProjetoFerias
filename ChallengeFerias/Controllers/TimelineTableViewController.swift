@@ -32,13 +32,15 @@ class TimelineMemoriasController: UITableViewController{
     override func viewWillAppear(_ animated: Bool) {
         carregarMemorias()
         
-//        if memorias.count == 0 {
-//            semMemoriaImg.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
-//            self.view.addSubview(semMemoriaImg)
-//            semMemoriaImg.center.x = self.view.center.x
-//            semMemoriaImg.center.y = self.view.center.y - 80
-//        }
-//        tableView.reloadData()
+        if memorias.count == 0 {
+            semMemoriaImg.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+            self.view.addSubview(semMemoriaImg)
+            semMemoriaImg.center.x = self.view.center.x
+            semMemoriaImg.center.y = self.view.center.y - 80
+//            tableView.tableFooterView = UIView()
+        }
+        tableView.reloadData()
+        tableView.tableFooterView = UIView()
     }
     
     //pegar as memorias que existem
@@ -49,7 +51,7 @@ class TimelineMemoriasController: UITableViewController{
             print("Falha na Timeline")
             return
         }
-        tableView.reloadData()
+//        tableView.reloadData()
     }
     
     //numero de linhas
@@ -64,15 +66,16 @@ class TimelineMemoriasController: UITableViewController{
             tableView.deleteRows(at: [indexPath], with: .fade)
             
             // Adding "noPartyImage" in case there are no more parties
-//            if memorias.count == 0 {
-//                semMemoriaImg.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
-//                self.view.addSubview(semMemoriaImg)
-//                semMemoriaImg.center.x = self.view.center.x
-//                semMemoriaImg.center.y = self.view.center.y - 80
-//            }
+            if memorias.count == 0 {
+                semMemoriaImg.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
+                self.view.addSubview(semMemoriaImg)
+                semMemoriaImg.center.x = self.view.center.x
+                semMemoriaImg.center.y = self.view.center.y - 80
+            }
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
         }
     }
+    
     
     //metodo que permite a acao de saida
     @IBAction func addMemoria(_ sender: UIStoryboardSegue){
@@ -81,7 +84,7 @@ class TimelineMemoriasController: UITableViewController{
                 if let nova = senderAdd.novaMemoria{
                     carregarMemorias()
                     tableView.reloadData()
-                    //noPartyImage.removeFromSuperview()
+                    semMemoriaImg.removeFromSuperview()
                 }
             }
         }
