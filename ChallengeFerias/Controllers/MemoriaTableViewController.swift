@@ -20,7 +20,7 @@ class MemoriaTableViewController: UITableViewController {
     
     @IBOutlet weak var imagemMemoria: UIImageView!
     
-    var situacaoText:String = "Adicione mais detalhes..."
+    @IBOutlet weak var tituloFoto: UILabel!
     
     override func viewDidLoad() {
         carregarImgMemoria()
@@ -151,6 +151,7 @@ class MemoriaTableViewController: UITableViewController {
         } else if memoria?.titulo == "Medo/Aversão"{
             imagemMemoria.image = #imageLiteral(resourceName: "Medo-AversaoT")
         }
+        tituloFoto.text = memoria?.titulo
     }
     
 //    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {

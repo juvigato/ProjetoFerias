@@ -26,7 +26,6 @@ class TimelineMemoriasController: UITableViewController{
         tableView.rowHeight = 171
         carregarMemorias()
         notificacao()
-//        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +66,12 @@ class TimelineMemoriasController: UITableViewController{
         let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath) as! MemoriaTableViewCelula
 
         celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-Tristeza – 4")
-        celula.situacaoMemoriaTimeline.text = memorias[indexPath.row].situacao
+        
+        if memorias[indexPath.row].situacao == nil{
+            celula.situacaoMemoriaTimeline.text = "Adicione mais detalhes..."
+        } else{
+            celula.situacaoMemoriaTimeline.text = memorias[indexPath.row].situacao
+        }
         
         var titulo:String = ""
         

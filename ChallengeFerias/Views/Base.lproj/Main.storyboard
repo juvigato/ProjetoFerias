@@ -305,13 +305,13 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5Y-Bb-EJc">
-                                            <rect key="frame" x="207" y="56" width="46" height="24"/>
+                                            <rect key="frame" x="197" y="56" width="46" height="24"/>
                                             <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxj-Ne-gGQ">
-                                            <rect key="frame" x="207" y="95" width="187" height="20"/>
+                                            <rect key="frame" x="197" y="95" width="187" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="0D0-ak-gcs"/>
                                                 <constraint firstAttribute="width" constant="187" id="NHD-Se-5cj"/>
@@ -325,9 +325,9 @@
                                         <constraint firstItem="Br0-mK-3NQ" firstAttribute="leading" secondItem="I8m-6N-WcE" secondAttribute="leadingMargin" id="DA2-OF-Plm"/>
                                         <constraint firstItem="Br0-mK-3NQ" firstAttribute="top" secondItem="I8m-6N-WcE" secondAttribute="topMargin" constant="10" id="DJk-3n-b1u"/>
                                         <constraint firstItem="N5Y-Bb-EJc" firstAttribute="top" secondItem="I8m-6N-WcE" secondAttribute="topMargin" constant="45" id="Hza-bQ-KYK"/>
-                                        <constraint firstItem="vxj-Ne-gGQ" firstAttribute="leading" secondItem="Br0-mK-3NQ" secondAttribute="trailing" constant="20" id="Sx6-jf-jfL"/>
+                                        <constraint firstItem="vxj-Ne-gGQ" firstAttribute="leading" secondItem="Br0-mK-3NQ" secondAttribute="trailing" constant="10" id="Sx6-jf-jfL"/>
                                         <constraint firstItem="vxj-Ne-gGQ" firstAttribute="top" secondItem="N5Y-Bb-EJc" secondAttribute="bottom" constant="15" id="pR2-F9-gO1"/>
-                                        <constraint firstItem="N5Y-Bb-EJc" firstAttribute="leading" secondItem="Br0-mK-3NQ" secondAttribute="trailing" constant="20" id="u2C-J9-YUz"/>
+                                        <constraint firstItem="N5Y-Bb-EJc" firstAttribute="leading" secondItem="Br0-mK-3NQ" secondAttribute="trailing" constant="10" id="u2C-J9-YUz"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -406,13 +406,22 @@
                                                         <constraint firstAttribute="width" constant="374" id="l1P-1j-LDE"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWU-4i-BfJ">
+                                                    <rect key="frame" x="74" y="368" width="46" height="24"/>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Xc5-Zl-fTR" secondAttribute="bottom" constant="9.5" id="Ej1-rS-9qF"/>
                                                 <constraint firstItem="fvZ-HH-vy9" firstAttribute="leading" secondItem="qKL-RW-2Ja" secondAttribute="leadingMargin" id="Qck-yR-nyG"/>
+                                                <constraint firstItem="VWU-4i-BfJ" firstAttribute="leading" secondItem="qKL-RW-2Ja" secondAttribute="leadingMargin" constant="54" id="Tjh-f7-eg6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="VWU-4i-BfJ" secondAttribute="bottom" constant="38" id="YeS-5U-7Dq"/>
                                                 <constraint firstItem="Xc5-Zl-fTR" firstAttribute="centerX" secondItem="qKL-RW-2Ja" secondAttribute="centerX" id="bux-CW-Vm1"/>
                                                 <constraint firstItem="Xc5-Zl-fTR" firstAttribute="top" secondItem="fvZ-HH-vy9" secondAttribute="bottom" constant="19" id="tCm-Rd-EV6"/>
                                                 <constraint firstItem="fvZ-HH-vy9" firstAttribute="top" secondItem="qKL-RW-2Ja" secondAttribute="topMargin" constant="9" id="wdw-L1-9mp"/>
+                                                <constraint firstItem="VWU-4i-BfJ" firstAttribute="top" secondItem="fvZ-HH-vy9" secondAttribute="bottom" constant="281" id="zdm-QI-0DU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -556,6 +565,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imagemMemoria" destination="Xc5-Zl-fTR" id="GYW-Jw-IsI"/>
+                        <outlet property="tituloFoto" destination="VWU-4i-BfJ" id="0qH-Fy-6ft"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sS6-Bx-xSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
