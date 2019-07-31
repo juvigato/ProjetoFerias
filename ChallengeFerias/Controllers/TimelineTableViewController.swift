@@ -17,6 +17,7 @@ class TimelineMemoriasController: UITableViewController{
     
     var context:NSManagedObjectContext?
 
+    var semMemoriaImg:UIImageView = UIImageView(image: UIImage(named: "empty"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,14 @@ class TimelineMemoriasController: UITableViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         carregarMemorias()
+        
+//        if memorias.count == 0 {
+//            semMemoriaImg.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
+//            self.view.addSubview(semMemoriaImg)
+//            semMemoriaImg.center.x = self.view.center.x
+//            semMemoriaImg.center.y = self.view.center.y - 80
+//        }
+//        tableView.reloadData()
     }
     
     //pegar as memorias que existem
@@ -46,6 +55,23 @@ class TimelineMemoriasController: UITableViewController{
     //numero de linhas
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memorias.count
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            context?.delete(memorias[indexPath.row])
+            memorias.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            // Adding "noPartyImage" in case there are no more parties
+//            if memorias.count == 0 {
+//                semMemoriaImg.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
+//                self.view.addSubview(semMemoriaImg)
+//                semMemoriaImg.center.x = self.view.center.x
+//                semMemoriaImg.center.y = self.view.center.y - 80
+//            }
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        }
     }
     
     //metodo que permite a acao de saida

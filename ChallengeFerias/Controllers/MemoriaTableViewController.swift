@@ -153,21 +153,5 @@ class MemoriaTableViewController: UITableViewController {
         }
         tituloFoto.text = memoria?.titulo
     }
-    
-//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-//
-//        if situacaoText != nil {
-//            if let _ = timelineTVC {
-//                if let context = context {
-//                    if let situacao = situacaoText {
-//                        memoria?.situacao = situacao
-//                    }
-//                }
-//            }
-//            (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
-//            return true
-//        }
-//        return false
-//    }
 }
 
