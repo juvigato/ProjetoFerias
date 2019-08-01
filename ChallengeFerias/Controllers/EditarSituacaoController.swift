@@ -20,15 +20,11 @@ class EditarSituacaoController:UIViewController, UITextViewDelegate{
     
     var situacaoText:String?
     
-//    @IBOutlet weak var situacaoTextField: UITextField!
-    
     @IBOutlet weak var situacaoTextField: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        situacaoTextField.text = "Escreva aqui..."
-        situacaoTextField.textColor = UIColor.lightGray
         situacaoTextField.layer.borderWidth = 1
         situacaoTextField.layer.borderColor = UIColor.lightGray.cgColor
         situacaoTextField.delegate = self
@@ -36,9 +32,17 @@ class EditarSituacaoController:UIViewController, UITextViewDelegate{
         
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        if let memoria = memoria{
-            situacaoTextField.text = memoria.situacao
+        
+        
+        if memoria?.situacao != nil{
+            if let memoria = memoria {
+                situacaoTextField.text = memoria.situacao
+            }
+        } else{
+            situacaoTextField.text = "Escreva aqui..."
+            situacaoTextField.textColor = UIColor.lightGray
         }
+        
     }
 
     func textViewDidBeginEditing(_ textView: UITextView) {
