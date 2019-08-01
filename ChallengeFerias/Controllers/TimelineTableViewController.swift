@@ -191,10 +191,8 @@ class TimelineMemoriasController: UITableViewController{
                 content.sound = UNNotificationSound.default
     
                 let date = Date(timeIntervalSinceNow: 3600 )
-                let triggerDiario = Calendar.current.dateComponents([.hour,.minute,.second], from: date)
+                let triggerDiario = Calendar.current.dateComponents([.day,.hour,.minute,.second], from: date)
                 let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDiario, repeats: false)
-                
-//                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 86400, repeats: false)
     
                 let request = UNNotificationRequest(identifier: "diario", content: content, trigger: trigger)
     

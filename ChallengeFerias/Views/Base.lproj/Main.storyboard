@@ -416,7 +416,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Xc5-Zl-fTR" secondAttribute="bottom" constant="9.5" id="Ej1-rS-9qF"/>
                                                 <constraint firstItem="fvZ-HH-vy9" firstAttribute="leading" secondItem="qKL-RW-2Ja" secondAttribute="leadingMargin" id="Qck-yR-nyG"/>
-                                                <constraint firstItem="VWU-4i-BfJ" firstAttribute="leading" secondItem="qKL-RW-2Ja" secondAttribute="leadingMargin" constant="54" id="Tjh-f7-eg6"/>
+                                                <constraint firstItem="VWU-4i-BfJ" firstAttribute="leading" secondItem="Xc5-Zl-fTR" secondAttribute="leadingMargin" constant="46" id="Tjh-f7-eg6"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="VWU-4i-BfJ" secondAttribute="bottom" constant="38" id="YeS-5U-7Dq"/>
                                                 <constraint firstItem="Xc5-Zl-fTR" firstAttribute="centerX" secondItem="qKL-RW-2Ja" secondAttribute="centerX" id="bux-CW-Vm1"/>
                                                 <constraint firstItem="Xc5-Zl-fTR" firstAttribute="top" secondItem="fvZ-HH-vy9" secondAttribute="bottom" constant="19" id="tCm-Rd-EV6"/>
@@ -486,7 +486,7 @@
                                         </tableViewCellContentView>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <segue destination="cmP-P1-z7x" kind="show" identifier="editarPensamentos" id="KBU-tE-5zU"/>
+                                            <segue destination="jHM-j1-iVe" kind="show" identifier="editarPensamentos" trigger="accessoryAction" id="hSE-k5-Veh"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="70" id="jXW-8y-lZ2">
@@ -595,23 +595,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escreva aqui..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0nI-PR-83k">
-                                <rect key="frame" x="20" y="212.5" width="374" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BVb-M1-FzX">
+                                <rect key="frame" x="20" y="212.5" width="374" height="230"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="YOU-bL-1LT"/>
+                                    <constraint firstAttribute="width" secondItem="BVb-M1-FzX" secondAttribute="height" multiplier="187:115" id="GFr-6Z-Cmn"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="BVb-M1-FzX" firstAttribute="top" secondItem="dvx-Fe-cts" secondAttribute="bottom" constant="20" id="0rr-mK-HZQ"/>
                             <constraint firstItem="dvx-Fe-cts" firstAttribute="top" secondItem="xMw-IP-2SD" secondAttribute="bottom" constant="10" id="Do4-Y5-XFM"/>
-                            <constraint firstItem="0nI-PR-83k" firstAttribute="top" secondItem="dvx-Fe-cts" secondAttribute="bottom" constant="20" id="aEX-hu-uTk"/>
+                            <constraint firstItem="YX7-6f-hhh" firstAttribute="trailing" secondItem="BVb-M1-FzX" secondAttribute="trailing" constant="20" id="YP2-L1-XzS"/>
                             <constraint firstItem="xMw-IP-2SD" firstAttribute="leading" secondItem="YX7-6f-hhh" secondAttribute="leading" constant="20" id="bGq-KE-5JB"/>
+                            <constraint firstItem="BVb-M1-FzX" firstAttribute="leading" secondItem="YX7-6f-hhh" secondAttribute="leading" constant="20" id="gf6-H2-WnJ"/>
                             <constraint firstItem="dvx-Fe-cts" firstAttribute="leading" secondItem="YX7-6f-hhh" secondAttribute="leading" constant="20" id="hBS-LT-REU"/>
-                            <constraint firstItem="0nI-PR-83k" firstAttribute="leading" secondItem="YX7-6f-hhh" secondAttribute="leading" constant="20" id="jai-sI-Ykb"/>
                             <constraint firstItem="xMw-IP-2SD" firstAttribute="top" secondItem="YX7-6f-hhh" secondAttribute="top" constant="20" id="jqa-TO-Nel"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YX7-6f-hhh"/>
@@ -624,13 +626,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="situacaoTextField" destination="0nI-PR-83k" id="NoS-Un-XEG"/>
+                        <outlet property="situacaoTextField" destination="BVb-M1-FzX" id="bXb-hC-yQp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="boz-bx-KfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ag4-Up-Q0J" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3732" y="-1527"/>
+            <point key="canvasLocation" x="3731.884057971015" y="-1527.4553571428571"/>
         </scene>
         <!--Atitude Tomada-->
         <scene sceneID="BSZ-KL-bnQ">
@@ -755,67 +757,6 @@
             </objects>
             <point key="canvasLocation" x="3732" y="617"/>
         </scene>
-        <!--Pensamentos-->
-        <scene sceneID="I8f-Pg-PPt">
-            <objects>
-                <viewController storyboardIdentifier="Pensamentos" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cmP-P1-z7x" customClass="EditarPensamentosController" customModule="ChallengeFerias" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TPC-b9-Edu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que passou pela sua cabeça?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhU-CY-i4l">
-                                <rect key="frame" x="20" y="108" width="370" height="33.5"/>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVp-dX-rls">
-                                <rect key="frame" x="20" y="151.5" width="374" height="61"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="L3v-jb-ofj"/>
-                                </constraints>
-                                <string key="text">Reflita um pouco sobre quais foram seus pensamentos quando você sentiu aquela emoção e em quanto você acredita nesses pensamentos</string>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escreva aqui..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3dP-qp-gXN">
-                                <rect key="frame" x="20" y="232.5" width="374" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="RMh-Gk-GVQ"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="3dP-qp-gXN" firstAttribute="leading" secondItem="83U-mb-UA7" secondAttribute="leading" constant="20" id="ALE-KF-ROZ"/>
-                            <constraint firstItem="3dP-qp-gXN" firstAttribute="top" secondItem="aVp-dX-rls" secondAttribute="bottom" constant="20" id="MPJ-NV-Wqu"/>
-                            <constraint firstItem="aVp-dX-rls" firstAttribute="leading" secondItem="83U-mb-UA7" secondAttribute="leading" constant="20" id="Z3y-9a-Anc"/>
-                            <constraint firstItem="aVp-dX-rls" firstAttribute="top" secondItem="hhU-CY-i4l" secondAttribute="bottom" constant="10" id="ohe-KO-UNX"/>
-                            <constraint firstItem="hhU-CY-i4l" firstAttribute="top" secondItem="83U-mb-UA7" secondAttribute="top" constant="20" id="x2S-sy-oPu"/>
-                            <constraint firstItem="hhU-CY-i4l" firstAttribute="leading" secondItem="83U-mb-UA7" secondAttribute="leading" constant="20" id="zrY-OB-IJz"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="83U-mb-UA7"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Pensamentos" id="wtf-xw-lSS">
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="Dnl-Bp-urL">
-                            <connections>
-                                <segue destination="xHB-4n-0cS" kind="unwind" unwindAction="salvarBotao:" id="Ha7-ud-psP"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="pensamentosTextField" destination="3dP-qp-gXN" id="XkE-q4-zz3"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="isv-jA-9eH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="xHB-4n-0cS" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="3732" y="-804"/>
-        </scene>
         <!--Nova Memória-->
         <scene sceneID="a8q-YP-EZs">
             <objects>
@@ -871,18 +812,18 @@ o</string>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Hh7-4z-gFK" secondAttribute="trailing" constant="56" id="0jy-y7-D9x"/>
                                                 <constraint firstItem="Hh7-4z-gFK" firstAttribute="top" secondItem="QwT-bZ-d1x" secondAttribute="bottom" constant="69" id="3Kw-Q1-dqZ"/>
                                                 <constraint firstItem="Hh7-4z-gFK" firstAttribute="leading" secondItem="7j0-ds-vbd" secondAttribute="leadingMargin" constant="51" id="8gg-J1-8dC"/>
                                                 <constraint firstItem="Qiy-MA-gbQ" firstAttribute="leading" secondItem="7j0-ds-vbd" secondAttribute="leadingMargin" id="Fjx-Ly-Eur"/>
                                                 <constraint firstItem="RLn-b2-EF9" firstAttribute="top" secondItem="QwT-bZ-d1x" secondAttribute="bottom" constant="10" id="Ml3-vr-rci"/>
                                                 <constraint firstItem="RLn-b2-EF9" firstAttribute="centerX" secondItem="7j0-ds-vbd" secondAttribute="centerX" id="SNU-cG-IvP"/>
                                                 <constraint firstItem="QwT-bZ-d1x" firstAttribute="top" secondItem="Qiy-MA-gbQ" secondAttribute="bottom" constant="10" id="UWD-1J-boV"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="dd0-85-OHr" secondAttribute="trailing" constant="41" id="WQL-21-Tor"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="dd0-85-OHr" secondAttribute="bottom" constant="113" id="jmP-gc-GMe"/>
                                                 <constraint firstItem="Qiy-MA-gbQ" firstAttribute="top" secondItem="7j0-ds-vbd" secondAttribute="topMargin" constant="20" id="l2c-o4-Sjp"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Hh7-4z-gFK" secondAttribute="bottom" constant="113" id="lIp-wI-UMr"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="dd0-85-OHr" secondAttribute="trailing" constant="41" id="pfd-kG-pgM"/>
                                                 <constraint firstItem="dd0-85-OHr" firstAttribute="top" secondItem="QwT-bZ-d1x" secondAttribute="bottom" constant="69" id="r0q-ZU-fbZ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Hh7-4z-gFK" secondAttribute="trailing" constant="56" id="rEu-Um-kGA"/>
                                                 <constraint firstItem="dd0-85-OHr" firstAttribute="leading" secondItem="7j0-ds-vbd" secondAttribute="leadingMargin" constant="36" id="wJc-Xs-0ze"/>
                                                 <constraint firstItem="QwT-bZ-d1x" firstAttribute="leading" secondItem="7j0-ds-vbd" secondAttribute="leadingMargin" id="zIz-ws-iWl"/>
                                             </constraints>
@@ -998,6 +939,70 @@ o</string>
                 <exit id="zIH-cV-KJz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2480" y="-804"/>
+        </scene>
+        <!--Pensamentos-->
+        <scene sceneID="FGJ-8d-xcT">
+            <objects>
+                <viewController storyboardIdentifier="Pensamentos" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jHM-j1-iVe" customClass="EditarPensamentosController" customModule="ChallengeFerias" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O6k-be-A96">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que passou pela sua cabeça?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLh-28-WnK">
+                                <rect key="frame" x="20" y="108" width="374" height="33.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="TLD-nV-WM9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escreva aqui..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DMS-gr-5nI">
+                                <rect key="frame" x="20" y="232.5" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="m2e-dB-dgC"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOf-MJ-F8F">
+                                <rect key="frame" x="20" y="151.5" width="374" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="apA-Hb-smR"/>
+                                </constraints>
+                                <string key="text">Reflita um pouco sobre quais foram seus pensamentos quando você sentiu aquela emoção e em quanto você acredita nesses pensamentos</string>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cOf-MJ-F8F" firstAttribute="top" secondItem="vLh-28-WnK" secondAttribute="bottom" constant="10" id="5xm-F1-AL7"/>
+                            <constraint firstItem="cOf-MJ-F8F" firstAttribute="leading" secondItem="VHv-cp-cTT" secondAttribute="leading" constant="20" id="Vmv-Xq-qmH"/>
+                            <constraint firstItem="vLh-28-WnK" firstAttribute="leading" secondItem="VHv-cp-cTT" secondAttribute="leading" constant="20" id="cb5-kC-oP5"/>
+                            <constraint firstItem="DMS-gr-5nI" firstAttribute="top" secondItem="cOf-MJ-F8F" secondAttribute="bottom" constant="20" id="fSM-8A-KWx"/>
+                            <constraint firstItem="DMS-gr-5nI" firstAttribute="leading" secondItem="VHv-cp-cTT" secondAttribute="leading" constant="20" id="jcS-wM-qGy"/>
+                            <constraint firstItem="vLh-28-WnK" firstAttribute="top" secondItem="VHv-cp-cTT" secondAttribute="top" constant="20" id="s2a-0R-do2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VHv-cp-cTT"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pensamentos" id="N8g-GR-SHb">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="xWh-cz-4Lw">
+                            <connections>
+                                <segue destination="b9b-Xq-SCz" kind="unwind" unwindAction="salvarBotao:" id="fwa-sT-lTY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pensamentosTextField" destination="DMS-gr-5nI" id="U3w-VQ-z2n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l9L-QB-43e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="b9b-Xq-SCz" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3732" y="-804"/>
         </scene>
     </scenes>
     <resources>

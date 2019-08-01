@@ -47,7 +47,6 @@ class MemoriaTableViewController: UITableViewController {
                 if let situacao = senderAdd.situacaoText{
                     memoria?.situacao = situacao
                 }
-                
             }
         }
         
@@ -76,7 +75,6 @@ class MemoriaTableViewController: UITableViewController {
         }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

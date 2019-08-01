@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class EditarSituacaoController:UIViewController{
+class EditarSituacaoController:UIViewController, UITextViewDelegate{
     
     public var memoria:Memoria?
     
@@ -20,15 +20,39 @@ class EditarSituacaoController:UIViewController{
     
     var situacaoText:String?
     
-    @IBOutlet weak var situacaoTextField: UITextField!
+//    @IBOutlet weak var situacaoTextField: UITextField!
+    
+    @IBOutlet weak var situacaoTextField: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        situacaoTextField.text = "Escreva aqui..."
+        situacaoTextField.textColor = UIColor.lightGray
+        situacaoTextField.layer.borderWidth = 1
+        situacaoTextField.layer.borderColor = UIColor.lightGray.cgColor
+        situacaoTextField.delegate = self
+
         
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         if let memoria = memoria{
             situacaoTextField.text = memoria.situacao
+        }
+    }
+
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if situacaoTextField.text == "Escreva aqui..."{
+            situacaoTextField.text = ""
+            situacaoTextField.textColor = UIColor.black
+        }
+    }
+
+
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if situacaoTextField.text.isEmpty{
+            situacaoTextField.text = "Escreva aqui..."
+            situacaoTextField.textColor = UIColor.lightGray
         }
     }
 
@@ -52,4 +76,3 @@ class EditarSituacaoController:UIViewController{
         return false
     }
 }
-
