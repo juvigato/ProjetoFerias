@@ -11,8 +11,6 @@ import CoreData
 
 class NovaMemoriaViewController: UITableViewController{
     
-//    var goingForwards:Bool = false
-    
     var context:NSManagedObjectContext?
     
     var novaMemoria:Memoria?
@@ -21,22 +19,15 @@ class NovaMemoriaViewController: UITableViewController{
     
     @IBOutlet weak var tableViewLista: UITableView!
     
-//    @IBOutlet weak var proximoBotao: UIBarButtonItem!
-    
     @IBOutlet weak var imagemEmocao: UIImageView?
     
     @IBOutlet weak var imagemEmocaoBaixo: UIImageView?
     
-    @IBOutlet weak var alegriaBotao: UIButton!
-    
     @IBOutlet weak var salvarBotaoNM: UIBarButtonItem!
-    var contadorBotoesSelecionados:Int = 0
     
-//    let date = NSDate()
-//    let calendar = NSCalendar.current
-//    let year = calendar.component(.year, from: date)
-//    let month = calendar.component(.month, from: date)
-//    let day = calendar.component(.day, from: date)
+    @IBOutlet weak var dataText: UILabel!
+    
+    var contadorBotoesSelecionados:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +37,13 @@ class NovaMemoriaViewController: UITableViewController{
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         self.tableView.delegate = self
         self.tableView.dataSource = self
-//        proximoBotao.isEnabled = false
         
         sentimentos = []
         salvarBotaoNM.isEnabled = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        dataText.text = formatarData(date: Date())
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -71,7 +65,6 @@ class NovaMemoriaViewController: UITableViewController{
                     } else {
                         sentimentos.append("aversao")
                     }
-//                    print(sentimentos[0])
                     mudarImagem()
                 }
             }
@@ -80,7 +73,14 @@ class NovaMemoriaViewController: UITableViewController{
         if sentimentos.count > 0{
             salvarBotaoNM.isEnabled = true
         }
-        
+    }
+    
+    //mudar a data para string
+    func formatarData(date:Date) -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        let dataAtual = formatter.string(from: date)
+        return dataAtual
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -198,18 +198,15 @@ class NovaMemoriaViewController: UITableViewController{
                 sentimento.nome = x
                 novaMemoria?.addToTem(sentimento)
             }
+            
+            novaMemoria?.data = Date() as NSDate
+            
             (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
             return true
         }
         return false
     }
-    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        if !goingForwards {
-//            context?.delete(novaMemoria!)
-//
-//        }
-//    }
+
     
     
 }

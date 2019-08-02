@@ -16,7 +16,7 @@ class TimelineMemoriasController: UITableViewController{
     public var memorias:[Memoria] = []
     
     var context:NSManagedObjectContext?
-
+    
     var semMemoriaImg:UIImageView = UIImageView(image: UIImage(named: "empty"))
     
     override func viewDidLoad() {
@@ -37,7 +37,6 @@ class TimelineMemoriasController: UITableViewController{
             self.view.addSubview(semMemoriaImg)
             semMemoriaImg.center.x = self.view.center.x
             semMemoriaImg.center.y = self.view.center.y - 80
-//            tableView.tableFooterView = UIView()
         }
         tableView.reloadData()
         tableView.tableFooterView = UIView()
@@ -51,7 +50,6 @@ class TimelineMemoriasController: UITableViewController{
             print("Falha na Timeline")
             return
         }
-//        tableView.reloadData()
     }
     
     //numero de linhas
@@ -65,7 +63,7 @@ class TimelineMemoriasController: UITableViewController{
             memorias.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
-            // Adding "noPartyImage" in case there are no more parties
+            //adicionar uma imagem se não houver memorias
             if memorias.count == 0 {
                 semMemoriaImg.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
                 self.view.addSubview(semMemoriaImg)
@@ -90,6 +88,14 @@ class TimelineMemoriasController: UITableViewController{
         }
     }
     
+    //formatar a data
+    func formatarData(date:Date) -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        let dataAtual = formatter.string(from: date)
+        return dataAtual
+    }
+    
     //carregar as células
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath) as! MemoriaTableViewCelula
@@ -101,6 +107,8 @@ class TimelineMemoriasController: UITableViewController{
         } else{
             celula.situacaoMemoriaTimeline.text = memorias[indexPath.row].situacao
         }
+        
+        celula.dataText.text = formatarData(date: memorias[indexPath.row].data as! Date)
         
         var titulo:String = ""
         

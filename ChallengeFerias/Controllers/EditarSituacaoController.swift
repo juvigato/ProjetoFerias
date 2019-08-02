@@ -29,10 +29,7 @@ class EditarSituacaoController:UIViewController, UITextViewDelegate{
         situacaoTextField.layer.borderColor = UIColor.lightGray.cgColor
         situacaoTextField.delegate = self
 
-        
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        
         
         if memoria?.situacao != nil{
             if let memoria = memoria {

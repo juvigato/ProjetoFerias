@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class EditarPensamentosController:UIViewController{
+class EditarPensamentosController:UIViewController, UITextViewDelegate{
     
     public var memoria:Memoria?
     
@@ -20,15 +20,39 @@ class EditarPensamentosController:UIViewController{
     
     var pensamentosText:String?
     
-    @IBOutlet weak var pensamentosTextField: UITextField!
+    @IBOutlet weak var pensamentosTextField: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pensamentosTextField.layer.borderWidth = 1
+        pensamentosTextField.layer.borderColor = UIColor.lightGray.cgColor
+        pensamentosTextField.delegate = self
+        
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        if let memoria = memoria{
-            pensamentosTextField.text = memoria.pensamentos
+        if memoria?.pensamentos != nil{
+            if let memoria = memoria {
+                pensamentosTextField.text = memoria.pensamentos
+            }
+        } else{
+            pensamentosTextField.text = "Escreva aqui..."
+            pensamentosTextField.textColor = UIColor.lightGray
+        }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if pensamentosTextField.text == "Escreva aqui..."{
+            pensamentosTextField.text = ""
+            pensamentosTextField.textColor = UIColor.black
+        }
+    }
+    
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if pensamentosTextField.text.isEmpty{
+            pensamentosTextField.text = "Escreva aqui..."
+            pensamentosTextField.textColor = UIColor.lightGray
         }
     }
     

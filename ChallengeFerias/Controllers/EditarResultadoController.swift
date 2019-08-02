@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class EditarResultadoController:UIViewController{
+class EditarResultadoController:UIViewController, UITextViewDelegate{
     
     public var memoria:Memoria?
     
@@ -20,15 +20,39 @@ class EditarResultadoController:UIViewController{
     
     var resultadoText:String?
     
-    @IBOutlet weak var resultadoTextField: UITextField!
+    @IBOutlet weak var resultadoTextField: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        resultadoTextField.layer.borderWidth = 1
+        resultadoTextField.layer.borderColor = UIColor.lightGray.cgColor
+        resultadoTextField.delegate = self
+        
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        if let memoria = memoria{
-            resultadoTextField.text = memoria.resultado
+        if memoria?.resultado != nil{
+            if let memoria = memoria {
+                resultadoTextField.text = memoria.resultado
+            }
+        } else{
+            resultadoTextField.text = "Escreva aqui..."
+            resultadoTextField.textColor = UIColor.lightGray
+        }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if resultadoTextField.text == "Escreva aqui..."{
+            resultadoTextField.text = ""
+            resultadoTextField.textColor = UIColor.black
+        }
+    }
+    
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if resultadoTextField.text.isEmpty{
+            resultadoTextField.text = "Escreva aqui..."
+            resultadoTextField.textColor = UIColor.lightGray
         }
     }
     

@@ -17,6 +17,8 @@ class MemoriaTableViewCelula: UITableViewCell{
     
     @IBOutlet weak var situacaoMemoriaTimeline: UILabel!
     
+    @IBOutlet weak var dataText: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

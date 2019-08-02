@@ -17,13 +17,9 @@
 		0F0EC4F422D8D4CC001118AA /* ChallengeFeriasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4F322D8D4CC001118AA /* ChallengeFeriasUITests.swift */; };
 		0F0EC50F22D8F8A1001118AA /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC50E22D8F8A1001118AA /* ProgressCircleView.swift */; };
 		0F0EC51122D8FA02001118AA /* ProgressCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC51022D8FA02001118AA /* ProgressCircleViewController.swift */; };
-		0F37FF4022EA3435002BFE02 /* Sentimento+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF3C22EA3435002BFE02 /* Sentimento+CoreDataClass.swift */; };
-		0F37FF4122EA3435002BFE02 /* Sentimento+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF3D22EA3435002BFE02 /* Sentimento+CoreDataProperties.swift */; };
 		0F37FF4B22EA9ED7002BFE02 /* EditarPensamentosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF4A22EA9ED7002BFE02 /* EditarPensamentosController.swift */; };
 		0F37FF4D22EAA61D002BFE02 /* EditarAtitudeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF4C22EAA61D002BFE02 /* EditarAtitudeController.swift */; };
 		0F37FF4F22EAA992002BFE02 /* EditarResultadoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF4E22EAA992002BFE02 /* EditarResultadoController.swift */; };
-		0F37FF5222EBFB3E002BFE02 /* Memoria+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF5022EBFB3E002BFE02 /* Memoria+CoreDataClass.swift */; };
-		0F37FF5322EBFB3E002BFE02 /* Memoria+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF5122EBFB3E002BFE02 /* Memoria+CoreDataProperties.swift */; };
 		0F58042422E7A2730013EC62 /* EditarSituacaoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58042322E7A2730013EC62 /* EditarSituacaoController.swift */; };
 		0F90D03022E2052F00999EBD /* NovaMemoriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90D02F22E2052F00999EBD /* NovaMemoriaViewController.swift */; };
 		0F9CD3B122E907AA006E8AA3 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9CD3B022E907AA006E8AA3 /* TimelineTableViewController.swift */; };
@@ -31,6 +27,10 @@
 		0FDFCB7C22F258C4005CF198 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0FDFCB7B22F258C4005CF198 /* SF-Pro-Display-Bold.otf */; };
 		0FDFCB7E22F258CC005CF198 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0FDFCB7D22F258CC005CF198 /* SF-Pro-Display-Regular.otf */; };
 		0FDFCB8022F258D3005CF198 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0FDFCB7F22F258D3005CF198 /* SF-Pro-Display-Semibold.otf */; };
+		0FDFCB8522F37D4C005CF198 /* Sentimento+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFCB8122F37D4C005CF198 /* Sentimento+CoreDataClass.swift */; };
+		0FDFCB8622F37D4C005CF198 /* Sentimento+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFCB8222F37D4C005CF198 /* Sentimento+CoreDataProperties.swift */; };
+		0FDFCB8722F37D4C005CF198 /* Memoria+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFCB8322F37D4C005CF198 /* Memoria+CoreDataClass.swift */; };
+		0FDFCB8822F37D4C005CF198 /* Memoria+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFCB8422F37D4C005CF198 /* Memoria+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,13 +67,9 @@
 		0F0EC4F522D8D4CC001118AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F0EC50E22D8F8A1001118AA /* ProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
 		0F0EC51022D8FA02001118AA /* ProgressCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleViewController.swift; sourceTree = "<group>"; };
-		0F37FF3C22EA3435002BFE02 /* Sentimento+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sentimento+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0F37FF3D22EA3435002BFE02 /* Sentimento+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sentimento+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0F37FF4A22EA9ED7002BFE02 /* EditarPensamentosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPensamentosController.swift; sourceTree = "<group>"; };
 		0F37FF4C22EAA61D002BFE02 /* EditarAtitudeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarAtitudeController.swift; sourceTree = "<group>"; };
 		0F37FF4E22EAA992002BFE02 /* EditarResultadoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarResultadoController.swift; sourceTree = "<group>"; };
-		0F37FF5022EBFB3E002BFE02 /* Memoria+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memoria+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0F37FF5122EBFB3E002BFE02 /* Memoria+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memoria+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0F58042322E7A2730013EC62 /* EditarSituacaoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarSituacaoController.swift; sourceTree = "<group>"; };
 		0F90D02F22E2052F00999EBD /* NovaMemoriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaMemoriaViewController.swift; sourceTree = "<group>"; };
 		0F9CD3B022E907AA006E8AA3 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +77,10 @@
 		0FDFCB7B22F258C4005CF198 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Bold.otf"; path = "../../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		0FDFCB7D22F258CC005CF198 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Regular.otf"; path = "../../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		0FDFCB7F22F258D3005CF198 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		0FDFCB8122F37D4C005CF198 /* Sentimento+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sentimento+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0FDFCB8222F37D4C005CF198 /* Sentimento+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sentimento+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0FDFCB8322F37D4C005CF198 /* Memoria+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memoria+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0FDFCB8422F37D4C005CF198 /* Memoria+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memoria+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,10 +191,10 @@
 		0F90D03722E2229200999EBD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0F37FF5022EBFB3E002BFE02 /* Memoria+CoreDataClass.swift */,
-				0F37FF5122EBFB3E002BFE02 /* Memoria+CoreDataProperties.swift */,
-				0F37FF3C22EA3435002BFE02 /* Sentimento+CoreDataClass.swift */,
-				0F37FF3D22EA3435002BFE02 /* Sentimento+CoreDataProperties.swift */,
+				0FDFCB8122F37D4C005CF198 /* Sentimento+CoreDataClass.swift */,
+				0FDFCB8222F37D4C005CF198 /* Sentimento+CoreDataProperties.swift */,
+				0FDFCB8322F37D4C005CF198 /* Memoria+CoreDataClass.swift */,
+				0FDFCB8422F37D4C005CF198 /* Memoria+CoreDataProperties.swift */,
 				0F0EC4D722D8D4CA001118AA /* ChallengeFerias.xcdatamodeld */,
 			);
 			path = Model;
@@ -334,19 +334,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FDFCB8722F37D4C005CF198 /* Memoria+CoreDataClass.swift in Sources */,
 				0F37FF4B22EA9ED7002BFE02 /* EditarPensamentosController.swift in Sources */,
-				0F37FF5322EBFB3E002BFE02 /* Memoria+CoreDataProperties.swift in Sources */,
-				0F37FF4022EA3435002BFE02 /* Sentimento+CoreDataClass.swift in Sources */,
 				0FA2228422E95F6500DDCA4E /* MemoriaTableViewCelula.swift in Sources */,
 				0F0EC4D922D8D4CA001118AA /* ChallengeFerias.xcdatamodeld in Sources */,
 				0F37FF4D22EAA61D002BFE02 /* EditarAtitudeController.swift in Sources */,
-				0F37FF4122EA3435002BFE02 /* Sentimento+CoreDataProperties.swift in Sources */,
+				0FDFCB8622F37D4C005CF198 /* Sentimento+CoreDataProperties.swift in Sources */,
 				0F0EC50F22D8F8A1001118AA /* ProgressCircleView.swift in Sources */,
-				0F37FF5222EBFB3E002BFE02 /* Memoria+CoreDataClass.swift in Sources */,
+				0FDFCB8522F37D4C005CF198 /* Sentimento+CoreDataClass.swift in Sources */,
 				0F58042422E7A2730013EC62 /* EditarSituacaoController.swift in Sources */,
 				0F0EC4D322D8D4CA001118AA /* MemoriaTableViewController.swift in Sources */,
 				0F37FF4F22EAA992002BFE02 /* EditarResultadoController.swift in Sources */,
 				0F9CD3B122E907AA006E8AA3 /* TimelineTableViewController.swift in Sources */,
+				0FDFCB8822F37D4C005CF198 /* Memoria+CoreDataProperties.swift in Sources */,
 				0F0EC51122D8FA02001118AA /* ProgressCircleViewController.swift in Sources */,
 				0F90D03022E2052F00999EBD /* NovaMemoriaViewController.swift in Sources */,
 				0F0EC4D122D8D4CA001118AA /* AppDelegate.swift in Sources */,
