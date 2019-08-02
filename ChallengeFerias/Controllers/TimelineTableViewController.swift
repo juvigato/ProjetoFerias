@@ -108,7 +108,11 @@ class TimelineMemoriasController: UITableViewController{
             celula.situacaoMemoriaTimeline.text = memorias[indexPath.row].situacao
         }
         
-        celula.dataText.text = formatarData(date: memorias[indexPath.row].data as! Date)
+        if memorias[indexPath.row].data != nil{
+            celula.dataText.text = formatarData(date: memorias[indexPath.row].data as! Date)
+        } else{
+            celula.dataText.text = "Sem data"
+        }
         
         var titulo:String = ""
         
@@ -198,12 +202,12 @@ class TimelineMemoriasController: UITableViewController{
                 content.body = NSString.localizedUserNotificationString(forKey: "Lembre-se de adicionar mais memórias!", arguments: nil)
                 content.sound = UNNotificationSound.default
     
-                let date = Date(timeIntervalSinceNow: 3600 )
+                let date = Date(timeIntervalSinceNow: 3600)
                 let triggerDiario = Calendar.current.dateComponents([.day,.hour,.minute,.second], from: date)
                 let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDiario, repeats: false)
-    
+                
                 let request = UNNotificationRequest(identifier: "diario", content: content, trigger: trigger)
-    
+                
                 let center = UNUserNotificationCenter.current()
                     center.add(request) { (error: Error?) in
                     if let error = error{

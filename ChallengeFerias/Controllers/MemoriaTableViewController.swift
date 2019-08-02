@@ -152,7 +152,11 @@ class MemoriaTableViewController: UITableViewController {
             imagemMemoria.image = #imageLiteral(resourceName: "Medo-AversaoT")
         }
         tituloFoto.text = memoria?.titulo
-        dataText.text = formatarData(date: memoria?.data as! Date)
+        if memoria?.data != nil {
+            dataText.text = formatarData(date: memoria?.data as! Date)
+        } else{
+            dataText.text = "Sem data"
+        }
     }
     
     //mudar a data para string
