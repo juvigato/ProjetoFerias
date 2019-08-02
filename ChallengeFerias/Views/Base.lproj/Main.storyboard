@@ -417,8 +417,14 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWU-4i-BfJ">
-                                                    <rect key="frame" x="74" y="368" width="46" height="24"/>
-                                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="20"/>
+                                                    <rect key="frame" x="74" y="368" width="39.5" height="24"/>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqY-3m-UXt">
+                                                    <rect key="frame" x="300.5" y="368" width="39.5" height="24"/>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -426,11 +432,14 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Xc5-Zl-fTR" secondAttribute="bottom" constant="9.5" id="Ej1-rS-9qF"/>
                                                 <constraint firstItem="fvZ-HH-vy9" firstAttribute="leading" secondItem="qKL-RW-2Ja" secondAttribute="leadingMargin" id="Qck-yR-nyG"/>
+                                                <constraint firstItem="Xc5-Zl-fTR" firstAttribute="trailingMargin" secondItem="NqY-3m-UXt" secondAttribute="trailing" constant="46" id="TVO-TR-MHG"/>
                                                 <constraint firstItem="VWU-4i-BfJ" firstAttribute="leading" secondItem="Xc5-Zl-fTR" secondAttribute="leadingMargin" constant="46" id="Tjh-f7-eg6"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="VWU-4i-BfJ" secondAttribute="bottom" constant="38" id="YeS-5U-7Dq"/>
                                                 <constraint firstItem="Xc5-Zl-fTR" firstAttribute="centerX" secondItem="qKL-RW-2Ja" secondAttribute="centerX" id="bux-CW-Vm1"/>
+                                                <constraint firstItem="NqY-3m-UXt" firstAttribute="top" secondItem="fvZ-HH-vy9" secondAttribute="bottom" constant="281" id="gDg-K4-m9a"/>
                                                 <constraint firstItem="Xc5-Zl-fTR" firstAttribute="top" secondItem="fvZ-HH-vy9" secondAttribute="bottom" constant="19" id="tCm-Rd-EV6"/>
                                                 <constraint firstItem="fvZ-HH-vy9" firstAttribute="top" secondItem="qKL-RW-2Ja" secondAttribute="topMargin" constant="9" id="wdw-L1-9mp"/>
+                                                <constraint firstItem="Xc5-Zl-fTR" firstAttribute="bottomMargin" secondItem="NqY-3m-UXt" secondAttribute="bottom" constant="31" id="xDb-pk-B6H"/>
                                                 <constraint firstItem="VWU-4i-BfJ" firstAttribute="top" secondItem="fvZ-HH-vy9" secondAttribute="bottom" constant="281" id="zdm-QI-0DU"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -574,13 +583,14 @@
                     <navigationItem key="navigationItem" title="Memória" id="MZ4-eA-oLh"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="dataText" destination="NqY-3m-UXt" id="8ma-8W-WbL"/>
                         <outlet property="imagemMemoria" destination="Xc5-Zl-fTR" id="GYW-Jw-IsI"/>
                         <outlet property="tituloFoto" destination="VWU-4i-BfJ" id="0qH-Fy-6ft"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sS6-Bx-xSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2480" y="-101"/>
+            <point key="canvasLocation" x="2479.7101449275365" y="-101.11607142857143"/>
         </scene>
         <!--Situação-->
         <scene sceneID="ABS-m9-NBV">
@@ -825,8 +835,8 @@ o</string>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwC-cz-AOb">
-                                                    <rect key="frame" x="296" y="364" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="298.5" y="364" width="39.5" height="20"/>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

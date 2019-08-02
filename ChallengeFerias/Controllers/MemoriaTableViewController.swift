@@ -22,6 +22,8 @@ class MemoriaTableViewController: UITableViewController {
     
     @IBOutlet weak var tituloFoto: UILabel!
     
+    @IBOutlet weak var dataText: UILabel!
+    
     override func viewDidLoad() {
         carregarImgMemoria()
         super.viewDidLoad()
@@ -150,6 +152,15 @@ class MemoriaTableViewController: UITableViewController {
             imagemMemoria.image = #imageLiteral(resourceName: "Medo-AversaoT")
         }
         tituloFoto.text = memoria?.titulo
+        dataText.text = formatarData(date: memoria?.data as! Date)
+    }
+    
+    //mudar a data para string
+    func formatarData(date:Date) -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        let dataAtual = formatter.string(from: date)
+        return dataAtual
     }
 }
 
