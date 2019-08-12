@@ -84,7 +84,7 @@ class MemoriaTableViewController: UITableViewController {
         if let situacaoTVC = segue.destination as? EditarSituacaoController{
             if segue.identifier == "editarSituacao"{
                 if let indexPath = tableView.indexPathForSelectedRow{
-                    var memoriaTemp = memoria
+                    let memoriaTemp = memoria
                     situacaoTVC.memoria = memoriaTemp
                 }
             }
@@ -93,7 +93,7 @@ class MemoriaTableViewController: UITableViewController {
         if let pensamentosTVC = segue.destination as? EditarPensamentosController{
             if segue.identifier == "editarPensamentos"{
                 if let indexPath = tableView.indexPathForSelectedRow{
-                    var memoriaTemp = memoria
+                    let memoriaTemp = memoria
                     pensamentosTVC.memoria = memoriaTemp
                 }
             }
@@ -102,7 +102,7 @@ class MemoriaTableViewController: UITableViewController {
         if let atitudeTVC = segue.destination as? EditarAtitudeController{
             if segue.identifier == "editarAtitude"{
                 if let indexPath = tableView.indexPathForSelectedRow{
-                    var memoriaTemp = memoria
+                    let memoriaTemp = memoria
                     atitudeTVC.memoria = memoriaTemp
                 }
             }
@@ -111,7 +111,7 @@ class MemoriaTableViewController: UITableViewController {
         if let resultadoTVC = segue.destination as? EditarResultadoController{
             if segue.identifier == "editarResultado"{
                 if let indexPath = tableView.indexPathForSelectedRow{
-                    var memoriaTemp = memoria
+                    let memoriaTemp = memoria
                     resultadoTVC.memoria = memoriaTemp
                 }
             }

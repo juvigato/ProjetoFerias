@@ -24,9 +24,6 @@
 		0F90D03022E2052F00999EBD /* NovaMemoriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90D02F22E2052F00999EBD /* NovaMemoriaViewController.swift */; };
 		0F9CD3B122E907AA006E8AA3 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9CD3B022E907AA006E8AA3 /* TimelineTableViewController.swift */; };
 		0FA2228422E95F6500DDCA4E /* MemoriaTableViewCelula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA2228322E95F6500DDCA4E /* MemoriaTableViewCelula.swift */; };
-		0FDFCB7C22F258C4005CF198 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0FDFCB7B22F258C4005CF198 /* SF-Pro-Display-Bold.otf */; };
-		0FDFCB7E22F258CC005CF198 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0FDFCB7D22F258CC005CF198 /* SF-Pro-Display-Regular.otf */; };
-		0FDFCB8022F258D3005CF198 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0FDFCB7F22F258D3005CF198 /* SF-Pro-Display-Semibold.otf */; };
 		0FDFCB8522F37D4C005CF198 /* Sentimento+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFCB8122F37D4C005CF198 /* Sentimento+CoreDataClass.swift */; };
 		0FDFCB8622F37D4C005CF198 /* Sentimento+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFCB8222F37D4C005CF198 /* Sentimento+CoreDataProperties.swift */; };
 		0FDFCB8722F37D4C005CF198 /* Memoria+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDFCB8322F37D4C005CF198 /* Memoria+CoreDataClass.swift */; };
@@ -74,9 +71,6 @@
 		0F90D02F22E2052F00999EBD /* NovaMemoriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaMemoriaViewController.swift; sourceTree = "<group>"; };
 		0F9CD3B022E907AA006E8AA3 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
 		0FA2228322E95F6500DDCA4E /* MemoriaTableViewCelula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriaTableViewCelula.swift; sourceTree = "<group>"; };
-		0FDFCB7B22F258C4005CF198 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Bold.otf"; path = "../../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
-		0FDFCB7D22F258CC005CF198 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Regular.otf"; path = "../../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
-		0FDFCB7F22F258D3005CF198 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../../../../../../Volumes/SF-Font-Pro/San Francisco Pro/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		0FDFCB8122F37D4C005CF198 /* Sentimento+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sentimento+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0FDFCB8222F37D4C005CF198 /* Sentimento+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sentimento+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0FDFCB8322F37D4C005CF198 /* Memoria+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memoria+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -115,9 +109,6 @@
 				0F0EC4E722D8D4CC001118AA /* ChallengeFeriasTests */,
 				0F0EC4F222D8D4CC001118AA /* ChallengeFeriasUITests */,
 				0F0EC4CE22D8D4CA001118AA /* Products */,
-				0FDFCB7B22F258C4005CF198 /* SF-Pro-Display-Bold.otf */,
-				0FDFCB7D22F258CC005CF198 /* SF-Pro-Display-Regular.otf */,
-				0FDFCB7F22F258D3005CF198 /* SF-Pro-Display-Semibold.otf */,
 			);
 			sourceTree = "<group>";
 		};
@@ -304,11 +295,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FDFCB8022F258D3005CF198 /* SF-Pro-Display-Semibold.otf in Resources */,
 				0F0EC4DE22D8D4CC001118AA /* LaunchScreen.storyboard in Resources */,
 				0F0EC4DB22D8D4CC001118AA /* Assets.xcassets in Resources */,
-				0FDFCB7C22F258C4005CF198 /* SF-Pro-Display-Bold.otf in Resources */,
-				0FDFCB7E22F258CC005CF198 /* SF-Pro-Display-Regular.otf in Resources */,
 				0F0EC4D622D8D4CA001118AA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
