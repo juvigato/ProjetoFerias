@@ -115,7 +115,7 @@ class AdicionarMemoriaViewController: UIViewController{
             } else if sentimentos.firstIndex(of: "aversao") != nil {
                 imagemEmocao?.image = #imageLiteral(resourceName: "AlegriaAversao")
             } else {
-                imagemEmocao?.image = #imageLiteral(resourceName: "Alegria")
+                imagemEmocao?.image = UIImage(named: "alegria")
             }
         }
         
@@ -130,7 +130,7 @@ class AdicionarMemoriaViewController: UIViewController{
             } else if sentimentos.firstIndex(of: "aversao") != nil {
                 imagemEmocao?.image = #imageLiteral(resourceName: "TristezaAversao")
             } else {
-                imagemEmocao?.image = #imageLiteral(resourceName: "Tristeza")
+                imagemEmocao?.image = UIImage(named: "tristeza")
             }
         }
         
@@ -145,7 +145,7 @@ class AdicionarMemoriaViewController: UIViewController{
             } else if sentimentos.firstIndex(of: "aversao") != nil {
                 imagemEmocao?.image = #imageLiteral(resourceName: "RaivaAversao")
             } else {
-                imagemEmocao?.image = #imageLiteral(resourceName: "Raiva")
+                imagemEmocao?.image = UIImage(named: "raiva")
             }
         }
         
