@@ -25,10 +25,19 @@ class AdicionarMemoriaViewController: UIViewController{
     var alegriaClicada:Int = 0
     var tristezaClicada:Int = 0
     var raivaClicada:Int = 0
+    var medoClicada:Int = 0
+    var aversaoClicada:Int = 0
     
-//    var sentimento1:String = ""
-//    var sentimento2:String = ""
-
+    @IBOutlet weak var buttonAlegria: UIButton!
+    
+    @IBOutlet weak var buttonTristeza: UIButton!
+    
+    @IBOutlet weak var buttonRaiva: UIButton!
+    
+    @IBOutlet weak var buttonMedo: UIButton!
+    
+    @IBOutlet weak var buttonAversao: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,61 +51,114 @@ class AdicionarMemoriaViewController: UIViewController{
     
     @IBAction func ButtonAlegriaClicked(_ sender: Any) {
         
-        if contadorBotoesSelecionados <= 2 {
-            if alegriaClicada == 0 {
+        // Entrar se não estiver clicado
+        if alegriaClicada == 0 {
+            // Entrar se apenas 0 ou 1 botao clicados
+            if contadorBotoesSelecionados < 2 && contadorBotoesSelecionados >= 0 {
                 print("alegria")
                 sentimentos.append("alegria")
                 alegriaClicada = 1
                 contadorBotoesSelecionados += 1
-                
-            } else {
-                while let idx = sentimentos.firstIndex(of:"alegria") {
-                    sentimentos.remove(at: idx)
-                }
-                alegriaClicada = 0
-                print("saiu alegria")
-                contadorBotoesSelecionados -= 1
+                buttonAlegria.setImage(UIImage(named: "imagemBotaoAlegriaClicada"), for: .normal)
             }
+        // Entrar se estiver clicado
+        } else {
+            while let idx = sentimentos.firstIndex(of:"alegria") {
+                sentimentos.remove(at: idx)
+            }
+            alegriaClicada = 0
+            print("saiu alegria")
+            contadorBotoesSelecionados -= 1
+            buttonAlegria.setImage(UIImage(named: "imagemBotaoAlegria"), for: .normal)
         }
         mudarImg()
     }
     
     
     @IBAction func buttonTristezaClicked(_ sender: Any) {
-        if contadorBotoesSelecionados <= 2 {
-            if tristezaClicada == 0 {
+
+        if tristezaClicada == 0 {
+            if contadorBotoesSelecionados < 2 && contadorBotoesSelecionados >= 0 {
                 print("tristeza")
                 sentimentos.append("tristeza")
                 tristezaClicada = 1
                 contadorBotoesSelecionados += 1
-            } else {
-                while let idx = sentimentos.firstIndex(of:"tristeza") {
-                    sentimentos.remove(at: idx)
-                }
-                tristezaClicada = 0
-                print("saiu tristeza")
-                contadorBotoesSelecionados -= 1
+                buttonTristeza.setImage(UIImage(named: "imagemBotaoTristezaClicada"), for: .normal)
             }
+        } else {
+            while let idx = sentimentos.firstIndex(of:"tristeza") {
+                sentimentos.remove(at: idx)
+            }
+            tristezaClicada = 0
+            print("saiu tristeza")
+            contadorBotoesSelecionados -= 1
+            buttonTristeza.setImage(UIImage(named: "imagemBotaoTristeza"), for: .normal)
         }
         mudarImg()
     }
     
     
-    @IBAction func ButtonRaivaClicked(_ sender: Any) {
-        if contadorBotoesSelecionados <= 2 {
-            if raivaClicada == 0 {
+    @IBAction func buttonRaivaClicked(_ sender: Any) {
+        
+        if raivaClicada == 0 {
+            if contadorBotoesSelecionados < 2 && contadorBotoesSelecionados >= 0 {
                 print("raiva")
                 sentimentos.append("raiva")
                 raivaClicada = 1
                 contadorBotoesSelecionados += 1
-            } else {
-                while let idx = sentimentos.firstIndex(of:"raiva") {
-                    sentimentos.remove(at: idx)
-                }
-                raivaClicada = 0
-                print("saiu raiva")
-                contadorBotoesSelecionados -= 1
+                buttonRaiva.setImage(UIImage(named: "imagemBotaoRaivaClicada"), for: .normal)
             }
+        } else {
+            while let idx = sentimentos.firstIndex(of:"raiva") {
+                sentimentos.remove(at: idx)
+            }
+            raivaClicada = 0
+            print("saiu raiva")
+            contadorBotoesSelecionados -= 1
+            buttonRaiva.setImage(UIImage(named: "imagemBotaoRaiva"), for: .normal)
+        }
+        mudarImg()
+    }
+    
+    
+    @IBAction func buttonMedoClicked(_ sender: Any) {
+        if medoClicada == 0 {
+            if contadorBotoesSelecionados < 2 && contadorBotoesSelecionados >= 0 {
+                print("medo")
+                sentimentos.append("medo")
+                medoClicada = 1
+                contadorBotoesSelecionados += 1
+                buttonMedo.setImage(UIImage(named: "imagemBotaoMedoClicada"), for: .normal)
+            }
+        } else {
+            while let idx = sentimentos.firstIndex(of:"medo") {
+                sentimentos.remove(at: idx)
+            }
+            medoClicada = 0
+            print("saiu medo")
+            contadorBotoesSelecionados -= 1
+            buttonMedo.setImage(UIImage(named: "imagemBotaoMedo"), for: .normal)
+        }
+        mudarImg()
+    }
+    
+    @IBAction func buttonAversaoClicked(_ sender: Any) {
+        if aversaoClicada == 0 {
+            if contadorBotoesSelecionados < 2 && contadorBotoesSelecionados >= 0 {
+                print("aversao")
+                sentimentos.append("aversao")
+                aversaoClicada = 1
+                contadorBotoesSelecionados += 1
+                buttonAversao.setImage(UIImage(named: "imagemBotaoAversaoClicada"), for: .normal)
+            }
+        } else {
+            while let idx = sentimentos.firstIndex(of:"aversao") {
+                sentimentos.remove(at: idx)
+            }
+            aversaoClicada = 0
+            print("saiu aversao")
+            contadorBotoesSelecionados -= 1
+            buttonAversao.setImage(UIImage(named: "imagemBotaoAversao"), for: .normal)
         }
         mudarImg()
     }
@@ -178,7 +240,9 @@ class AdicionarMemoriaViewController: UIViewController{
                 imagemEmocao?.image = #imageLiteral(resourceName: "aversao")
             }
         }
+        
+        else {
+            imagemEmocao?.image = UIImage(named: "vazio")
+        }
     }
-    
-    
 }

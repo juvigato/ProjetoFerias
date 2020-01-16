@@ -690,16 +690,22 @@
                                 <rect key="frame" x="22.5" y="664" width="113" height="126"/>
                                 <state key="normal" image="imagemBotaoRaiva"/>
                                 <connections>
-                                    <action selector="ButtonRaivaClicked:" destination="xSF-h0-RAV" eventType="touchUpInside" id="gS9-Tv-DJe"/>
+                                    <action selector="buttonRaivaClicked:" destination="xSF-h0-RAV" eventType="touchUpInside" id="gS9-Tv-DJe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vw-1c-Hme">
                                 <rect key="frame" x="150.5" y="664" width="113" height="126"/>
                                 <state key="normal" image="imagemBotaoMedo"/>
+                                <connections>
+                                    <action selector="buttonMedoClicked:" destination="xSF-h0-RAV" eventType="touchUpInside" id="2lw-Cy-egK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qT6-Yz-9hc">
                                 <rect key="frame" x="278.5" y="664" width="113" height="126"/>
                                 <state key="normal" image="imagemBotaoAversao"/>
+                                <connections>
+                                    <action selector="buttonAversaoClicked:" destination="xSF-h0-RAV" eventType="touchUpInside" id="9FE-qI-3wq"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDv-3m-Aad">
                                 <rect key="frame" x="182" y="438" width="158" height="20"/>
@@ -751,6 +757,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="cH4-xO-wtt"/>
                     <connections>
+                        <outlet property="buttonAlegria" destination="hYE-KF-4Pq" id="3LI-3c-SFQ"/>
+                        <outlet property="buttonAversao" destination="qT6-Yz-9hc" id="NPr-rK-kl1"/>
+                        <outlet property="buttonMedo" destination="7vw-1c-Hme" id="0q5-XZ-TTy"/>
+                        <outlet property="buttonRaiva" destination="b5h-p8-4iL" id="l4P-VF-24p"/>
+                        <outlet property="buttonTristeza" destination="8Kh-31-Oov" id="G9W-ru-FXP"/>
                         <outlet property="imagemEmocao" destination="hJm-Px-pCf" id="k6K-oQ-n8D"/>
                     </connections>
                 </viewController>
