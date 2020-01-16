@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xSF-h0-RAV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yK9-VG-gV8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -635,7 +635,7 @@
             </objects>
             <point key="canvasLocation" x="2479.7101449275365" y="-101.11607142857143"/>
         </scene>
-        <!--Adicionar Memoria View Controller-->
+        <!--Nova Memória-->
         <scene sceneID="u3y-0m-B9z">
             <objects>
                 <viewController id="xSF-h0-RAV" customClass="AdicionarMemoriaViewController" customModule="ChallengeFerias" customModuleProvider="target" sceneMemberID="viewController">
@@ -704,7 +704,7 @@
                                 <rect key="frame" x="278.5" y="664" width="113" height="126"/>
                                 <state key="normal" image="imagemBotaoAversao"/>
                                 <connections>
-                                    <action selector="buttonAversaoClicked:" destination="xSF-h0-RAV" eventType="touchUpInside" id="9FE-qI-3wq"/>
+                                    <action selector="buttonAversaoClicked:" destination="xSF-h0-RAV" eventType="touchUpInside" id="H2B-Zn-YfV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDv-3m-Aad">
@@ -755,17 +755,27 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fOl-5g-Lvn"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cH4-xO-wtt"/>
+                    <navigationItem key="navigationItem" title="Nova Memória" id="vt8-ZE-kkS">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="AJG-um-5TJ">
+                            <connections>
+                                <action selector="botaoAdicionarNovaMemoria:" destination="wdd-bb-I7q" id="dNd-tD-c1Q"/>
+                                <segue destination="wdd-bb-I7q" kind="unwind" unwindAction="addMemoria:" id="P15-vg-d46"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="buttonAlegria" destination="hYE-KF-4Pq" id="3LI-3c-SFQ"/>
                         <outlet property="buttonAversao" destination="qT6-Yz-9hc" id="NPr-rK-kl1"/>
                         <outlet property="buttonMedo" destination="7vw-1c-Hme" id="0q5-XZ-TTy"/>
                         <outlet property="buttonRaiva" destination="b5h-p8-4iL" id="l4P-VF-24p"/>
+                        <outlet property="buttonSalvar" destination="AJG-um-5TJ" id="tcG-Pd-1v7"/>
                         <outlet property="buttonTristeza" destination="8Kh-31-Oov" id="G9W-ru-FXP"/>
                         <outlet property="imagemEmocao" destination="hJm-Px-pCf" id="k6K-oQ-n8D"/>
+                        <outlet property="labelData" destination="LDv-3m-Aad" id="9aO-Nd-Jsd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Lr-1F-Fnf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="wdd-bb-I7q" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2485.507246376812" y="-1477.2321428571429"/>
         </scene>
