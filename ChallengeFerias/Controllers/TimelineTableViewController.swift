@@ -26,6 +26,7 @@ class TimelineMemoriasController: UITableViewController{
         tableView.delegate = self
         tableView.rowHeight = 171
         view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9294117647, blue: 0.8862745098, alpha: 1)
+        self.tableView.separatorStyle = .none
         carregarMemorias()
         notificacao()
     }
