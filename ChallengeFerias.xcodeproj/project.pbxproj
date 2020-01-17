@@ -20,6 +20,7 @@
 		0F37FF4B22EA9ED7002BFE02 /* EditarPensamentosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF4A22EA9ED7002BFE02 /* EditarPensamentosController.swift */; };
 		0F37FF4D22EAA61D002BFE02 /* EditarAtitudeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF4C22EAA61D002BFE02 /* EditarAtitudeController.swift */; };
 		0F37FF4F22EAA992002BFE02 /* EditarResultadoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF4E22EAA992002BFE02 /* EditarResultadoController.swift */; };
+		0F4F133923D0F19C00C87405 /* AdicionarMemoriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4F133823D0F19C00C87405 /* AdicionarMemoriaViewController.swift */; };
 		0F58042422E7A2730013EC62 /* EditarSituacaoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F58042322E7A2730013EC62 /* EditarSituacaoController.swift */; };
 		0F90D03022E2052F00999EBD /* NovaMemoriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90D02F22E2052F00999EBD /* NovaMemoriaViewController.swift */; };
 		0F9CD3B122E907AA006E8AA3 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9CD3B022E907AA006E8AA3 /* TimelineTableViewController.swift */; };
@@ -67,6 +68,7 @@
 		0F37FF4A22EA9ED7002BFE02 /* EditarPensamentosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPensamentosController.swift; sourceTree = "<group>"; };
 		0F37FF4C22EAA61D002BFE02 /* EditarAtitudeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarAtitudeController.swift; sourceTree = "<group>"; };
 		0F37FF4E22EAA992002BFE02 /* EditarResultadoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarResultadoController.swift; sourceTree = "<group>"; };
+		0F4F133823D0F19C00C87405 /* AdicionarMemoriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarMemoriaViewController.swift; sourceTree = "<group>"; };
 		0F58042322E7A2730013EC62 /* EditarSituacaoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarSituacaoController.swift; sourceTree = "<group>"; };
 		0F90D02F22E2052F00999EBD /* NovaMemoriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaMemoriaViewController.swift; sourceTree = "<group>"; };
 		0F9CD3B022E907AA006E8AA3 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				0F9CD3B022E907AA006E8AA3 /* TimelineTableViewController.swift */,
 				0F90D02F22E2052F00999EBD /* NovaMemoriaViewController.swift */,
+				0F4F133823D0F19C00C87405 /* AdicionarMemoriaViewController.swift */,
 				0F0EC4D222D8D4CA001118AA /* MemoriaTableViewController.swift */,
 				0F58042322E7A2730013EC62 /* EditarSituacaoController.swift */,
 				0F37FF4A22EA9ED7002BFE02 /* EditarPensamentosController.swift */,
@@ -331,6 +334,7 @@
 				0F0EC50F22D8F8A1001118AA /* ProgressCircleView.swift in Sources */,
 				0FDFCB8522F37D4C005CF198 /* Sentimento+CoreDataClass.swift in Sources */,
 				0F58042422E7A2730013EC62 /* EditarSituacaoController.swift in Sources */,
+				0F4F133923D0F19C00C87405 /* AdicionarMemoriaViewController.swift in Sources */,
 				0F0EC4D322D8D4CA001118AA /* MemoriaTableViewController.swift in Sources */,
 				0F37FF4F22EAA992002BFE02 /* EditarResultadoController.swift in Sources */,
 				0F9CD3B122E907AA006E8AA3 /* TimelineTableViewController.swift in Sources */,
