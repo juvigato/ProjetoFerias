@@ -24,7 +24,7 @@ class TimelineMemoriasController: UITableViewController{
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 171
+        tableView.rowHeight = 250
         view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9294117647, blue: 0.8862745098, alpha: 1)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
         self.navigationController?.navigationBar.shadowImage = UIImage()
