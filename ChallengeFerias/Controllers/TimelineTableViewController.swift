@@ -19,6 +19,8 @@ class TimelineMemoriasController: UITableViewController{
     
     var semMemoriaImg:UIImageView = UIImageView(image: UIImage(named: "empty"))
     
+    var imagemBackground:UIImage = UIImage(named: "background.jpg") ?? UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -26,6 +28,7 @@ class TimelineMemoriasController: UITableViewController{
         tableView.delegate = self
         tableView.rowHeight = 250
         view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9294117647, blue: 0.8862745098, alpha: 1)
+        self.view.backgroundColor = UIColor(patternImage: imagemBackground)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
@@ -98,7 +101,9 @@ class TimelineMemoriasController: UITableViewController{
     //formatar a data
     func formatarData(date:Date) -> String{
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
+//        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.dateFormat = "dd/MM/yyyy"
+//        formatter.dateFormat = "EEEE, MMM d, yyyy"
         let dataAtual = formatter.string(from: date)
         return dataAtual
     }
