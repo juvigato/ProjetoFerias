@@ -110,11 +110,11 @@ class TimelineMemoriasController: UITableViewController{
         celula.imgMemoriaTimeline.image = UIImage(named: "vazio")
         celula.layer.backgroundColor = UIColor.clear.cgColor
         
-        if memorias[indexPath.row].situacao == nil{
-            celula.situacaoMemoriaTimeline.text = "Adicione mais detalhes..."
-        } else{
-            celula.situacaoMemoriaTimeline.text = memorias[indexPath.row].situacao
-        }
+//        if memorias[indexPath.row].situacao == nil{
+//            celula.situacaoMemoriaTimeline.text = "Adicione mais detalhes..."
+//        } else{
+//            celula.situacaoMemoriaTimeline.text = memorias[indexPath.row].situacao
+//        }
         
         if memorias[indexPath.row].data != nil{
             celula.dataText.text = formatarData(date: memorias[indexPath.row].data as! Date)
@@ -184,7 +184,7 @@ class TimelineMemoriasController: UITableViewController{
         }
         memorias[indexPath.row].titulo = titulo
         celula.imgMemoriaTimeline.image = UIImage(named: titulo)
-        celula.emocaoMemoriaTimeline.text = titulo
+//        celula.emocaoMemoriaTimeline.text = titulo
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
         return celula
     }
