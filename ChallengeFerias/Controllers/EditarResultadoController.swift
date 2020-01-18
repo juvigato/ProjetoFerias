@@ -22,6 +22,10 @@ class EditarResultadoController:UIViewController, UITextViewDelegate{
     
     @IBOutlet weak var resultadoTextField: UITextView!
     
+    @IBOutlet weak var imagemResultado: UIImageView!
+    
+    var imagemBackground:UIImage = UIImage(named: "backgroundClaro.jpg") ?? UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +35,8 @@ class EditarResultadoController:UIViewController, UITextViewDelegate{
         
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
+        self.view.backgroundColor = UIColor(patternImage: imagemBackground)
+        
         if memoria?.resultado != nil{
             if let memoria = memoria {
                 resultadoTextField.text = memoria.resultado
@@ -38,6 +44,15 @@ class EditarResultadoController:UIViewController, UITextViewDelegate{
         } else{
             resultadoTextField.text = "Escreva aqui..."
             resultadoTextField.textColor = UIColor.lightGray
+        }
+        
+        if memoria?.titulo != nil {
+            if let memoria = memoria {
+                let nomeImg:String = memoria.titulo ?? "vazio"
+                imagemResultado.image = UIImage(named: nomeImg)
+            }
+        } else {
+            imagemResultado.image = UIImage(named: "vazio")
         }
     }
     

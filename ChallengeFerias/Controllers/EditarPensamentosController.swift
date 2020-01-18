@@ -22,6 +22,13 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
     
     @IBOutlet weak var pensamentosTextField: UITextView!
     
+//    @IBOutlet weak var testeView: UIView!
+    
+    // outlet imagem
+    @IBOutlet weak var imagemPensamentos: UIImageView!
+    
+    var imagemBackground:UIImage = UIImage(named: "backgroundClaro.jpg") ?? UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +38,8 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
         
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
+        self.view.backgroundColor = UIColor(patternImage: imagemBackground)
+        
         if memoria?.pensamentos != nil{
             if let memoria = memoria {
                 pensamentosTextField.text = memoria.pensamentos
@@ -39,6 +48,16 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
             pensamentosTextField.text = "Escreva aqui..."
             pensamentosTextField.textColor = UIColor.lightGray
         }
+        
+        if memoria?.titulo != nil {
+            if let memoria = memoria {
+                let nomeImg:String = memoria.titulo ?? "vazio"
+                imagemPensamentos.image = UIImage(named: nomeImg)
+            }
+        } else {
+            imagemPensamentos.image = UIImage(named: "vazio")
+        }
+//        degrede(view: testeView)
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -74,4 +93,14 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
         return false
     }
     
+    func degrede(view: UIView){
+        let gradient = CAGradientLayer()
+        gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradient.endPoint = CGPoint(x: 0.5, y: 1)
+        let gradientColor = UIColor.white
+        gradient.colors = [gradientColor.withAlphaComponent(0.0).cgColor, gradientColor.withAlphaComponent(1.0).cgColor]
+        gradient.locations = [NSNumber(value: 0.5), NSNumber(value: 1.0), NSNumber(value: 1.0)]
+        gradient.frame = view.bounds
+        view.layer.mask = gradient
+    }
 }
