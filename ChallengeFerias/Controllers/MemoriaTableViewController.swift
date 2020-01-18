@@ -24,10 +24,13 @@ class MemoriaTableViewController: UITableViewController {
     
     @IBOutlet weak var dataText: UILabel!
     
+    var imagemBackground:UIImage = UIImage(named: "backgroundClaro.jpg") ?? UIImage()
+    
     override func viewDidLoad() {
         carregarImgMemoria()
         super.viewDidLoad()
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        self.view.backgroundColor = UIColor(patternImage: imagemBackground)
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

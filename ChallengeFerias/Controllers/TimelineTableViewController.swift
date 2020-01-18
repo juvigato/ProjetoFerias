@@ -19,13 +19,16 @@ class TimelineMemoriasController: UITableViewController{
     
     var semMemoriaImg:UIImageView = UIImageView(image: UIImage(named: "empty"))
     
+    var imagemBackground:UIImage = UIImage(named: "background.jpg") ?? UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 171
-        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9294117647, blue: 0.8862745098, alpha: 1)
+        tableView.rowHeight = 250
+//        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9294117647, blue: 0.8862745098, alpha: 1)
+        self.view.backgroundColor = UIColor(patternImage: imagemBackground)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
@@ -39,12 +42,13 @@ class TimelineMemoriasController: UITableViewController{
     override func viewWillAppear(_ animated: Bool) {
         carregarMemorias()
         
-        if memorias.count == 0 {
-            semMemoriaImg.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-            self.view.addSubview(semMemoriaImg)
-            semMemoriaImg.center.x = self.view.center.x
-            semMemoriaImg.center.y = self.view.center.y - 80
-        }
+//        if memorias.count == 0 {
+//            semMemoriaImg.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+//            self.view.addSubview(semMemoriaImg)
+//            semMemoriaImg.center.x = self.view.center.x
+//            semMemoriaImg.center.y = self.view.center.y - 80
+//        }
+//
         tableView.reloadData()
         tableView.tableFooterView = UIView()
     }
@@ -71,12 +75,12 @@ class TimelineMemoriasController: UITableViewController{
             tableView.deleteRows(at: [indexPath], with: .fade)
             
             //adicionar uma imagem se não houver memorias
-            if memorias.count == 0 {
-                semMemoriaImg.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
-                self.view.addSubview(semMemoriaImg)
-                semMemoriaImg.center.x = self.view.center.x
-                semMemoriaImg.center.y = self.view.center.y - 80
-            }
+//            if memorias.count == 0 {
+//                semMemoriaImg.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
+//                self.view.addSubview(semMemoriaImg)
+//                semMemoriaImg.center.x = self.view.center.x
+//                semMemoriaImg.center.y = self.view.center.y - 80
+//            }
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
         }
     }
@@ -86,7 +90,7 @@ class TimelineMemoriasController: UITableViewController{
     @IBAction func addMemoria(_ sender: UIStoryboardSegue){
         if sender.source is NovaMemoriaViewController{
             if let senderAdd = sender.source as? NovaMemoriaViewController{
-                if let nova = senderAdd.novaMemoria{
+                if senderAdd.novaMemoria != nil{
                     carregarMemorias()
                     tableView.reloadData()
                     semMemoriaImg.removeFromSuperview()
@@ -98,7 +102,9 @@ class TimelineMemoriasController: UITableViewController{
     //formatar a data
     func formatarData(date:Date) -> String{
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
+//        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.dateFormat = "dd/MM/yyyy"
+//        formatter.dateFormat = "EEEE, MMM d, yyyy"
         let dataAtual = formatter.string(from: date)
         return dataAtual
     }
@@ -110,11 +116,11 @@ class TimelineMemoriasController: UITableViewController{
         celula.imgMemoriaTimeline.image = UIImage(named: "vazio")
         celula.layer.backgroundColor = UIColor.clear.cgColor
         
-        if memorias[indexPath.row].situacao == nil{
-            celula.situacaoMemoriaTimeline.text = "Adicione mais detalhes..."
-        } else{
-            celula.situacaoMemoriaTimeline.text = memorias[indexPath.row].situacao
-        }
+//        if memorias[indexPath.row].situacao == nil{
+//            celula.situacaoMemoriaTimeline.text = "Adicione mais detalhes..."
+//        } else{
+//            celula.situacaoMemoriaTimeline.text = memorias[indexPath.row].situacao
+//        }
         
         if memorias[indexPath.row].data != nil{
             celula.dataText.text = formatarData(date: memorias[indexPath.row].data as! Date)
@@ -131,60 +137,44 @@ class TimelineMemoriasController: UITableViewController{
             if (x.nome != nil || y.nome != nil){
                 if (x.nome == "alegria" && y.nome == "tristeza") || (x.nome == "tristeza" && y.nome == "alegria"){
                     titulo = "alegriaTristeza"
-//                    celula.imgMemoriaTimeline.image = UIImage(named: "alegriaTristeza")
                 } else if (x.nome == "alegria" && y.nome == "raiva") || (x.nome == "raiva" && y.nome == "alegria") {
                     titulo = "alegriaRaiva"
-//                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-RaivaT")
                 } else if (x.nome == "alegria" && y.nome == "medo") || (x.nome == "medo" && y.nome == "alegria"){
                     titulo = "alegriaMedo"
-//                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-MedoT")
                 } else if x.nome == "alegria" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "alegria"){
                     titulo = "alegriaAversao"
-//                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Alegria-AversaoT")
                 } else if x.nome == "tristeza" && y.nome == "raiva" || (x.nome == "raiva" && y.nome == "tristeza"){
                     titulo = "tristezaRaiva"
-//                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Tristeza-RaivaT")
                 } else if x.nome == "tristeza" && y.nome == "medo" || (x.nome == "medo" && y.nome == "tristeza"){
                     titulo = "tristezaMedo"
-//                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Tristeza-MedoT")
                 } else if x.nome == "tristeza" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "tristeza"){
                     titulo = "tristezaAversao"
-//                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Tristeza-AversaoT")
                 } else if x.nome == "raiva" && y.nome == "medo" || (x.nome == "medo" && y.nome == "raiva"){
                     titulo = "raivaMedo"
-//                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Raiva-MedoT")
                 } else if x.nome == "raiva" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "raiva"){
                     titulo = "raivaAversao"
-//                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Raiva-AversaoT")
                 } else if x.nome == "medo" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "medo"){
                     titulo = "medoAversao"
-//                    celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "Medo-AversaoT")
                 }
-//                celula.imgMemoriaTimeline.image = UIImage(named: titulo)
             }
         }
         if (memorias[indexPath.row].tem!.count) == 1{
             if x.nome == "alegria" {
                 titulo = "alegria"
-//                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "alegriaT")
             } else if x.nome == "tristeza" {
                 titulo = "tristeza"
-//                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "tristezaT")
             } else if x.nome == "raiva" {
                 titulo = "raiva"
-//                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "raivaT")
             } else if x.nome == "medo" {
                 titulo = "medo"
-//                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "medoT")
             } else if x.nome == "aversao" {
                 titulo = "aversao"
-//                celula.imgMemoriaTimeline.image = #imageLiteral(resourceName: "aversaoT")
             }
 
         }
         memorias[indexPath.row].titulo = titulo
         celula.imgMemoriaTimeline.image = UIImage(named: titulo)
-        celula.emocaoMemoriaTimeline.text = titulo
+//        celula.emocaoMemoriaTimeline.text = titulo
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
         return celula
     }
@@ -193,7 +183,7 @@ class TimelineMemoriasController: UITableViewController{
         if let memoriaTVC = segue.destination as? MemoriaTableViewController{
             if segue.identifier == "detalhesMemoria"{
                 if let indexPath = tableView.indexPathForSelectedRow{
-                    var memoriaTemp = memorias[indexPath.row]
+                    let memoriaTemp = memorias[indexPath.row]
                     memoriaTVC.memoria = memoriaTemp
                 }
                 
