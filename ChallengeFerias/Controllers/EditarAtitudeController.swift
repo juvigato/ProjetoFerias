@@ -22,6 +22,10 @@ class EditarAtitudeController:UIViewController, UITextViewDelegate{
     
     @IBOutlet weak var atitudeTextField: UITextView!
     
+    @IBOutlet weak var imagemAtitude: UIImageView!
+    
+    var imagemBackground:UIImage = UIImage(named: "backgroundClaro.jpg") ?? UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +34,8 @@ class EditarAtitudeController:UIViewController, UITextViewDelegate{
         atitudeTextField.delegate = self
         
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        self.view.backgroundColor = UIColor(patternImage: imagemBackground)
         
         if let memoria = memoria{
             atitudeTextField.text = memoria.atitude
@@ -42,6 +48,15 @@ class EditarAtitudeController:UIViewController, UITextViewDelegate{
         } else{
             atitudeTextField.text = "Escreva aqui..."
             atitudeTextField.textColor = UIColor.lightGray
+        }
+        
+        if memoria?.titulo != nil {
+            if let memoria = memoria {
+                let nomeImg:String = memoria.titulo ?? "vazio"
+                imagemAtitude.image = UIImage(named: nomeImg)
+            }
+        } else {
+            imagemAtitude.image = UIImage(named: "vazio")
         }
     }
     
