@@ -122,7 +122,7 @@ class NovaMemoriaViewController: UITableViewController{
     func mudarImagem(){
         var sentimento1:String = ""
         var sentimento2:String = ""
-
+        
         if let index = sentimentos.firstIndex(of: "Alegria"){
             if (sentimento1 == ""){
                 sentimento1 = "Alegria"
@@ -188,7 +188,6 @@ class NovaMemoriaViewController: UITableViewController{
             imagemEmocao?.image = #imageLiteral(resourceName: "vazioSolo")
         }
     }
-    
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if let context = context{

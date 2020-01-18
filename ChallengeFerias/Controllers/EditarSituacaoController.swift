@@ -20,11 +20,7 @@ class EditarSituacaoController:UIViewController, UITextViewDelegate{
     
     var situacaoText:String?
     
-    var imagemBackground:UIImage = UIImage(named: "backgroundClaro.jpg") ?? UIImage()
-    
     @IBOutlet weak var situacaoTextField: UITextView!
-    
-    @IBOutlet weak var imagemSituacao: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +28,6 @@ class EditarSituacaoController:UIViewController, UITextViewDelegate{
         situacaoTextField.layer.borderWidth = 1
         situacaoTextField.layer.borderColor = UIColor.lightGray.cgColor
         situacaoTextField.delegate = self
-        self.view.backgroundColor = UIColor(patternImage: imagemBackground)
 
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
@@ -44,16 +39,6 @@ class EditarSituacaoController:UIViewController, UITextViewDelegate{
             situacaoTextField.text = "Escreva aqui..."
             situacaoTextField.textColor = UIColor.lightGray
         }
-        
-        if memoria?.titulo != nil {
-            if let memoria = memoria {
-                let nomeImg:String = memoria.titulo ?? "vazio"
-                imagemSituacao.image = UIImage(named: nomeImg)
-            }
-        } else {
-            imagemSituacao.image = UIImage(named: "vazio")
-        }
-        
         
     }
 
