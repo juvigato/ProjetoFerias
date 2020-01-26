@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Raiva.png",
+      "filename" : "raiva.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "raiva@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "raiva@3x.png",
       "scale" : "3x"
     }
   ],

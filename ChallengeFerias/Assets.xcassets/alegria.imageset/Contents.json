@@ -7,10 +7,12 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "alegria@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "alegria@3x.png",
       "scale" : "3x"
     }
   ],
