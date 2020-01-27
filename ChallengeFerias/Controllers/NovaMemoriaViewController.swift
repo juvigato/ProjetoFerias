@@ -122,6 +122,8 @@ class NovaMemoriaViewController: UITableViewController{
     func mudarImagem(){
         var sentimento1:String = ""
         var sentimento2:String = ""
+        
+        var titulo:String = ""
 
         if let index = sentimentos.firstIndex(of: "Alegria"){
             if (sentimento1 == ""){

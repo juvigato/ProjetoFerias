@@ -27,16 +27,29 @@ class TimelineMemoriasController: UITableViewController{
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 250
-//        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9294117647, blue: 0.8862745098, alpha: 1)
         self.view.backgroundColor = UIColor(patternImage: imagemBackground)
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.barTintColor = .clear
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.3450980392, green: 0.4901960784, blue: 0.9019607843, alpha: 1)
         self.tableView.separatorStyle = .none
+//        UserDefaults.standard.set("Original", forKey: "tema")
+        detectarPrimeiroLançamento()
         carregarMemorias()
         notificacao()
+    }
+    
+    
+    func detectarPrimeiroLançamento() {
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        if launchedBefore  {
+            print("Not first launch.")
+        } else {
+            print("First launch, setting UserDefault.")
+            UserDefaults.standard.set("Original", forKey: "tema")
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -131,47 +144,91 @@ class TimelineMemoriasController: UITableViewController{
         var titulo:String = ""
         
         let x:Sentimento = memorias[indexPath.row].tem![0] as! Sentimento
+        
+        if UserDefaults.standard.string(forKey: "tema") == "Original" {
+            if (memorias[indexPath.row].tem!.count) > 1 {
+                let y:Sentimento = memorias[indexPath.row].tem![1] as! Sentimento
+                if (x.nome != nil || y.nome != nil){
+                    if (x.nome == "alegria" && y.nome == "tristeza") || (x.nome == "tristeza" && y.nome == "alegria"){
+                        titulo = "alegriaTristeza"
+                    } else if (x.nome == "alegria" && y.nome == "raiva") || (x.nome == "raiva" && y.nome == "alegria") {
+                        titulo = "alegriaRaiva"
+                    } else if (x.nome == "alegria" && y.nome == "medo") || (x.nome == "medo" && y.nome == "alegria"){
+                        titulo = "alegriaMedo"
+                    } else if x.nome == "alegria" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "alegria"){
+                        titulo = "alegriaAversao"
+                    } else if x.nome == "tristeza" && y.nome == "raiva" || (x.nome == "raiva" && y.nome == "tristeza"){
+                        titulo = "tristezaRaiva"
+                    } else if x.nome == "tristeza" && y.nome == "medo" || (x.nome == "medo" && y.nome == "tristeza"){
+                        titulo = "tristezaMedo"
+                    } else if x.nome == "tristeza" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "tristeza"){
+                        titulo = "tristezaAversao"
+                    } else if x.nome == "raiva" && y.nome == "medo" || (x.nome == "medo" && y.nome == "raiva"){
+                        titulo = "raivaMedo"
+                    } else if x.nome == "raiva" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "raiva"){
+                        titulo = "raivaAversao"
+                    } else if x.nome == "medo" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "medo"){
+                        titulo = "medoAversao"
+                    }
+                }
+            }
+            if (memorias[indexPath.row].tem!.count) == 1{
+                if x.nome == "alegria" {
+                    titulo = "alegria"
+                } else if x.nome == "tristeza" {
+                    titulo = "tristeza"
+                } else if x.nome == "raiva" {
+                    titulo = "raiva"
+                } else if x.nome == "medo" {
+                    titulo = "medo"
+                } else if x.nome == "aversao" {
+                    titulo = "aversao"
+                }
 
-        if (memorias[indexPath.row].tem!.count) > 1 {
-            let y:Sentimento = memorias[indexPath.row].tem![1] as! Sentimento
-            if (x.nome != nil || y.nome != nil){
-                if (x.nome == "alegria" && y.nome == "tristeza") || (x.nome == "tristeza" && y.nome == "alegria"){
-                    titulo = "alegriaTristeza"
-                } else if (x.nome == "alegria" && y.nome == "raiva") || (x.nome == "raiva" && y.nome == "alegria") {
-                    titulo = "alegriaRaiva"
-                } else if (x.nome == "alegria" && y.nome == "medo") || (x.nome == "medo" && y.nome == "alegria"){
-                    titulo = "alegriaMedo"
-                } else if x.nome == "alegria" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "alegria"){
-                    titulo = "alegriaAversao"
-                } else if x.nome == "tristeza" && y.nome == "raiva" || (x.nome == "raiva" && y.nome == "tristeza"){
-                    titulo = "tristezaRaiva"
-                } else if x.nome == "tristeza" && y.nome == "medo" || (x.nome == "medo" && y.nome == "tristeza"){
-                    titulo = "tristezaMedo"
-                } else if x.nome == "tristeza" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "tristeza"){
-                    titulo = "tristezaAversao"
-                } else if x.nome == "raiva" && y.nome == "medo" || (x.nome == "medo" && y.nome == "raiva"){
-                    titulo = "raivaMedo"
-                } else if x.nome == "raiva" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "raiva"){
-                    titulo = "raivaAversao"
-                } else if x.nome == "medo" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "medo"){
-                    titulo = "medoAversao"
+            }
+        } else if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza"{
+            
+            if (memorias[indexPath.row].tem!.count) > 1 {
+                let y:Sentimento = memorias[indexPath.row].tem![1] as! Sentimento
+                if (x.nome != nil || y.nome != nil){
+                    if (x.nome == "alegria" && y.nome == "tristeza") || (x.nome == "tristeza" && y.nome == "alegria"){
+                        titulo = "alegriaTristezaCinza"
+                    } else if (x.nome == "alegria" && y.nome == "raiva") || (x.nome == "raiva" && y.nome == "alegria") {
+                        titulo = "alegriaRaivaCinza"
+                    } else if (x.nome == "alegria" && y.nome == "medo") || (x.nome == "medo" && y.nome == "alegria"){
+                        titulo = "alegriaMedoCinza"
+                    } else if x.nome == "alegria" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "alegria"){
+                        titulo = "alegriaAversaoCinza"
+                    } else if x.nome == "tristeza" && y.nome == "raiva" || (x.nome == "raiva" && y.nome == "tristezaCinza"){
+                        titulo = "tristezaRaivaCinza"
+                    } else if x.nome == "tristeza" && y.nome == "medo" || (x.nome == "medo" && y.nome == "tristeza"){
+                        titulo = "tristezaMedoCinza"
+                    } else if x.nome == "tristeza" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "tristeza"){
+                        titulo = "tristezaAversaoCinza"
+                    } else if x.nome == "raiva" && y.nome == "medo" || (x.nome == "medo" && y.nome == "raiva"){
+                        titulo = "raivaMedoCinza"
+                    } else if x.nome == "raiva" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "raiva"){
+                        titulo = "raivaAversaoCinza"
+                    } else if x.nome == "medo" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "medo"){
+                        titulo = "medoAversaoCinza"
+                    }
+                }
+            }
+            if (memorias[indexPath.row].tem!.count) == 1{
+                if x.nome == "alegria" {
+                    titulo = "alegriaCinza"
+                } else if x.nome == "tristeza" {
+                    titulo = "tristezaCinza"
+                } else if x.nome == "raiva" {
+                    titulo = "raivaCinza"
+                } else if x.nome == "medo" {
+                    titulo = "medoCinza"
+                } else if x.nome == "aversao" {
+                    titulo = "aversaoCinza"
                 }
             }
         }
-        if (memorias[indexPath.row].tem!.count) == 1{
-            if x.nome == "alegria" {
-                titulo = "alegria"
-            } else if x.nome == "tristeza" {
-                titulo = "tristeza"
-            } else if x.nome == "raiva" {
-                titulo = "raiva"
-            } else if x.nome == "medo" {
-                titulo = "medo"
-            } else if x.nome == "aversao" {
-                titulo = "aversao"
-            }
-
-        }
+        
         memorias[indexPath.row].titulo = titulo
         celula.imgMemoriaTimeline.image = UIImage(named: titulo)
 //        celula.emocaoMemoriaTimeline.text = titulo
