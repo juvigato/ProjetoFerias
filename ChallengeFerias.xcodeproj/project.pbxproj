@@ -17,6 +17,8 @@
 		0F0EC4F422D8D4CC001118AA /* ChallengeFeriasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4F322D8D4CC001118AA /* ChallengeFeriasUITests.swift */; };
 		0F0EC50F22D8F8A1001118AA /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC50E22D8F8A1001118AA /* ProgressCircleView.swift */; };
 		0F0EC51122D8FA02001118AA /* ProgressCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC51022D8FA02001118AA /* ProgressCircleViewController.swift */; };
+		0F27384823DE554400CD37BD /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F27384723DE554400CD37BD /* Defaults.swift */; };
+		0F27384A23DE5AEF00CD37BD /* Tema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F27384923DE5AEF00CD37BD /* Tema.swift */; };
 		0F37FF4B22EA9ED7002BFE02 /* EditarPensamentosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF4A22EA9ED7002BFE02 /* EditarPensamentosController.swift */; };
 		0F37FF4D22EAA61D002BFE02 /* EditarAtitudeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF4C22EAA61D002BFE02 /* EditarAtitudeController.swift */; };
 		0F37FF4F22EAA992002BFE02 /* EditarResultadoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37FF4E22EAA992002BFE02 /* EditarResultadoController.swift */; };
@@ -65,6 +67,8 @@
 		0F0EC4F522D8D4CC001118AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F0EC50E22D8F8A1001118AA /* ProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
 		0F0EC51022D8FA02001118AA /* ProgressCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleViewController.swift; sourceTree = "<group>"; };
+		0F27384723DE554400CD37BD /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		0F27384923DE5AEF00CD37BD /* Tema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tema.swift; sourceTree = "<group>"; };
 		0F37FF4A22EA9ED7002BFE02 /* EditarPensamentosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPensamentosController.swift; sourceTree = "<group>"; };
 		0F37FF4C22EAA61D002BFE02 /* EditarAtitudeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarAtitudeController.swift; sourceTree = "<group>"; };
 		0F37FF4E22EAA992002BFE02 /* EditarResultadoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarResultadoController.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 				0F37FF4C22EAA61D002BFE02 /* EditarAtitudeController.swift */,
 				0F37FF4E22EAA992002BFE02 /* EditarResultadoController.swift */,
 				0F0EC51022D8FA02001118AA /* ProgressCircleViewController.swift */,
+				0F27384923DE5AEF00CD37BD /* Tema.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				0FDFCB8322F37D4C005CF198 /* Memoria+CoreDataClass.swift */,
 				0FDFCB8422F37D4C005CF198 /* Memoria+CoreDataProperties.swift */,
 				0F0EC4D722D8D4CA001118AA /* ChallengeFerias.xcdatamodeld */,
+				0F27384723DE554400CD37BD /* Defaults.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -329,11 +335,13 @@
 				0F37FF4B22EA9ED7002BFE02 /* EditarPensamentosController.swift in Sources */,
 				0FA2228422E95F6500DDCA4E /* MemoriaTableViewCelula.swift in Sources */,
 				0F0EC4D922D8D4CA001118AA /* ChallengeFerias.xcdatamodeld in Sources */,
+				0F27384A23DE5AEF00CD37BD /* Tema.swift in Sources */,
 				0F37FF4D22EAA61D002BFE02 /* EditarAtitudeController.swift in Sources */,
 				0FDFCB8622F37D4C005CF198 /* Sentimento+CoreDataProperties.swift in Sources */,
 				0F0EC50F22D8F8A1001118AA /* ProgressCircleView.swift in Sources */,
 				0FDFCB8522F37D4C005CF198 /* Sentimento+CoreDataClass.swift in Sources */,
 				0F58042422E7A2730013EC62 /* EditarSituacaoController.swift in Sources */,
+				0F27384823DE554400CD37BD /* Defaults.swift in Sources */,
 				0F4F133923D0F19C00C87405 /* AdicionarMemoriaViewController.swift in Sources */,
 				0F0EC4D322D8D4CA001118AA /* MemoriaTableViewController.swift in Sources */,
 				0F37FF4F22EAA992002BFE02 /* EditarResultadoController.swift in Sources */,

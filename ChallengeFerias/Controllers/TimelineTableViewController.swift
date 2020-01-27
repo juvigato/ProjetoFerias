@@ -27,16 +27,29 @@ class TimelineMemoriasController: UITableViewController{
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 250
-//        view.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.9294117647, blue: 0.8862745098, alpha: 1)
         self.view.backgroundColor = UIColor(patternImage: imagemBackground)
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.barTintColor = .clear
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.3450980392, green: 0.4901960784, blue: 0.9019607843, alpha: 1)
         self.tableView.separatorStyle = .none
+//        UserDefaults.standard.set("Original", forKey: "tema")
+        detectarPrimeiroLançamento()
         carregarMemorias()
         notificacao()
+    }
+    
+    
+    func detectarPrimeiroLançamento() {
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        if launchedBefore  {
+            print("Not first launch.")
+        } else {
+            print("First launch, setting UserDefault.")
+            UserDefaults.standard.set("Original", forKey: "tema")
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
