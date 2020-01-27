@@ -184,86 +184,173 @@ class AdicionarMemoriaViewController: UIViewController{
     // Mudar Imagem da Emoção
     func mudarImg() {
         
-        //Mudar imagem quando alegria é clicado
-        if let index = sentimentos.firstIndex(of: "alegria"){
-            if sentimentos.firstIndex(of: "tristeza") != nil{
-                imagemEmocao?.image = UIImage(named: "alegriaTristeza")
-            } else if sentimentos.firstIndex(of: "raiva") != nil {
-                imagemEmocao?.image = UIImage(named: "alegriaRaiva")
-            } else if sentimentos.firstIndex(of: "medo") != nil {
-                imagemEmocao?.image = UIImage(named: "alegriaMedo")
-            } else if sentimentos.firstIndex(of: "aversao") != nil {
-                imagemEmocao?.image = UIImage(named: "alegriaAversao")
-            } else {
-                imagemEmocao?.image = UIImage(named: "alegria")
-            }
-        }
+        var titulo:String = ""
         
-        // Mudar imagem quando Tristeza é clicado
-        else if let index = sentimentos.firstIndex(of: "tristeza"){
+        if UserDefaults.standard.string(forKey: "tema") == "Original" {
+            //Mudar imagem quando alegria é clicado
             if sentimentos.firstIndex(of: "alegria") != nil{
-                imagemEmocao?.image = UIImage(named: "alegriaTristeza")
-            } else if sentimentos.firstIndex(of: "raiva") != nil {
-                imagemEmocao?.image = UIImage(named: "tristezaRaiva")
-            } else if sentimentos.firstIndex(of: "medo") != nil {
-                imagemEmocao?.image = UIImage(named: "tristezaMedo")
-            } else if sentimentos.firstIndex(of: "aversao") != nil {
-                imagemEmocao?.image = UIImage(named: "tristezaAversao")
-            } else {
-                imagemEmocao?.image = UIImage(named: "tristeza")
+                if sentimentos.firstIndex(of: "tristeza") != nil{
+                    titulo = "alegriaTristeza"
+                } else if sentimentos.firstIndex(of: "raiva") != nil {
+                    titulo = "alegriaRaiva"
+                } else if sentimentos.firstIndex(of: "medo") != nil {
+                    titulo = "alegriaMedo"
+                } else if sentimentos.firstIndex(of: "aversao") != nil {
+                    titulo = "alegriaAversao"
+                } else {
+                    titulo = "alegria"
+                }
+            }
+            
+            // Mudar imagem quando Tristeza é clicado
+            else if sentimentos.firstIndex(of: "tristeza") != nil{
+                if sentimentos.firstIndex(of: "alegria") != nil{
+                    titulo = "alegriaTristeza"
+                } else if sentimentos.firstIndex(of: "raiva") != nil {
+                    titulo = "tristezaRaiva"
+                } else if sentimentos.firstIndex(of: "medo") != nil {
+                    titulo = "tristezaMedo"
+                } else if sentimentos.firstIndex(of: "aversao") != nil {
+                    titulo = "tristezaAversao"
+                } else {
+                    titulo = "tristeza"
+                }
+            }
+            
+            // Mudar imagem quando raiva é clicada
+            else if let index = sentimentos.firstIndex(of: "raiva") {
+                if sentimentos.firstIndex(of: "alegria") != nil{
+                    titulo = "alegriaRaiva"
+                } else if sentimentos.firstIndex(of: "tristeza") != nil {
+                    titulo = "tristezaRaiva"
+                } else if sentimentos.firstIndex(of: "medo") != nil {
+                    titulo = "raivaMedo"
+                } else if sentimentos.firstIndex(of: "aversao") != nil {
+                    titulo = "raivaAversao"
+                } else {
+                    titulo = "raiva"
+                }
+            }
+            
+            // Mudar imagem quando medo é clicada
+            else if let index = sentimentos.firstIndex(of: "medo"){
+                if sentimentos.firstIndex(of: "alegria") != nil{
+                    titulo = "alegriaMedo"
+                } else if sentimentos.firstIndex(of: "tristeza") != nil {
+                    titulo = "tristezaMedo"
+                } else if sentimentos.firstIndex(of: "raiva") != nil {
+                    titulo = "raivaMedo"
+                } else if sentimentos.firstIndex(of: "aversao") != nil {
+                    titulo = "medoAversao"
+                } else {
+                    titulo = "medo"
+                }
+            }
+            
+            // Mudar imagem quando aversao é clicada
+            else if let index = sentimentos.firstIndex(of: "aversao"){
+                if sentimentos.firstIndex(of: "alegria") != nil{
+                    titulo = "alegriaAversao"
+                } else if sentimentos.firstIndex(of: "tristeza") != nil {
+                    titulo = "tristezaAversao"
+                } else if sentimentos.firstIndex(of: "medo") != nil {
+                    titulo = "medoAversao"
+                } else if sentimentos.firstIndex(of: "raiva") != nil {
+                    titulo = "raivaAversao"
+                } else {
+                    titulo = "aversao"
+                }
+            }
+            
+            else {
+                titulo = "vazio"
             }
         }
-        
-        // Mudar imagem quando raiva é clicada
-        else if let index = sentimentos.firstIndex(of: "raiva") {
+        else if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
+            //escala de cinza
+            
+            //Mudar imagem quando alegria é clicado
             if sentimentos.firstIndex(of: "alegria") != nil{
-                imagemEmocao?.image = UIImage(named: "alegriaRaiva")
-            } else if sentimentos.firstIndex(of: "tristeza") != nil {
-                imagemEmocao?.image = UIImage(named: "tristezaRaiva")
-            } else if sentimentos.firstIndex(of: "medo") != nil {
-                imagemEmocao?.image = UIImage(named: "raivaMedo")
-            } else if sentimentos.firstIndex(of: "aversao") != nil {
-                imagemEmocao?.image = UIImage(named: "raivaAversao")
-            } else {
-                imagemEmocao?.image = UIImage(named: "raiva")
+                if sentimentos.firstIndex(of: "tristeza") != nil{
+                    titulo = "alegriaTristezaCinza"
+                } else if sentimentos.firstIndex(of: "raiva") != nil {
+                    titulo = "alegriaRaivaCinza"
+                } else if sentimentos.firstIndex(of: "medo") != nil {
+                    titulo = "alegriaMedoCinza"
+                } else if sentimentos.firstIndex(of: "aversao") != nil {
+                    titulo = "alegriaAversaoCinza"
+                } else {
+                    titulo = "alegriaCinza"
+                }
+            }
+            
+            // Mudar imagem quando Tristeza é clicado
+            else if sentimentos.firstIndex(of: "tristeza") != nil{
+                if sentimentos.firstIndex(of: "alegria") != nil{
+                    titulo = "alegriaTristezaCinza"
+                } else if sentimentos.firstIndex(of: "raiva") != nil {
+                    titulo = "tristezaRaivaCinza"
+                } else if sentimentos.firstIndex(of: "medo") != nil {
+                    titulo = "tristezaMedoCinza"
+                } else if sentimentos.firstIndex(of: "aversao") != nil {
+                    titulo = "tristezaAversaoCinza"
+                } else {
+                    titulo = "tristezaCinza"
+                }
+            }
+            
+            // Mudar imagem quando raiva é clicada
+            else if let index = sentimentos.firstIndex(of: "raiva") {
+                if sentimentos.firstIndex(of: "alegria") != nil{
+                    titulo = "alegriaRaivaCinza"
+                } else if sentimentos.firstIndex(of: "tristeza") != nil {
+                    titulo = "tristezaRaivaCinza"
+                } else if sentimentos.firstIndex(of: "medo") != nil {
+                    titulo = "raivaMedoCinza"
+                } else if sentimentos.firstIndex(of: "aversao") != nil {
+                    titulo = "raivaAversaoCinza"
+                } else {
+                    titulo = "raivaCinza"
+                }
+            }
+            
+            // Mudar imagem quando medo é clicada
+            else if let index = sentimentos.firstIndex(of: "medo"){
+                if sentimentos.firstIndex(of: "alegria") != nil{
+                    titulo = "alegriaMedoCinza"
+                } else if sentimentos.firstIndex(of: "tristeza") != nil {
+                    titulo = "tristezaMedoCinza"
+                } else if sentimentos.firstIndex(of: "raiva") != nil {
+                    titulo = "raivaMedoCinza"
+                } else if sentimentos.firstIndex(of: "aversao") != nil {
+                    titulo = "medoAversaoCinza"
+                } else {
+                    titulo = "medoCinza"
+                }
+            }
+            
+            // Mudar imagem quando aversao é clicada
+            else if let index = sentimentos.firstIndex(of: "aversao"){
+                if sentimentos.firstIndex(of: "alegria") != nil{
+                    titulo = "alegriaAversaoCinza"
+                } else if sentimentos.firstIndex(of: "tristeza") != nil {
+                    titulo = "tristezaAversaoCinza"
+                } else if sentimentos.firstIndex(of: "medo") != nil {
+                    titulo = "medoAversaoCinza"
+                } else if sentimentos.firstIndex(of: "raiva") != nil {
+                    titulo = "raivaAversaoCinza"
+                } else {
+                    titulo = "aversaoCinza"
+                }
+            }
+            
+            else {
+                titulo = "vazioCinza"
             }
         }
         
-        // Mudar imagem quando medo é clicada
-        else if let index = sentimentos.firstIndex(of: "medo"){
-            if sentimentos.firstIndex(of: "alegria") != nil{
-                imagemEmocao?.image = UIImage(named: "alegriaMedo")
-            } else if sentimentos.firstIndex(of: "tristeza") != nil {
-                imagemEmocao?.image = UIImage(named: "tristezaMedo")
-            } else if sentimentos.firstIndex(of: "raiva") != nil {
-                imagemEmocao?.image = UIImage(named: "raivaMedo")
-            } else if sentimentos.firstIndex(of: "aversao") != nil {
-                imagemEmocao?.image = UIImage(named: "medoAversao")
-            } else {
-                imagemEmocao?.image = UIImage(named: "medo")
-            }
-        }
-        
-        // Mudar imagem quando aversao é clicada
-        else if let index = sentimentos.firstIndex(of: "aversao"){
-            if sentimentos.firstIndex(of: "alegria") != nil{
-                imagemEmocao?.image = UIImage(named: "alegriaAversao")
-            } else if sentimentos.firstIndex(of: "tristeza") != nil {
-                imagemEmocao?.image = UIImage(named: "tristezaAversao")
-            } else if sentimentos.firstIndex(of: "medo") != nil {
-                imagemEmocao?.image = UIImage(named: "medoAversao")
-            } else if sentimentos.firstIndex(of: "raiva") != nil {
-                imagemEmocao?.image = UIImage(named: "raivaAversao")
-            } else {
-                imagemEmocao?.image = UIImage(named: "aversao")
-            }
-        }
-        
-        else {
-            imagemEmocao?.image = UIImage(named: "vazio")
-        }
+        imagemEmocao?.image = UIImage(named: titulo)
     }
-    
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if let context = context{
