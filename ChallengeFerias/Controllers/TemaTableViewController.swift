@@ -13,8 +13,12 @@ class TemaTableViewController:UITableViewController {
     
     let temas = ["Original", "Escala de cinza"]
     
+    var imagemBackground:UIImage = UIImage(named: "backgroundClaro.jpg") ?? UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: imagemBackground)
+
         tableView.dataSource = self
         tableView.delegate = self
     }
