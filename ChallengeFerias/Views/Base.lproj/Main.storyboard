@@ -601,6 +601,7 @@
                                                 <constraint firstItem="4mp-Nw-mdo" firstAttribute="top" secondItem="Ygf-k4-XpH" secondAttribute="topMargin" id="lHU-fH-WQX"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <segue destination="l0t-OY-r0q" kind="show" id="pPK-O1-fkk"/>
                                         </connections>
