@@ -11,7 +11,7 @@
 		0F0EC4D322D8D4CA001118AA /* MemoriaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4D222D8D4CA001118AA /* MemoriaTableViewController.swift */; };
 		0F0EC4D622D8D4CA001118AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F0EC4D422D8D4CA001118AA /* Main.storyboard */; };
 		0F0EC4D922D8D4CA001118AA /* ChallengeFerias.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4D722D8D4CA001118AA /* ChallengeFerias.xcdatamodeld */; };
-		0F0EC4DB22D8D4CC001118AA /* Aackssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0EC4DA22D8D4CC001118AA /* Aackssets.xcassets */; };
+		0F0EC4DB22D8D4CC001118AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0EC4DA22D8D4CC001118AA /* Images.xcassets */; };
 		0F0EC4DE22D8D4CC001118AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F0EC4DC22D8D4CC001118AA /* LaunchScreen.storyboard */; };
 		0F0EC4E922D8D4CC001118AA /* ChallengeFeriasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4E822D8D4CC001118AA /* ChallengeFeriasTests.swift */; };
 		0F0EC4F422D8D4CC001118AA /* ChallengeFeriasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4F322D8D4CC001118AA /* ChallengeFeriasUITests.swift */; };
@@ -57,7 +57,7 @@
 		0F0EC4D222D8D4CA001118AA /* MemoriaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriaTableViewController.swift; sourceTree = "<group>"; };
 		0F0EC4D522D8D4CA001118AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F0EC4D822D8D4CA001118AA /* ChallengeFerias.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChallengeFerias.xcdatamodel; sourceTree = "<group>"; };
-		0F0EC4DA22D8D4CC001118AA /* Aackssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Aackssets.xcassets; sourceTree = "<group>"; };
+		0F0EC4DA22D8D4CC001118AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0F0EC4DD22D8D4CC001118AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F0EC4DF22D8D4CC001118AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F0EC4E422D8D4CC001118AA /* ChallengeFeriasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengeFeriasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,7 +137,7 @@
 				0F0EC50D22D8F80C001118AA /* Controllers */,
 				0F0EC50C22D8F7E5001118AA /* Views */,
 				0F0EC4D022D8D4CA001118AA /* AppDelegate.swift */,
-				0F0EC4DA22D8D4CC001118AA /* Aackssets.xcassets */,
+				0F0EC4DA22D8D4CC001118AA /* Images.xcassets */,
 				0F0EC4DF22D8D4CC001118AA /* Info.plist */,
 			);
 			path = ChallengeFerias;
@@ -308,7 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F0EC4DE22D8D4CC001118AA /* LaunchScreen.storyboard in Resources */,
-				0F0EC4DB22D8D4CC001118AA /* Aackssets.xcassets in Resources */,
+				0F0EC4DB22D8D4CC001118AA /* Images.xcassets in Resources */,
 				0F0EC4D622D8D4CA001118AA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

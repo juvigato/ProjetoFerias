@@ -24,7 +24,7 @@ class AdicionarMemoriaViewController: UIViewController{
     
     var imagemBackground:UIImage = UIImage(named: "backgroundClaro.png") ?? UIImage()
     
-    var imagemBackgroundCinza:UIImage = UIImage(named: "backgroundClaroCinza.png") ?? UIImage()
+//    var imagemBackgroundCinza:UIImage = UIImage(named: "backgroundClaroCinza.png") ?? UIImage()
     
     var alegriaClicada:Int = 0
     var tristezaClicada:Int = 0
@@ -46,32 +46,67 @@ class AdicionarMemoriaViewController: UIViewController{
     
     @IBOutlet weak var labelData: UILabel!
     
+    @IBOutlet weak var lblButtonAlegria: UILabel!
+    
+    @IBOutlet weak var lblButtonTristeza: UILabel!
+    
+    @IBOutlet weak var lblButtonRaiva: UILabel!
+    
+    @IBOutlet weak var lblButtonMedo: UILabel!
+    
+    @IBOutlet weak var lblButtonAversao: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
-        
         sentimentos = []
         buttonSalvar.isEnabled = false
-        checarBackground()
-        
-        
+        checarTema()
+        self.view.backgroundColor = UIColor(patternImage: imagemBackground)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         labelData.text = formatarData(date: Date())
     }
     
-    func checarBackground() {
+    /**
+    *Checar o tema para que as imagens e textos sejam do tema selecionado*
+     - Parameters: Nada
+     - Returns: Nada
+     */
+    func checarTema() {
         if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
-            self.view.backgroundColor = UIColor(patternImage: imagemBackgroundCinza)
             buttonSalvar.tintColor = #colorLiteral(red: 0.1971875429, green: 0.2142196, blue: 0.2370504141, alpha: 1)
+            lblButtonAlegria.textColor = #colorLiteral(red: 0.8392156863, green: 0.8352941176, blue: 0.8352941176, alpha: 1)
+            lblButtonTristeza.textColor = #colorLiteral(red: 0.7450980392, green: 0.737254902, blue: 0.737254902, alpha: 1)
+            lblButtonRaiva.textColor = #colorLiteral(red: 0.3647058824, green: 0.3529411765, blue: 0.3529411765, alpha: 1)
+            lblButtonMedo.textColor = #colorLiteral(red: 0.4862745098, green: 0.4784313725, blue: 0.4784313725, alpha: 1)
+            lblButtonAversao.textColor = #colorLiteral(red: 0.6156862745, green: 0.6039215686, blue: 0.6039215686, alpha: 1)
+            buttonAlegria.setImage(UIImage(named: "imagemBotaoAlegriaCinza"), for: .normal)
+            buttonTristeza.setImage(UIImage(named: "imagemBotaoTristezaCinza"), for: .normal)
+            buttonRaiva.setImage(UIImage(named: "imagemBotaoRaivaCinza"), for: .normal)
+            buttonMedo.setImage(UIImage(named: "imagemBotaoMedoCinza"), for: .normal)
+            buttonAversao.setImage(UIImage(named: "imagemBotaoAversaoCinza"), for: .normal)
         } else {
-            self.view.backgroundColor = UIColor(patternImage: imagemBackground)
+            lblButtonAlegria.textColor = #colorLiteral(red: 1, green: 0.8, blue: 0.2705882353, alpha: 1)
+            lblButtonTristeza.textColor = #colorLiteral(red: 0.337254902, green: 0.4980392157, blue: 0.9019607843, alpha: 1)
+            lblButtonRaiva.textColor = #colorLiteral(red: 0.9019607843, green: 0.3215686275, blue: 0.2588235294, alpha: 1)
+            lblButtonMedo.textColor = #colorLiteral(red: 0.4901960784, green: 0.3921568627, blue: 0.7137254902, alpha: 1)
+            lblButtonAversao.textColor = #colorLiteral(red: 0.5960784314, green: 0.8, blue: 0.2901960784, alpha: 1)
+            buttonAlegria.setImage(UIImage(named: "imagemBotaoAlegria"), for: .normal)
+            buttonTristeza.setImage(UIImage(named: "imagemBotaoTristeza"), for: .normal)
+            buttonRaiva.setImage(UIImage(named: "imagemBotaoRaiva"), for: .normal)
+            buttonMedo.setImage(UIImage(named: "imagemBotaoMedo"), for: .normal)
+            buttonAversao.setImage(UIImage(named: "imagemBotaoAversao"), for: .normal)
         }
     }
     
-    // Função para formatar a data para String
+    /**
+    *Função para formatar a data para String*
+    - Parameters:
+     - date: uma data em formato Date
+    - Returns: uma data em formato de String
+    */
     func formatarData(date:Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
@@ -79,8 +114,13 @@ class AdicionarMemoriaViewController: UIViewController{
         return dataAtual
     }
     
+    /**
+    *Quando o botão que representa a Alegria for clicado, a imagem do botão irá ser alterada*
+    - Parameters:
+     - sender: o botão clicado
+    - Returns: Nada
+    */
     @IBAction func ButtonAlegriaClicked(_ sender: Any) {
-        
         // Entrar se não estiver clicado
         if alegriaClicada == 0 {
             // Entrar se apenas 0 ou 1 botao clicados
@@ -88,7 +128,11 @@ class AdicionarMemoriaViewController: UIViewController{
                 sentimentos.append("alegria")
                 alegriaClicada = 1
                 contadorBotoesSelecionados += 1
-                buttonAlegria.setImage(UIImage(named: "imagemBotaoAlegriaClicada"), for: .normal)
+                if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
+                    buttonAlegria.setImage(UIImage(named: "imagemBotaoAlegriaClicadaCinza"), for: .normal)
+                } else {
+                    buttonAlegria.setImage(UIImage(named: "imagemBotaoAlegriaClicada"), for: .normal)
+                }
             }
         // Entrar se estiver clicado
         } else {
@@ -97,7 +141,11 @@ class AdicionarMemoriaViewController: UIViewController{
             }
             alegriaClicada = 0
             contadorBotoesSelecionados -= 1
-            buttonAlegria.setImage(UIImage(named: "imagemBotaoAlegria"), for: .normal)
+            if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
+                buttonAlegria.setImage(UIImage(named: "imagemBotaoAlegriaCinza"), for: .normal)
+            } else {
+                buttonAlegria.setImage(UIImage(named: "imagemBotaoAlegria"), for: .normal)
+            }
         }
         mudarImg()
         checarBotaoSalvar()
@@ -111,7 +159,12 @@ class AdicionarMemoriaViewController: UIViewController{
                 sentimentos.append("tristeza")
                 tristezaClicada = 1
                 contadorBotoesSelecionados += 1
-                buttonTristeza.setImage(UIImage(named: "imagemBotaoTristezaClicada"), for: .normal)
+                
+                if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
+                    buttonTristeza.setImage(UIImage(named: "imagemBotaoTristezaClicadaCinza"), for: .normal)
+                } else {
+                    buttonTristeza.setImage(UIImage(named: "imagemBotaoTristezaClicada"), for: .normal)
+                }
             }
         } else {
             while let idx = sentimentos.firstIndex(of:"tristeza") {
@@ -119,7 +172,12 @@ class AdicionarMemoriaViewController: UIViewController{
             }
             tristezaClicada = 0
             contadorBotoesSelecionados -= 1
-            buttonTristeza.setImage(UIImage(named: "imagemBotaoTristeza"), for: .normal)
+            if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
+                buttonTristeza.setImage(UIImage(named: "imagemBotaoTristezaCinza"), for: .normal)
+            } else {
+                buttonTristeza.setImage(UIImage(named: "imagemBotaoTristeza"), for: .normal)
+            }
+            
         }
         mudarImg()
         checarBotaoSalvar()
@@ -133,7 +191,11 @@ class AdicionarMemoriaViewController: UIViewController{
                 sentimentos.append("raiva")
                 raivaClicada = 1
                 contadorBotoesSelecionados += 1
-                buttonRaiva.setImage(UIImage(named: "imagemBotaoRaivaClicada"), for: .normal)
+                if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
+                    buttonRaiva.setImage(UIImage(named: "imagemBotaoRaivaClicadaCinza"), for: .normal)
+                } else {
+                    buttonRaiva.setImage(UIImage(named: "imagemBotaoRaivaClicada"), for: .normal)
+                }
             }
         } else {
             while let idx = sentimentos.firstIndex(of:"raiva") {
@@ -141,7 +203,11 @@ class AdicionarMemoriaViewController: UIViewController{
             }
             raivaClicada = 0
             contadorBotoesSelecionados -= 1
-            buttonRaiva.setImage(UIImage(named: "imagemBotaoRaiva"), for: .normal)
+            if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
+                buttonRaiva.setImage(UIImage(named: "imagemBotaoRaivaCinza"), for: .normal)
+            } else {
+                buttonRaiva.setImage(UIImage(named: "imagemBotaoRaiva"), for: .normal)            }
+            
         }
         mudarImg()
         checarBotaoSalvar()
@@ -155,6 +221,11 @@ class AdicionarMemoriaViewController: UIViewController{
                 medoClicada = 1
                 contadorBotoesSelecionados += 1
                 buttonMedo.setImage(UIImage(named: "imagemBotaoMedoClicada"), for: .normal)
+                if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
+                    buttonMedo.setImage(UIImage(named: "imagemBotaoMedoClicadaCinza"), for: .normal)
+                } else {
+                    buttonMedo.setImage(UIImage(named: "imagemBotaoMedoClicada"), for: .normal)
+                }
             }
         } else {
             while let idx = sentimentos.firstIndex(of:"medo") {
@@ -162,7 +233,12 @@ class AdicionarMemoriaViewController: UIViewController{
             }
             medoClicada = 0
             contadorBotoesSelecionados -= 1
-            buttonMedo.setImage(UIImage(named: "imagemBotaoMedo"), for: .normal)
+            
+            if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
+                buttonMedo.setImage(UIImage(named: "imagemBotaoMedoCinza"), for: .normal)
+            } else {
+                buttonMedo.setImage(UIImage(named: "imagemBotaoMedo"), for: .normal)
+            }
         }
         mudarImg()
         checarBotaoSalvar()
@@ -174,7 +250,12 @@ class AdicionarMemoriaViewController: UIViewController{
                 sentimentos.append("aversao")
                 aversaoClicada = 1
                 contadorBotoesSelecionados += 1
-                buttonAversao.setImage(UIImage(named: "imagemBotaoAversaoClicada"), for: .normal)
+                
+                if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
+                    buttonAversao.setImage(UIImage(named: "imagemBotaoAversaoClicadaCinza"), for: .normal)
+                } else {
+                    buttonAversao.setImage(UIImage(named: "imagemBotaoAversaoClicada"), for: .normal)
+                }
             }
         } else {
             while let idx = sentimentos.firstIndex(of:"aversao") {
@@ -182,7 +263,12 @@ class AdicionarMemoriaViewController: UIViewController{
             }
             aversaoClicada = 0
             contadorBotoesSelecionados -= 1
-            buttonAversao.setImage(UIImage(named: "imagemBotaoAversao"), for: .normal)
+            
+            if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
+                buttonAversao.setImage(UIImage(named: "imagemBotaoAversaoCinza"), for: .normal)
+            } else {
+                buttonAversao.setImage(UIImage(named: "imagemBotaoAversao"), for: .normal)
+            }
         }
         mudarImg()
         checarBotaoSalvar()

@@ -26,13 +26,15 @@ class MemoriaTableViewController: UITableViewController {
     
     var imagemBackground:UIImage = UIImage(named: "backgroundClaro.jpg") ?? UIImage()
     
+//    var imagemBackgroundCinza:UIImage = UIImage(named: "backgroundClaroCinza.jpg") ?? UIImage()
+    
     override func viewDidLoad() {
         carregarImgMemoria()
         super.viewDidLoad()
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         self.view.backgroundColor = UIColor(patternImage: imagemBackground)
     }
-
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 1{
             performSegue(withIdentifier: "editarSituacao", sender: nil)

@@ -26,6 +26,8 @@ class EditarAtitudeController:UIViewController, UITextViewDelegate{
     
     var imagemBackground:UIImage = UIImage(named: "backgroundClaro.jpg") ?? UIImage()
     
+    var imagemBackgroundCinza:UIImage = UIImage(named: "backgroundClaroCinza.jpg") ?? UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
