@@ -11,9 +11,11 @@ import UIKit
 
 class AjustesTableViewController:UITableViewController{
     
+    var imagemBackground:UIImage = UIImage(named: "backgroundClaro.jpg") ?? UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = UIColor(patternImage: imagemBackground)
 //        verificarNotificacoes()
     }
     
