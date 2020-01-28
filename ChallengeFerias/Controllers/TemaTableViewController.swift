@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Tema:UITableViewController {
+class TemaTableViewController:UITableViewController {
     
     let temas = ["Original", "Escala de cinza"]
     

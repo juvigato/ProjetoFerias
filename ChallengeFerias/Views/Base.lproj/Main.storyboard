@@ -574,7 +574,7 @@
         <!--Ajustes-->
         <scene sceneID="2In-Xa-Ezd">
             <objects>
-                <tableViewController id="xB2-0H-Yoo" sceneMemberID="viewController">
+                <tableViewController id="xB2-0H-Yoo" customClass="AjustesTableViewController" customModule="ChallengeFerias" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4h5-aw-Ldp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -592,6 +592,10 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qir-2I-baW">
                                                     <rect key="frame" x="345" y="6" width="51" height="32"/>
                                                     <color key="onTintColor" red="0.59607843140000005" green="0.80392156859999997" blue="0.2901960784" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="switchButtonNotifications:" destination="Jca-Oj-Sji" eventType="valueChanged" id="eT4-kF-ySx"/>
+                                                        <action selector="switchButtonNotificationsClicked:" destination="xB2-0H-Yoo" eventType="valueChanged" id="Smq-Q0-CqL"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notificações" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ags-WJ-0qV">
                                                     <rect key="frame" x="20" y="11" width="96" height="21"/>
@@ -641,16 +645,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Ajustes" id="hW8-QW-Klf"/>
+                    <connections>
+                        <outlet property="switchButton" destination="Qir-2I-baW" id="g2n-pK-DP8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KPG-HX-95e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Jca-Oj-Sji" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1101" y="-1572"/>
         </scene>
         <!--Temas-->
         <scene sceneID="oUM-Bm-F82">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3BA-m7-uaj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tableViewController id="l0t-OY-r0q" customClass="Tema" customModule="ChallengeFerias" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="l0t-OY-r0q" customClass="TemaTableViewController" customModule="ChallengeFerias" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="xSW-zf-U1n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -682,6 +689,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Temas" id="kgz-aa-0y1"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3BA-m7-uaj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1931.8840579710147" y="-1572.3214285714284"/>
         </scene>

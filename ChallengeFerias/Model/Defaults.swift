@@ -11,14 +11,17 @@ import Foundation
 struct Defaults {
     
     static let (temaKey) = ("tema")
+    static let (notificacoesKey) = ("notificacoes")
     static let userSessionKey = "com.save.usersession"
     private static let userDefault = UserDefaults.standard
     
     struct UserDetails {
         let tema: String
+        let notificacoes: String
         
         init(_ json: [String: String]) {
             self.tema = json[temaKey] ?? ""
+            self.notificacoes = json[notificacoesKey] ?? "off"
         }
     }
     
