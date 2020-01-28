@@ -22,7 +22,9 @@ class AdicionarMemoriaViewController: UIViewController{
     
     var contadorBotoesSelecionados:Int = 0
     
-    var imagemBackground:UIImage = UIImage(named: "backgroundClaro.jpg") ?? UIImage()
+    var imagemBackground:UIImage = UIImage(named: "backgroundClaro.png") ?? UIImage()
+    
+    var imagemBackgroundCinza:UIImage = UIImage(named: "backgroundClaroCinza.png") ?? UIImage()
     
     var alegriaClicada:Int = 0
     var tristezaClicada:Int = 0
@@ -51,11 +53,22 @@ class AdicionarMemoriaViewController: UIViewController{
         
         sentimentos = []
         buttonSalvar.isEnabled = false
-        self.view.backgroundColor = UIColor(patternImage: imagemBackground)
+        checarBackground()
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         labelData.text = formatarData(date: Date())
+    }
+    
+    func checarBackground() {
+        if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
+            self.view.backgroundColor = UIColor(patternImage: imagemBackgroundCinza)
+            buttonSalvar.tintColor = #colorLiteral(red: 0.1971875429, green: 0.2142196, blue: 0.2370504141, alpha: 1)
+        } else {
+            self.view.backgroundColor = UIColor(patternImage: imagemBackground)
+        }
     }
     
     // Função para formatar a data para String
@@ -178,6 +191,9 @@ class AdicionarMemoriaViewController: UIViewController{
     func checarBotaoSalvar() {
         if contadorBotoesSelecionados > 0 {
             buttonSalvar.isEnabled = true
+        }
+        else {
+            buttonSalvar.isEnabled = false
         }
     }
     
