@@ -20,7 +20,7 @@ class TimelineMemoriasController: UITableViewController{
     var semMemoriaImg:UIImageView = UIImageView(image: UIImage(named: "empty"))
     
     var imagemBackground:UIImage = UIImage(named: "background.jpg") ?? UIImage()
-    
+        
 //    var imagemBackgroundCinza:UIImage = UIImage(named: "backgroundCinza.png") ?? UIImage()
     
     override func viewDidLoad() {
@@ -40,6 +40,7 @@ class TimelineMemoriasController: UITableViewController{
         detectarPrimeiroLançamento()
         carregarMemorias()
         notificacao()
+        
     }
     
     func detectarPrimeiroLançamento() {
