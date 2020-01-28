@@ -14,7 +14,7 @@ class AjustesTableViewController:UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        verificarNotificacoes()
+//        verificarNotificacoes()
     }
     
     func verificarNotificacoes() {

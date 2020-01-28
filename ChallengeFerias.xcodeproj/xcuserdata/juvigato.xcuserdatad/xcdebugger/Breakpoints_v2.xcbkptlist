@@ -58,7 +58,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0238FC80-D383-4364-B32D-5D3F31AC3463"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChallengeFerias/Controllers/AjustesTableViewController.swift"
@@ -74,7 +74,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3A2B9A87-C330-4071-87E2-1A956114164A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChallengeFerias/Controllers/AjustesTableViewController.swift"
