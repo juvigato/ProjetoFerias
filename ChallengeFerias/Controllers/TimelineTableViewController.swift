@@ -260,9 +260,10 @@ class TimelineMemoriasController: UITableViewController{
     
                 let date = Date(timeIntervalSinceNow: 3600)
                 let triggerDiario = Calendar.current.dateComponents([.day,.hour,.minute,.second], from: date)
-                let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDiario, repeats: false)
-                
-                let request = UNNotificationRequest(identifier: "diario", content: content, trigger: trigger)
+//                let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDiario, repeats: false)
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+//                let request = UNNotificationRequest(identifier: "diario", content: content, trigger: trigger)
+                let request = UNNotificationRequest(identifier: "5seconds", content: content, trigger: trigger)
                 
                 let center = UNUserNotificationCenter.current()
                     center.add(request) { (error: Error?) in
@@ -270,8 +271,11 @@ class TimelineMemoriasController: UITableViewController{
                         print(error.localizedDescription)
                     }
                 }
+                
+                UserDefaults.standard.setValue("on", forKey: "notificacoes")
             } else {
                 print("Permissão negada - notificações desativadas")
+                UserDefaults.standard.setValue("off", forKey: "notificacoes")
             }
         }
     }
