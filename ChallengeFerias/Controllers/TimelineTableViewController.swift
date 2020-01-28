@@ -21,6 +21,8 @@ class TimelineMemoriasController: UITableViewController{
     
     var imagemBackground:UIImage = UIImage(named: "background.jpg") ?? UIImage()
     
+//    var imagemBackgroundCinza:UIImage = UIImage(named: "backgroundCinza.png") ?? UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -39,7 +41,6 @@ class TimelineMemoriasController: UITableViewController{
         carregarMemorias()
         notificacao()
     }
-    
     
     func detectarPrimeiroLançamento() {
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")

@@ -29,15 +29,15 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
     
     var imagemBackground:UIImage = UIImage(named: "backgroundClaro.jpg") ?? UIImage()
     
+//    var imagemBackgroundCinza:UIImage = UIImage(named: "backgroundClaroCinza.jpg") ?? UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         pensamentosTextField.layer.borderWidth = 1
         pensamentosTextField.layer.borderColor = UIColor.lightGray.cgColor
         pensamentosTextField.delegate = self
-        
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
         self.view.backgroundColor = UIColor(patternImage: imagemBackground)
         
         if memoria?.pensamentos != nil{

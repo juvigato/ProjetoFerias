@@ -288,7 +288,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celula" rowHeight="171" id="CWd-OD-JlJ" customClass="MemoriaTableViewCelula" customModule="ChallengeFerias" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="celula" rowHeight="171" id="CWd-OD-JlJ" customClass="MemoriaTableViewCelula" customModule="ChallengeFerias" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="171"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CWd-OD-JlJ" id="I8m-6N-WcE">
@@ -756,7 +756,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDv-3m-Aad">
-                                <rect key="frame" x="186.5" y="449" width="41.5" height="34"/>
+                                <rect key="frame" x="186.5" y="444" width="41.5" height="34"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -795,7 +795,7 @@
                             <constraint firstItem="7vw-1c-Hme" firstAttribute="bottom" secondItem="ubn-qm-l5m" secondAttribute="bottom" id="Vem-TM-KXZ"/>
                             <constraint firstItem="fOl-5g-Lvn" firstAttribute="trailing" secondItem="hJm-Px-pCf" secondAttribute="trailing" constant="29" id="bLf-LJ-7zZ"/>
                             <constraint firstItem="b5h-p8-4iL" firstAttribute="bottom" secondItem="WvS-VQ-zr4" secondAttribute="bottom" id="bqo-O2-287"/>
-                            <constraint firstItem="LDv-3m-Aad" firstAttribute="bottom" secondItem="hJm-Px-pCf" secondAttribute="bottom" constant="-10" id="cPf-OH-Dbw"/>
+                            <constraint firstItem="LDv-3m-Aad" firstAttribute="bottom" secondItem="hJm-Px-pCf" secondAttribute="bottom" constant="-15" id="cPf-OH-Dbw"/>
                             <constraint firstItem="hJm-Px-pCf" firstAttribute="top" secondItem="fOl-5g-Lvn" secondAttribute="top" constant="119" id="cRc-VQ-3si"/>
                             <constraint firstItem="5rO-2J-9vu" firstAttribute="centerX" secondItem="8Kh-31-Oov" secondAttribute="centerX" id="cfM-t4-1Hg"/>
                             <constraint firstItem="qT6-Yz-9hc" firstAttribute="height" secondItem="hYE-KF-4Pq" secondAttribute="height" id="dQZ-Gt-D3c"/>
@@ -835,6 +835,11 @@
                         <outlet property="buttonTristeza" destination="8Kh-31-Oov" id="G9W-ru-FXP"/>
                         <outlet property="imagemEmocao" destination="hJm-Px-pCf" id="k6K-oQ-n8D"/>
                         <outlet property="labelData" destination="LDv-3m-Aad" id="9aO-Nd-Jsd"/>
+                        <outlet property="lblButtonAlegria" destination="eeT-6Z-Mdt" id="Dbf-1s-63h"/>
+                        <outlet property="lblButtonAversao" destination="Kk0-1m-9MJ" id="zjq-kn-CMg"/>
+                        <outlet property="lblButtonMedo" destination="ubn-qm-l5m" id="03c-Lq-zhs"/>
+                        <outlet property="lblButtonRaiva" destination="WvS-VQ-zr4" id="Que-Gl-Tnf"/>
+                        <outlet property="lblButtonTristeza" destination="5rO-2J-9vu" id="0Ml-4J-SJO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Lr-1F-Fnf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

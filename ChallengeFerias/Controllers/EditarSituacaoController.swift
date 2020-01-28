@@ -22,6 +22,8 @@ class EditarSituacaoController:UIViewController, UITextViewDelegate{
     
     var imagemBackground:UIImage = UIImage(named: "backgroundClaro.jpg") ?? UIImage()
     
+//    var imagemBackgroundCinza:UIImage = UIImage(named: "backgroundClaroCinza .jpg") ?? UIImage()
+    
     @IBOutlet weak var situacaoTextField: UITextView!
     
     @IBOutlet weak var imagemSituacao: UIImageView!
