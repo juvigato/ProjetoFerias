@@ -57,48 +57,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6491C835-273E-4A2E-9402-925C6B09CE06"
+            uuid = "0238FC80-D383-4364-B32D-5D3F31AC3463"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ChallengeFerias/Controllers/TimelineTableViewController.swift"
+            filePath = "ChallengeFerias/Controllers/AjustesTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "verificarNotificacoes()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7E9278AF-C4E1-421E-B4DE-B6AE3D1D7AE2"
+            uuid = "3A2B9A87-C330-4071-87E2-1A956114164A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ChallengeFerias/Controllers/TimelineTableViewController.swift"
+            filePath = "ChallengeFerias/Controllers/AjustesTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7AFEEE29-31D0-49FC-9D50-15ED22075519"
-            shouldBeEnabled = "Yes"
+            uuid = "8AAB7610-1FDA-4767-AA1D-14F3A17BCB2D"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChallengeFerias/Controllers/TimelineTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
+            landmarkName = "notificacao()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -273,6 +273,7 @@ class TimelineMemoriasController: UITableViewController{
                 }
                 
                 UserDefaults.standard.setValue("on", forKey: "notificacoes")
+                
             } else {
                 print("Permissão negada - notificações desativadas")
                 UserDefaults.standard.setValue("off", forKey: "notificacoes")

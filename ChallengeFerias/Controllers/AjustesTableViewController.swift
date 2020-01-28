@@ -13,10 +13,12 @@ class AjustesTableViewController:UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         verificarNotificacoes()
     }
     
     func verificarNotificacoes() {
+        
         if UserDefaults.standard.string(forKey: "notificacoes") == "on" {
             switchButton.setOn(true, animated:true)
         } else {
@@ -35,8 +37,8 @@ class AjustesTableViewController:UITableViewController{
         } else {
             print("off")
             UserDefaults.standard.set("off", forKey: "notificacoes")
-            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-//            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["diario"])
+//            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["5seconds"])
         }
    
     }
