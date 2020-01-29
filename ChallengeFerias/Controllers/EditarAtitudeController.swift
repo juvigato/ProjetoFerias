@@ -41,7 +41,8 @@ class EditarAtitudeController:UIViewController, UITextViewDelegate{
         atitudeTextField.layer.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         atitudeTextField.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         atitudeTextField.delegate = self
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         self.view.backgroundColor = UIColor(patternImage: imagemBackground)
@@ -67,6 +68,15 @@ class EditarAtitudeController:UIViewController, UITextViewDelegate{
         } else {
             imagemAtitude.image = UIImage(named: "vazio")
         }
+    }
+    
+    /**
+    *Quando a edição tiver terminado, o teclado irá sumir da tela*
+     - Parameters: Nada
+     - Returns: Nada
+     */
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
     }
     
     /**
