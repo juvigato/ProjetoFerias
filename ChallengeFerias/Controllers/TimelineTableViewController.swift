@@ -39,11 +39,11 @@ class TimelineMemoriasController: UITableViewController{
         navigationController?.navigationBar.barTintColor = .clear
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.3450980392, green: 0.4901960784, blue: 0.9019607843, alpha: 1)
         self.tableView.separatorStyle = .none
-//        UserDefaults.standard.set("Original", forKey: "tema")
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        
         detectarPrimeiroLançamento()
         carregarMemorias()
         notificacao()
-        
     }
     
     /**
@@ -252,7 +252,7 @@ class TimelineMemoriasController: UITableViewController{
                         titulo = "alegriaMedoCinza"
                     } else if x.nome == "alegria" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "alegria"){
                         titulo = "alegriaAversaoCinza"
-                    } else if x.nome == "tristeza" && y.nome == "raiva" || (x.nome == "raiva" && y.nome == "tristezaCinza"){
+                    } else if x.nome == "tristeza" && y.nome == "raiva" || (x.nome == "raiva" && y.nome == "tristeza"){
                         titulo = "tristezaRaivaCinza"
                     } else if x.nome == "tristeza" && y.nome == "medo" || (x.nome == "medo" && y.nome == "tristeza"){
                         titulo = "tristezaMedoCinza"

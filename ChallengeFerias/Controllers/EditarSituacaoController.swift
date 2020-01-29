@@ -28,6 +28,11 @@ class EditarSituacaoController:UIViewController, UITextViewDelegate{
     
     @IBOutlet weak var imagemSituacao: UIImageView!
     
+    /**
+    *Carregar  todas características necessárias da tela*
+     - Parameters: Nada
+     - Returns: Nada
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         

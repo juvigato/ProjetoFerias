@@ -56,6 +56,11 @@ class AdicionarMemoriaViewController: UIViewController{
     
     @IBOutlet weak var lblButtonAversao: UILabel!
     
+    /**
+    *Carregar  todas características necessárias da tela*
+     - Parameters: Nada
+     - Returns: Nada
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
@@ -63,8 +68,26 @@ class AdicionarMemoriaViewController: UIViewController{
         buttonSalvar.isEnabled = false
         checarTema()
         self.view.backgroundColor = UIColor(patternImage: imagemBackground)
+        definirBotaoVoltar()
     }
     
+    /**
+    *Definir título do botão back na navigation bar*
+     - Parameters: Nada
+     - Returns: Nada
+     */
+    func definirBotaoVoltar() {
+        let backButton = UIBarButtonItem()
+        backButton.title = "Voltar"
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
+    
+    /**
+    *Carregar todas as características da tela que irá aparecer*
+     - Parameters:
+      - animated: valor booleano
+     - Returns: Nada
+     */
     override func viewWillAppear(_ animated: Bool) {
         labelData.text = formatarData(date: Date())
     }
@@ -167,7 +190,12 @@ class AdicionarMemoriaViewController: UIViewController{
         checarBotaoSalvar()
     }
     
-    
+    /**
+    *Quando o botão que representa a Tristeza for clicado, a imagem do botão irá ser alterada*
+    - Parameters:
+     - sender: o botão clicado
+    - Returns: Nada
+    */
     @IBAction func buttonTristezaClicked(_ sender: Any) {
 
         if tristezaClicada == 0 {
@@ -203,7 +231,12 @@ class AdicionarMemoriaViewController: UIViewController{
         checarBotaoSalvar()
     }
     
-    
+    /**
+    *Quando o botão que representa a Raiva for clicado, a imagem do botão irá ser alterada*
+    - Parameters:
+     - sender: o botão clicado
+    - Returns: Nada
+    */
     @IBAction func buttonRaivaClicked(_ sender: Any) {
         
         if raivaClicada == 0 {
@@ -238,7 +271,12 @@ class AdicionarMemoriaViewController: UIViewController{
         checarBotaoSalvar()
     }
     
-    
+    /**
+    *Quando o botão que representa a Medo for clicado, a imagem do botão irá ser alterada*
+    - Parameters:
+     - sender: o botão clicado
+    - Returns: Nada
+    */
     @IBAction func buttonMedoClicked(_ sender: Any) {
         if medoClicada == 0 {
             if contadorBotoesSelecionados < 2 && contadorBotoesSelecionados >= 0 {
@@ -273,6 +311,12 @@ class AdicionarMemoriaViewController: UIViewController{
         checarBotaoSalvar()
     }
     
+    /**
+    *Quando o botão que representa a Aversão for clicado, a imagem do botão irá ser alterada*
+    - Parameters:
+     - sender: o botão clicado
+    - Returns: Nada
+    */
     @IBAction func buttonAversaoClicked(_ sender: Any) {
         if aversaoClicada == 0 {
             if contadorBotoesSelecionados < 2 && contadorBotoesSelecionados >= 0 {
@@ -307,6 +351,11 @@ class AdicionarMemoriaViewController: UIViewController{
         checarBotaoSalvar()
     }
     
+    /**
+    *Checar se o botão Salvar deve estar habilitado ou desabilitado*
+    - Parameters: Nada
+    - Returns: Nada
+    */
     func checarBotaoSalvar() {
         if contadorBotoesSelecionados > 0 {
             buttonSalvar.isEnabled = true
@@ -316,7 +365,11 @@ class AdicionarMemoriaViewController: UIViewController{
         }
     }
     
-    // Mudar Imagem da Emoção
+    /**
+    *Alterar a imagem quando os botões forem clicados, para representar as emoções da memória que será adicionada*
+    - Parameters: Nada
+    - Returns: Nada
+    */
     func mudarImg() {
         
         var titulo:String = ""
@@ -567,6 +620,13 @@ class AdicionarMemoriaViewController: UIViewController{
         imagemEmocao?.image = UIImage(named: titulo)
     }
     
+    /**
+    *Executar a segue recebida*
+    - Parameters:
+     - identifier: string que representa o id da tela que será apresentada
+     - sender: gatilho do storyboard
+    - Returns: Valor booleano
+    */
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if let context = context{
             novaMemoria = (NSEntityDescription.insertNewObject(forEntityName: "Memoria", into: context) as! Memoria)
@@ -584,6 +644,4 @@ class AdicionarMemoriaViewController: UIViewController{
         }
         return false
     }
-
-    
 }

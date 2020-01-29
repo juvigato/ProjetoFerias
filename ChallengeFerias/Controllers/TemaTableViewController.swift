@@ -31,6 +31,7 @@ class TemaTableViewController:UITableViewController {
         let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath)
         
         celula.textLabel?.text = temas[indexPath.row]
+        celula.textLabel?.textColor = UIColor.black
         
         let tema = UserDefaults.standard.string(forKey: "tema")
         

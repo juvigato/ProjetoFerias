@@ -74,6 +74,11 @@ class MemoriaTableViewController: UITableViewController {
     
     let arrayNomesOriginal = ["alegria", "tristeza", "raiva", "medo", "aversao", "alegriaTristeza", "alegriaRaiva", "alegriaMedo", "alegriaAversao", "tristezaRaiva", "tristezaMedo", "tristezaAversao", "raivaMedo", "raivaAversao", "medoAversao", "alegriaCinza", "tristezaCinza", "raivaCinza", "medoCinza", "aversaoCinza", "alegriaTristezaCinza", "alegriaRaivaCinza", "alegriaMedoCinza", "alegriaAversaoCinza", "tristezaRaivaCinza", "tristezaMedoCinza", "tristezaAversaoCinza", "raivaMedoCinza", "raivaAversaoCinza", "medoAversaoCinza", "alegriaPastel", "tristezaPastel", "raivaPastel", "medoPastel", "aversaoPastel", "alegriaTristezaPastel", "alegriaRaivaPastel", "alegriaMedoPastel", "alegriaAversaoPastel", "tristezaRaivaPastel", "tristezaMedoPastel", "tristezaAversaoPastel", "raivaMedoPastel", "raivaAversaoPastel", "medoAversaoPastel"]
     
+    /**
+    *Carregar  todas características necessárias da tela*
+     - Parameters: Nada
+     - Returns: Nada
+     */
     override func viewDidLoad() {
         carregarImgMemoria()
         super.viewDidLoad()
