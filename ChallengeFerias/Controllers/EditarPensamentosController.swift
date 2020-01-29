@@ -38,6 +38,8 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
         pensamentosTextField.layer.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         pensamentosTextField.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         pensamentosTextField.delegate = self
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         self.view.backgroundColor = UIColor(patternImage: imagemBackground)
         
@@ -59,6 +61,15 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
             imagemPensamentos.image = UIImage(named: "vazio")
         }
 //        degrede(view: testeView)
+    }
+    
+    /**
+    *Quando a edição tiver terminado, o teclado irá sumir da tela*
+     - Parameters: Nada
+     - Returns: Nada
+     */
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
     }
     
     /**
