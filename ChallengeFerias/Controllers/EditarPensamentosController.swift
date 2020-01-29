@@ -33,7 +33,6 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         pensamentosTextField.layer.borderWidth = 1
         pensamentosTextField.layer.borderColor = UIColor.lightGray.cgColor
         pensamentosTextField.delegate = self
@@ -121,7 +120,8 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
         gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
         gradient.endPoint = CGPoint(x: 0.5, y: 1)
         let gradientColor = UIColor.white
-        gradient.colors = [gradientColor.withAlphaComponent(0.0).cgColor, gradientColor.withAlphaComponent(1.0).cgColor]
+        gradient.colors = [gradientColor.withAlphaComponent(0.0).cgColor,
+                           gradientColor.withAlphaComponent(1.0).cgColor]
         gradient.locations = [NSNumber(value: 0.5), NSNumber(value: 1.0), NSNumber(value: 1.0)]
         gradient.frame = view.bounds
         view.layer.mask = gradient

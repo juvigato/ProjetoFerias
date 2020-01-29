@@ -323,11 +323,8 @@ class TimelineMemoriasController: UITableViewController{
                 }
             }
         }
-        
-        
         memorias[indexPath.row].titulo = titulo
         celula.imgMemoriaTimeline.image = UIImage(named: titulo)
-//        celula.emocaoMemoriaTimeline.text = titulo
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
         return celula
     }
@@ -388,4 +385,3 @@ class TimelineMemoriasController: UITableViewController{
         }
     }
 }
-

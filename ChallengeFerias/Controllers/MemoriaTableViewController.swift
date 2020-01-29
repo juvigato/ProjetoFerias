@@ -235,4 +235,3 @@ class MemoriaTableViewController: UITableViewController {
         return dataAtual
     }
 }
-
