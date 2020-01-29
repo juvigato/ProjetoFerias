@@ -293,7 +293,7 @@ class TimelineMemoriasController: UITableViewController{
                     } else if (x.nome == "alegria" && y.nome == "medo") || (x.nome == "medo" && y.nome == "alegria"){
                         titulo = "alegriaMedoPastel"
                     } else if x.nome == "alegria" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "alegria"){
-                        titulo = "alegriaAversaoCinza"
+                        titulo = "alegriaAversaoPastel"
                     } else if x.nome == "tristeza" && y.nome == "raiva" || (x.nome == "raiva" && y.nome == "tristeza"){
                         titulo = "tristezaRaivaPastel"
                     } else if x.nome == "tristeza" && y.nome == "medo" || (x.nome == "medo" && y.nome == "tristeza"){
