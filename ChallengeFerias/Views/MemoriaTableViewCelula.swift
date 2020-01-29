@@ -17,6 +17,10 @@ class MemoriaTableViewCelula: UITableViewCell{
     
     @IBOutlet weak var situacaoMemoriaTimeline: UILabel!
     
+    @IBOutlet weak var imgTarraxinhaEsq: UIImageView!
+    
+    @IBOutlet weak var imgTarraxinhaDir: UIImageView!
+    
     @IBOutlet weak var dataText: UILabel!
     
     override func awakeFromNib() {

@@ -20,8 +20,6 @@ class TimelineMemoriasController: UITableViewController{
     var semMemoriaImg:UIImageView = UIImageView(image: UIImage(named: "semMemoriaImg"))
     
     var imagemBackground:UIImage = UIImage(named: "background.jpg") ?? UIImage()
-        
-//    var imagemBackgroundCinza:UIImage = UIImage(named: "backgroundCinza.png") ?? UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,6 +146,8 @@ class TimelineMemoriasController: UITableViewController{
         let x:Sentimento = memorias[indexPath.row].tem![0] as! Sentimento
         
         if UserDefaults.standard.string(forKey: "tema") == "Original" {
+            celula.imgTarraxinhaEsq.image = UIImage(named: "tarraxinhaOriginal")
+            celula.imgTarraxinhaDir.image = UIImage(named: "tarraxinhaOriginal")
             if (memorias[indexPath.row].tem!.count) > 1 {
                 let y:Sentimento = memorias[indexPath.row].tem![1] as! Sentimento
                 if (x.nome != nil || y.nome != nil){
@@ -189,6 +189,8 @@ class TimelineMemoriasController: UITableViewController{
 
             }
         } else if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza"{
+            celula.imgTarraxinhaEsq.image = UIImage(named: "tarraxinhaCinza")
+            celula.imgTarraxinhaDir.image = UIImage(named: "tarraxinhaCinza")
             if (memorias[indexPath.row].tem!.count) > 1 {
                 let y:Sentimento = memorias[indexPath.row].tem![1] as! Sentimento
                 if (x.nome != nil || y.nome != nil){
@@ -229,6 +231,8 @@ class TimelineMemoriasController: UITableViewController{
                 }
             }
         } else if UserDefaults.standard.string(forKey: "tema") == "Cores pastéis" {
+            celula.imgTarraxinhaEsq.image = UIImage(named: "tarraxinhaPastel")
+            celula.imgTarraxinhaDir.image = UIImage(named: "tarraxinhaPastel")
             if (memorias[indexPath.row].tem!.count) > 1 {
                 let y:Sentimento = memorias[indexPath.row].tem![1] as! Sentimento
                 if (x.nome != nil || y.nome != nil){
