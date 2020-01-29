@@ -92,7 +92,7 @@ class TimelineMemoriasController: UITableViewController{
             
             //adicionar uma imagem se não houver memorias
             if memorias.count == 0 {
-                semMemoriaImg.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
+                semMemoriaImg.frame = CGRect(x: 0, y: 0, width: 250, height: 250)
                 self.view.addSubview(semMemoriaImg)
                 semMemoriaImg.center.x = self.view.center.x
                 semMemoriaImg.center.y = self.view.center.y - 80
@@ -100,7 +100,6 @@ class TimelineMemoriasController: UITableViewController{
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
         }
     }
-    
     
     //metodo que permite a acao de saida
     @IBAction func addMemoria(_ sender: UIStoryboardSegue){
@@ -190,7 +189,6 @@ class TimelineMemoriasController: UITableViewController{
 
             }
         } else if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza"{
-            
             if (memorias[indexPath.row].tem!.count) > 1 {
                 let y:Sentimento = memorias[indexPath.row].tem![1] as! Sentimento
                 if (x.nome != nil || y.nome != nil){
@@ -215,7 +213,7 @@ class TimelineMemoriasController: UITableViewController{
                     } else if x.nome == "medo" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "medo"){
                         titulo = "medoAversaoCinza"
                     }
-                }
+                } 
             }
             if (memorias[indexPath.row].tem!.count) == 1{
                 if x.nome == "alegria" {
@@ -230,7 +228,48 @@ class TimelineMemoriasController: UITableViewController{
                     titulo = "aversaoCinza"
                 }
             }
+        } else if UserDefaults.standard.string(forKey: "tema") == "Cores pastéis" {
+            if (memorias[indexPath.row].tem!.count) > 1 {
+                let y:Sentimento = memorias[indexPath.row].tem![1] as! Sentimento
+                if (x.nome != nil || y.nome != nil){
+                    if (x.nome == "alegria" && y.nome == "tristeza") || (x.nome == "tristeza" && y.nome == "alegria"){
+                        titulo = "alegriaTristezaPastel"
+                    } else if (x.nome == "alegria" && y.nome == "raiva") || (x.nome == "raiva" && y.nome == "alegria") {
+                        titulo = "alegriaRaivaPastel"
+                    } else if (x.nome == "alegria" && y.nome == "medo") || (x.nome == "medo" && y.nome == "alegria"){
+                        titulo = "alegriaMedoPastel"
+                    } else if x.nome == "alegria" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "alegria"){
+                        titulo = "alegriaAversaoCinza"
+                    } else if x.nome == "tristeza" && y.nome == "raiva" || (x.nome == "raiva" && y.nome == "tristeza"){
+                        titulo = "tristezaRaivaPastel"
+                    } else if x.nome == "tristeza" && y.nome == "medo" || (x.nome == "medo" && y.nome == "tristeza"){
+                        titulo = "tristezaMedoPastel"
+                    } else if x.nome == "tristeza" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "tristeza"){
+                        titulo = "tristezaAversaoPastel"
+                    } else if x.nome == "raiva" && y.nome == "medo" || (x.nome == "medo" && y.nome == "raiva"){
+                        titulo = "raivaMedoPastel"
+                    } else if x.nome == "raiva" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "raiva"){
+                        titulo = "raivaAversaoPastel"
+                    } else if x.nome == "medo" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "medo"){
+                        titulo = "medoAversaoPastel"
+                    }
+                }
+            }
+            if (memorias[indexPath.row].tem!.count) == 1{
+                if x.nome == "alegria" {
+                    titulo = "alegriaPastel"
+                } else if x.nome == "tristeza" {
+                    titulo = "tristezaPastel"
+                } else if x.nome == "raiva" {
+                    titulo = "raivaPastel"
+                } else if x.nome == "medo" {
+                    titulo = "medoPastel"
+                } else if x.nome == "aversao" {
+                    titulo = "aversaoPastel"
+                }
+            }
         }
+        
         
         memorias[indexPath.row].titulo = titulo
         celula.imgMemoriaTimeline.image = UIImage(named: titulo)
