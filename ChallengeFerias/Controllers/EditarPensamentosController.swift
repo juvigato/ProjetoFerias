@@ -22,15 +22,15 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
     
     @IBOutlet weak var pensamentosTextField: UITextView!
     
-//    @IBOutlet weak var testeView: UIView!
-    
-    // outlet imagem
     @IBOutlet weak var imagemPensamentos: UIImageView!
     
     var imagemBackground:UIImage = UIImage(named: "backgroundClaro.jpg") ?? UIImage()
     
-//    var imagemBackgroundCinza:UIImage = UIImage(named: "backgroundClaroCinza.jpg") ?? UIImage()
-    
+    /**
+    *Carregar  todas características necessárias da tela*
+     - Parameters: Nada
+     - Returns: Nada
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,6 +60,12 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
 //        degrede(view: testeView)
     }
     
+    /**
+    *Definir como a textView irá parecer antes de ser editada*
+     - Parameters:
+      - textView: textView que está na tela
+     - Returns: Nada
+     */
     func textViewDidBeginEditing(_ textView: UITextView) {
         if pensamentosTextField.text == "Escreva aqui..."{
             pensamentosTextField.text = ""
@@ -67,7 +73,11 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
         }
     }
     
-    
+    /**
+    *Verificar se a textView está vazia após edição*
+     - Parameters: Nada
+     - Returns: Nada
+     */
     func textViewDidEndEditing(_ textView: UITextView) {
         if pensamentosTextField.text.isEmpty{
             pensamentosTextField.text = "Escreva aqui..."
