@@ -74,13 +74,25 @@ class MemoriaTableViewController: UITableViewController {
     
     let arrayNomesOriginal = ["alegria", "tristeza", "raiva", "medo", "aversao", "alegriaTristeza", "alegriaRaiva", "alegriaMedo", "alegriaAversao", "tristezaRaiva", "tristezaMedo", "tristezaAversao", "raivaMedo", "raivaAversao", "medoAversao", "alegriaCinza", "tristezaCinza", "raivaCinza", "medoCinza", "aversaoCinza", "alegriaTristezaCinza", "alegriaRaivaCinza", "alegriaMedoCinza", "alegriaAversaoCinza", "tristezaRaivaCinza", "tristezaMedoCinza", "tristezaAversaoCinza", "raivaMedoCinza", "raivaAversaoCinza", "medoAversaoCinza", "alegriaPastel", "tristezaPastel", "raivaPastel", "medoPastel", "aversaoPastel", "alegriaTristezaPastel", "alegriaRaivaPastel", "alegriaMedoPastel", "alegriaAversaoPastel", "tristezaRaivaPastel", "tristezaMedoPastel", "tristezaAversaoPastel", "raivaMedoPastel", "raivaAversaoPastel", "medoAversaoPastel"]
     
+    /**
+    *Carregar  todas características necessárias da tela*
+     - Parameters: Nada
+     - Returns: Nada
+     */
     override func viewDidLoad() {
-        carregarImgMemoria()
+        carregarDadosMemoria()
         super.viewDidLoad()
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         self.view.backgroundColor = UIColor(patternImage: imagemBackground)
     }
     
+    /**
+    *Detecta qual linha foi selecionada*
+     - Parameters:
+      - tableView: tableView que aparecerá na tela
+      - indexPath: index da célula da tableView
+     - Returns: Nada
+     */
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 1{
             performSegue(withIdentifier: "editarSituacao", sender: nil)
@@ -93,7 +105,12 @@ class MemoriaTableViewController: UITableViewController {
         }
     }
     
-    
+    /**
+    *Ação que da seguimento a alguma tela, ou seja, ao clicar neste botão, o aplicativo vai para a tela anterior e salva os dados modificados na tela atual*
+     - Parameters:
+      - sender: determinada segue
+     - Returns: Nada
+     */
     @IBAction func salvarBotao(_ sender: UIStoryboardSegue){
         if sender.source is EditarSituacaoController{
             if let senderAdd = sender.source as? EditarSituacaoController{
@@ -130,8 +147,14 @@ class MemoriaTableViewController: UITableViewController {
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
 
+    /**
+    *Preparar a tela que virá a seguir*
+     - Parameters:
+      - segue: segue do storyboard
+      - sender: algum gatilho do storyboard
+     - Returns: Nada
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if let situacaoTVC = segue.destination as? EditarSituacaoController{
             if segue.identifier == "editarSituacao"{
                 if let indexPath = tableView.indexPathForSelectedRow{
@@ -140,7 +163,6 @@ class MemoriaTableViewController: UITableViewController {
                 }
             }
         }
-        
         if let pensamentosTVC = segue.destination as? EditarPensamentosController{
             if segue.identifier == "editarPensamentos"{
                 if let indexPath = tableView.indexPathForSelectedRow{
@@ -149,7 +171,6 @@ class MemoriaTableViewController: UITableViewController {
                 }
             }
         }
-        
         if let atitudeTVC = segue.destination as? EditarAtitudeController{
             if segue.identifier == "editarAtitude"{
                 if let indexPath = tableView.indexPathForSelectedRow{
@@ -158,7 +179,6 @@ class MemoriaTableViewController: UITableViewController {
                 }
             }
         }
-        
         if let resultadoTVC = segue.destination as? EditarResultadoController{
             if segue.identifier == "editarResultado"{
                 if let indexPath = tableView.indexPathForSelectedRow{
@@ -167,10 +187,14 @@ class MemoriaTableViewController: UITableViewController {
                 }
             }
         }
-
     }
     
-    func carregarImgMemoria(){
+    /**
+    *Carregar imagem, titulo e data da imagem*
+     - Parameters: Nada
+     - Returns: Nada
+     */
+    func carregarDadosMemoria(){
         imagemMemoria.image = UIImage(named: memoria?.titulo ?? "vazio")
         tituloFoto.text = memoria?.titulo
         formatarNomeImg()
@@ -181,8 +205,12 @@ class MemoriaTableViewController: UITableViewController {
         }
     }
     
+    /**
+    *Formatar nome da imagem, ao recuperar o elemento titulo que a memória possui*
+     - Parameters: Nada
+     - Returns: Nada
+     */
     func formatarNomeImg() {
-        
         for nome in arrayNomesOriginal {
             if let titulo = dicionarioNomesOriginal[nome]{
                 if memoria?.titulo == nome {
@@ -194,7 +222,12 @@ class MemoriaTableViewController: UITableViewController {
         }
     }
     
-    //mudar a data para string
+    /**
+    *Formatar data*
+     - Parameters:
+      - date: data em formato Date
+     - Returns:data em formato de String
+     */
     func formatarData(date:Date) -> String{
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
@@ -202,4 +235,3 @@ class MemoriaTableViewController: UITableViewController {
         return dataAtual
     }
 }
-

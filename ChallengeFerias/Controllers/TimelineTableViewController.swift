@@ -21,6 +21,11 @@ class TimelineMemoriasController: UITableViewController{
     
     var imagemBackground:UIImage = UIImage(named: "background.jpg") ?? UIImage()
     
+    /**
+    *Carregar  todas características necessárias da tela*
+     - Parameters: Nada
+     - Returns: Nada
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -34,13 +39,18 @@ class TimelineMemoriasController: UITableViewController{
         navigationController?.navigationBar.barTintColor = .clear
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.3450980392, green: 0.4901960784, blue: 0.9019607843, alpha: 1)
         self.tableView.separatorStyle = .none
-//        UserDefaults.standard.set("Original", forKey: "tema")
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        
         detectarPrimeiroLançamento()
         carregarMemorias()
         notificacao()
-        
     }
     
+    /**
+    *Detectar se é ou não o primeiro lançamento do aplicativo*
+     - Parameters: Nada
+     - Returns: Nada
+     */
     func detectarPrimeiroLançamento() {
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if launchedBefore  {
@@ -52,6 +62,12 @@ class TimelineMemoriasController: UITableViewController{
         }
     }
     
+    /**
+    *Carregar todas as características da tela que irá aparecer*
+     - Parameters:
+      - animated: valor booleano
+     - Returns: Nada
+     */
     override func viewWillAppear(_ animated: Bool) {
         carregarMemorias()
         
@@ -67,7 +83,11 @@ class TimelineMemoriasController: UITableViewController{
         tableView.tableFooterView = UIView()
     }
     
-    //pegar as memorias que existem
+    /**
+    *Carregar todas memórias já existentem*
+     - Parameters: Nada
+     - Returns: Nada
+     */
     func carregarMemorias(){
         do{
             memorias = try context!.fetch(Memoria.fetchRequest())
@@ -77,11 +97,25 @@ class TimelineMemoriasController: UITableViewController{
         }
     }
     
-    //numero de linhas
+    /**
+    *Checar número de linhas em uma tableview*
+     - Parameters:
+      - tableView: uma tableView que irá aparecer na tela do tipo UITableView
+      - numberOfRowsInSection: número de linhas em uma seção do tipo Inteiro
+     - Returns: um número Inteiro
+     */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memorias.count
     }
     
+    /**
+    *Possibilitar edição da tableview*
+     - Parameters:
+      - tableView: tableView carregada na tela do tipo UITableView
+      - editingStyle: tipo de ocorrência na célula da tableView
+      - indexPath: o index da célula da tableView
+     - Returns: Nada
+     */
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             context?.delete(memorias[indexPath.row])
@@ -98,8 +132,13 @@ class TimelineMemoriasController: UITableViewController{
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
         }
     }
-    
-    //metodo que permite a acao de saida
+
+    /**
+    *Método que permite a ação de saída da tela*
+     - Parameters:
+      - sender: segue do storyboard
+     - Returns: Nada
+     */
     @IBAction func addMemoria(_ sender: UIStoryboardSegue){
         if sender.source is NovaMemoriaViewController{
             if let senderAdd = sender.source as? NovaMemoriaViewController{
@@ -112,7 +151,12 @@ class TimelineMemoriasController: UITableViewController{
         }
     }
     
-    //formatar a data
+    /**
+    *Formatar data*
+     - Parameters:
+      - date: data em formato Date
+     - Returns:data em formato de String
+     */
     func formatarData(date:Date) -> String{
         let formatter = DateFormatter()
 //        formatter.dateFormat = "dd.MM.yyyy"
@@ -122,7 +166,13 @@ class TimelineMemoriasController: UITableViewController{
         return dataAtual
     }
     
-    //carregar as células
+    /**
+    *Carregar células da tableView e seus respectivos itens*
+     - Parameters:
+      - tableView: tableView que aparecerá na tela
+      - indexPath: index da célula da tableView
+     - Returns: célula da tableView recebida
+     */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath) as! MemoriaTableViewCelula
 
@@ -202,7 +252,7 @@ class TimelineMemoriasController: UITableViewController{
                         titulo = "alegriaMedoCinza"
                     } else if x.nome == "alegria" && y.nome == "aversao" || (x.nome == "aversao" && y.nome == "alegria"){
                         titulo = "alegriaAversaoCinza"
-                    } else if x.nome == "tristeza" && y.nome == "raiva" || (x.nome == "raiva" && y.nome == "tristezaCinza"){
+                    } else if x.nome == "tristeza" && y.nome == "raiva" || (x.nome == "raiva" && y.nome == "tristeza"){
                         titulo = "tristezaRaivaCinza"
                     } else if x.nome == "tristeza" && y.nome == "medo" || (x.nome == "medo" && y.nome == "tristeza"){
                         titulo = "tristezaMedoCinza"
@@ -273,15 +323,19 @@ class TimelineMemoriasController: UITableViewController{
                 }
             }
         }
-        
-        
         memorias[indexPath.row].titulo = titulo
         celula.imgMemoriaTimeline.image = UIImage(named: titulo)
-//        celula.emocaoMemoriaTimeline.text = titulo
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
         return celula
     }
     
+    /**
+    *Preparar a tela que virá a seguir*
+     - Parameters:
+      - segue: segue do storyboard
+      - sender: algum gatilho do storyboard
+     - Returns: Nada
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let memoriaTVC = segue.destination as? MemoriaTableViewController{
             if segue.identifier == "detalhesMemoria"{
@@ -294,7 +348,11 @@ class TimelineMemoriasController: UITableViewController{
         }
     }
     
-    //notificacoes
+    /**
+    *Criar notificações e pedir autorização*
+     - Parameters: Nada
+     - Returns: Nada
+     */
     func notificacao(){
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.getNotificationSettings{ (settings) in
@@ -327,4 +385,3 @@ class TimelineMemoriasController: UITableViewController{
         }
     }
 }
-

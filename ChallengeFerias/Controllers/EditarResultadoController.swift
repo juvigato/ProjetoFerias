@@ -26,6 +26,11 @@ class EditarResultadoController:UIViewController, UITextViewDelegate{
     
     var imagemBackground:UIImage = UIImage(named: "backgroundClaro.jpg") ?? UIImage()
     
+    /**
+    *Carregar  todas características necessárias da tela*
+     - Parameters: Nada
+     - Returns: Nada
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,6 +61,12 @@ class EditarResultadoController:UIViewController, UITextViewDelegate{
         }
     }
     
+    /**
+    *Definir como a textView irá parecer antes de ser editada*
+     - Parameters:
+      - textView: textView que está na tela
+     - Returns: Nada
+     */
     func textViewDidBeginEditing(_ textView: UITextView) {
         if resultadoTextField.text == "Escreva aqui..."{
             resultadoTextField.text = ""
@@ -63,7 +74,11 @@ class EditarResultadoController:UIViewController, UITextViewDelegate{
         }
     }
     
-    
+    /**
+    *Verificar se a textView está vazia após edição*
+     - Parameters: Nada
+     - Returns: Nada
+     */
     func textViewDidEndEditing(_ textView: UITextView) {
         if resultadoTextField.text.isEmpty{
             resultadoTextField.text = "Escreva aqui..."
@@ -71,6 +86,12 @@ class EditarResultadoController:UIViewController, UITextViewDelegate{
         }
     }
     
+    /**
+    *Executar a segue recebida*
+    - Parameters:
+     - view: uma view do tipo UIView
+    - Returns: Nada
+    */
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if resultadoTextField.text != nil, resultadoTextField.text!.count > 0{
             resultadoText = resultadoTextField.text

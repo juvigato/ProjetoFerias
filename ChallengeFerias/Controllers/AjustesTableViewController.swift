@@ -13,25 +13,15 @@ class AjustesTableViewController:UITableViewController{
     
     var imagemBackground:UIImage = UIImage(named: "backgroundClaro.jpg") ?? UIImage()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: imagemBackground)
-//        verificarNotificacoes()
-    }
-    
-    func verificarNotificacoes() {
-        
-        if UserDefaults.standard.string(forKey: "notificacoes") == "on" {
-            switchButton.setOn(true, animated:true)
-        } else {
-            switchButton.setOn(false, animated:true)
-        }
-    }
-    
     @IBOutlet weak var switchButton: UISwitch!
 
+    /**
+    *Quando clicado, detecta se o botão switch está ativado ou não*
+    - Parameters:
+      - sender: botão clicado
+    - Returns: Nada
+    */
     @IBAction func switchButtonNotificationsClicked(_ sender: Any) {
-        
         if switchButton.isOn {
             print("on")
             UserDefaults.standard.set("on", forKey: "notificacoes")
@@ -42,9 +32,32 @@ class AjustesTableViewController:UITableViewController{
 //            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["5seconds"])
         }
-   
     }
     
+    /**
+    *Carregar  todas características necessárias da tela*
+    - Parameters: Nada
+    - Returns: Nada
+    */
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: imagemBackground)
+//        verificarNotificacoes()
+    }
+    
+    /**
+    *Verificar se as notifições estão ativadas ou desativadas*
+    - Parameters: Nada
+    - Returns: Nada
+    */
+    func verificarNotificacoes() {
+        if UserDefaults.standard.string(forKey: "notificacoes") == "on" {
+            switchButton.setOn(true, animated:true)
+        } else {
+            switchButton.setOn(false, animated:true)
+        }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

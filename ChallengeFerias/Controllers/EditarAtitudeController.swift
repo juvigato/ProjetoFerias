@@ -28,6 +28,11 @@ class EditarAtitudeController:UIViewController, UITextViewDelegate{
     
     var imagemBackgroundCinza:UIImage = UIImage(named: "backgroundClaroCinza.jpg") ?? UIImage()
     
+    /**
+    *Carregar  todas características necessárias da tela*
+     - Parameters: Nada
+     - Returns: Nada
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,6 +67,12 @@ class EditarAtitudeController:UIViewController, UITextViewDelegate{
         }
     }
     
+    /**
+    *Definir como a textView irá parecer antes de ser editada*
+     - Parameters:
+      - textView: textView que está na tela
+     - Returns: Nada
+     */
     func textViewDidBeginEditing(_ textView: UITextView) {
         if atitudeTextField.text == "Escreva aqui..."{
             atitudeTextField.text = ""
@@ -69,7 +80,11 @@ class EditarAtitudeController:UIViewController, UITextViewDelegate{
         }
     }
     
-    
+    /**
+    *Verificar se a textView está vazia após edição*
+     - Parameters: Nada
+     - Returns: Nada
+     */
     func textViewDidEndEditing(_ textView: UITextView) {
         if atitudeTextField.text.isEmpty{
             atitudeTextField.text = "Escreva aqui..."
@@ -77,7 +92,13 @@ class EditarAtitudeController:UIViewController, UITextViewDelegate{
         }
     }
 
-    
+    /**
+    *Executar a segue recebida*
+    - Parameters:
+     - identifier: string que representa o id da tela que será apresentada
+     - sender: gatilho do storyboard
+    - Returns: Valor booleano
+    */
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if atitudeTextField.text != nil, atitudeTextField.text!.count > 0{
             atitudeText = atitudeTextField.text

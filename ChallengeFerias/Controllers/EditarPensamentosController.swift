@@ -22,18 +22,17 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
     
     @IBOutlet weak var pensamentosTextField: UITextView!
     
-//    @IBOutlet weak var testeView: UIView!
-    
-    // outlet imagem
     @IBOutlet weak var imagemPensamentos: UIImageView!
     
     var imagemBackground:UIImage = UIImage(named: "backgroundClaro.jpg") ?? UIImage()
     
-//    var imagemBackgroundCinza:UIImage = UIImage(named: "backgroundClaroCinza.jpg") ?? UIImage()
-    
+    /**
+    *Carregar  todas características necessárias da tela*
+     - Parameters: Nada
+     - Returns: Nada
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         pensamentosTextField.layer.borderWidth = 1
         pensamentosTextField.layer.borderColor = UIColor.lightGray.cgColor
         pensamentosTextField.delegate = self
@@ -60,6 +59,12 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
 //        degrede(view: testeView)
     }
     
+    /**
+    *Definir como a textView irá parecer antes de ser editada*
+     - Parameters:
+      - textView: textView que está na tela
+     - Returns: Nada
+     */
     func textViewDidBeginEditing(_ textView: UITextView) {
         if pensamentosTextField.text == "Escreva aqui..."{
             pensamentosTextField.text = ""
@@ -67,7 +72,11 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
         }
     }
     
-    
+    /**
+    *Verificar se a textView está vazia após edição*
+     - Parameters: Nada
+     - Returns: Nada
+     */
     func textViewDidEndEditing(_ textView: UITextView) {
         if pensamentosTextField.text.isEmpty{
             pensamentosTextField.text = "Escreva aqui..."
@@ -75,6 +84,13 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
         }
     }
     
+    /**
+    *Executar a segue recebida*
+    - Parameters:
+     - identifier: string que representa o id da tela que será apresentada
+     - sender: gatilho do storyboard
+    - Returns: Valor booleano
+    */
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if pensamentosTextField.text != nil, pensamentosTextField.text!.count > 0{
             pensamentosText = pensamentosTextField.text
@@ -93,12 +109,19 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
         return false
     }
     
+    /**
+    *Executar a segue recebida*
+    - Parameters:
+     - view: uma view do tipo UIView
+    - Returns: Nada
+    */
     func degrede(view: UIView){
         let gradient = CAGradientLayer()
         gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
         gradient.endPoint = CGPoint(x: 0.5, y: 1)
         let gradientColor = UIColor.white
-        gradient.colors = [gradientColor.withAlphaComponent(0.0).cgColor, gradientColor.withAlphaComponent(1.0).cgColor]
+        gradient.colors = [gradientColor.withAlphaComponent(0.0).cgColor,
+                           gradientColor.withAlphaComponent(1.0).cgColor]
         gradient.locations = [NSNumber(value: 0.5), NSNumber(value: 1.0), NSNumber(value: 1.0)]
         gradient.frame = view.bounds
         view.layer.mask = gradient
