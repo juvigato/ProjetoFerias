@@ -36,6 +36,8 @@ class EditarResultadoController:UIViewController, UITextViewDelegate{
         
         resultadoTextField.layer.borderWidth = 1
         resultadoTextField.layer.borderColor = UIColor.lightGray.cgColor
+        resultadoTextField.layer.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        resultadoTextField.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         resultadoTextField.delegate = self
         
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext

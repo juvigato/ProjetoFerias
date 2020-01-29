@@ -38,6 +38,8 @@ class EditarAtitudeController:UIViewController, UITextViewDelegate{
         
         atitudeTextField.layer.borderWidth = 1
         atitudeTextField.layer.borderColor = UIColor.lightGray.cgColor
+        atitudeTextField.layer.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        atitudeTextField.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         atitudeTextField.delegate = self
         
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
