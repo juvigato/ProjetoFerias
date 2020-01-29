@@ -17,7 +17,7 @@ class TimelineMemoriasController: UITableViewController{
     
     var context:NSManagedObjectContext?
     
-    var semMemoriaImg:UIImageView = UIImageView(image: UIImage(named: "empty"))
+    var semMemoriaImg:UIImageView = UIImageView(image: UIImage(named: "semMemoriaImg"))
     
     var imagemBackground:UIImage = UIImage(named: "background.jpg") ?? UIImage()
         
@@ -57,13 +57,14 @@ class TimelineMemoriasController: UITableViewController{
     override func viewWillAppear(_ animated: Bool) {
         carregarMemorias()
         
-//        if memorias.count == 0 {
-//            semMemoriaImg.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-//            self.view.addSubview(semMemoriaImg)
-//            semMemoriaImg.center.x = self.view.center.x
-//            semMemoriaImg.center.y = self.view.center.y - 80
-//        }
-//
+        if memorias.count == 0 {
+            semMemoriaImg.frame = CGRect(x: 0, y: 0, width: 220, height: 220)
+            self.view.addSubview(semMemoriaImg)
+            semMemoriaImg.center.x = self.view.center.x
+            semMemoriaImg.center.y = self.view.center.y - 80
+        } else {
+            semMemoriaImg.removeFromSuperview()
+        }
         tableView.reloadData()
         tableView.tableFooterView = UIView()
     }
@@ -90,12 +91,12 @@ class TimelineMemoriasController: UITableViewController{
             tableView.deleteRows(at: [indexPath], with: .fade)
             
             //adicionar uma imagem se não houver memorias
-//            if memorias.count == 0 {
-//                semMemoriaImg.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
-//                self.view.addSubview(semMemoriaImg)
-//                semMemoriaImg.center.x = self.view.center.x
-//                semMemoriaImg.center.y = self.view.center.y - 80
-//            }
+            if memorias.count == 0 {
+                semMemoriaImg.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
+                self.view.addSubview(semMemoriaImg)
+                semMemoriaImg.center.x = self.view.center.x
+                semMemoriaImg.center.y = self.view.center.y - 80
+            }
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
         }
     }
