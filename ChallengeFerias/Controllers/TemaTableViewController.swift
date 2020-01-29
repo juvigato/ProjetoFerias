@@ -11,7 +11,7 @@ import UIKit
 
 class TemaTableViewController:UITableViewController {
     
-    let temas = ["Original", "Escala de cinza"]
+    let temas = ["Original", "Escala de cinza", "Cores pastéis"]
     
     var imagemBackground:UIImage = UIImage(named: "backgroundClaro.jpg") ?? UIImage()
     

@@ -31,8 +31,8 @@
             filePath = "ChallengeFerias/Controllers/TimelineTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -72,22 +72,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8AAB7610-1FDA-4767-AA1D-14F3A17BCB2D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ChallengeFerias/Controllers/TimelineTableViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "262"
-            endingLineNumber = "262"
-            landmarkName = "notificacao()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "AB7655AE-1A4A-46B5-84AC-B1F6F725DF98"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -95,9 +79,9 @@
             filePath = "ChallengeFerias/Controllers/AdicionarMemoriaViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "279"
-            endingLineNumber = "279"
-            landmarkName = "checarBotaoSalvar()"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
+            landmarkName = "buttonAversaoClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

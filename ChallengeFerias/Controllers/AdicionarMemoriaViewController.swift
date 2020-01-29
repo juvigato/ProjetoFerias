@@ -87,7 +87,7 @@ class AdicionarMemoriaViewController: UIViewController{
             buttonRaiva.setImage(UIImage(named: "imagemBotaoRaivaCinza"), for: .normal)
             buttonMedo.setImage(UIImage(named: "imagemBotaoMedoCinza"), for: .normal)
             buttonAversao.setImage(UIImage(named: "imagemBotaoAversaoCinza"), for: .normal)
-        } else {
+        } else if UserDefaults.standard.string(forKey: "tema") == "Original" {
             lblButtonAlegria.textColor = #colorLiteral(red: 1, green: 0.8, blue: 0.2705882353, alpha: 1)
             lblButtonTristeza.textColor = #colorLiteral(red: 0.337254902, green: 0.4980392157, blue: 0.9019607843, alpha: 1)
             lblButtonRaiva.textColor = #colorLiteral(red: 0.9019607843, green: 0.3215686275, blue: 0.2588235294, alpha: 1)
@@ -98,6 +98,17 @@ class AdicionarMemoriaViewController: UIViewController{
             buttonRaiva.setImage(UIImage(named: "imagemBotaoRaiva"), for: .normal)
             buttonMedo.setImage(UIImage(named: "imagemBotaoMedo"), for: .normal)
             buttonAversao.setImage(UIImage(named: "imagemBotaoAversao"), for: .normal)
+        } else if UserDefaults.standard.string(forKey: "tema") == "Cores pastéis" {
+            lblButtonAlegria.textColor = #colorLiteral(red: 0.968627451, green: 0.8705882353, blue: 0.05490196078, alpha: 1)
+            lblButtonTristeza.textColor = #colorLiteral(red: 0.2588235294, green: 0.6745098039, blue: 0.9803921569, alpha: 1)
+            lblButtonRaiva.textColor = #colorLiteral(red: 0.9568627451, green: 0.3137254902, blue: 0.3137254902, alpha: 1)
+            lblButtonMedo.textColor = #colorLiteral(red: 0.9882352941, green: 0.6274509804, blue: 0.2705882353, alpha: 1)
+            lblButtonAversao.textColor = #colorLiteral(red: 0.5607843137, green: 0.7568627451, blue: 0.4549019608, alpha: 1)
+            buttonAlegria.setImage(UIImage(named: "imagemBotaoAlegriaPastel"), for: .normal)
+            buttonTristeza.setImage(UIImage(named: "imagemBotaoTristezaPastel"), for: .normal)
+            buttonRaiva.setImage(UIImage(named: "imagemBotaoRaivaPastel"), for: .normal)
+            buttonMedo.setImage(UIImage(named: "imagemBotaoMedoPastel"), for: .normal)
+            buttonAversao.setImage(UIImage(named: "imagemBotaoAversaoPastel"), for: .normal)
         }
     }
     
@@ -130,9 +141,12 @@ class AdicionarMemoriaViewController: UIViewController{
                 contadorBotoesSelecionados += 1
                 if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
                     buttonAlegria.setImage(UIImage(named: "imagemBotaoAlegriaClicadaCinza"), for: .normal)
-                } else {
+                } else if UserDefaults.standard.string(forKey: "tema") == "Original" {
                     buttonAlegria.setImage(UIImage(named: "imagemBotaoAlegriaClicada"), for: .normal)
+                } else if UserDefaults.standard.string(forKey: "tema") == "Cores pastéis" {
+                    buttonAlegria.setImage(UIImage(named: "imagemBotaoAlegriaClicadaPastel"), for: .normal)
                 }
+                    
             }
         // Entrar se estiver clicado
         } else {
@@ -143,8 +157,10 @@ class AdicionarMemoriaViewController: UIViewController{
             contadorBotoesSelecionados -= 1
             if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
                 buttonAlegria.setImage(UIImage(named: "imagemBotaoAlegriaCinza"), for: .normal)
-            } else {
+            } else if UserDefaults.standard.string(forKey: "tema") == "Original" {
                 buttonAlegria.setImage(UIImage(named: "imagemBotaoAlegria"), for: .normal)
+            } else if UserDefaults.standard.string(forKey: "tema") == "Cores pastéis" {
+                buttonAlegria.setImage(UIImage(named: "imagemBotaoAlegriaPastel"), for: .normal)
             }
         }
         mudarImg()
@@ -162,8 +178,10 @@ class AdicionarMemoriaViewController: UIViewController{
                 
                 if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
                     buttonTristeza.setImage(UIImage(named: "imagemBotaoTristezaClicadaCinza"), for: .normal)
-                } else {
+                } else if UserDefaults.standard.string(forKey: "tema") == "Original" {
                     buttonTristeza.setImage(UIImage(named: "imagemBotaoTristezaClicada"), for: .normal)
+                } else if UserDefaults.standard.string(forKey: "tema") == "Cores pastéis" {
+                    buttonTristeza.setImage(UIImage(named: "imagemBotaoTristezaClicadaPastel"), for: .normal)
                 }
             }
         } else {
@@ -174,8 +192,10 @@ class AdicionarMemoriaViewController: UIViewController{
             contadorBotoesSelecionados -= 1
             if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
                 buttonTristeza.setImage(UIImage(named: "imagemBotaoTristezaCinza"), for: .normal)
-            } else {
+            } else if UserDefaults.standard.string(forKey: "tema") == "Original" {
                 buttonTristeza.setImage(UIImage(named: "imagemBotaoTristeza"), for: .normal)
+            } else if UserDefaults.standard.string(forKey: "tema") == "Cores pastéis" {
+                buttonTristeza.setImage(UIImage(named: "imagemBotaoTristezaPastel"), for: .normal)
             }
             
         }
@@ -193,8 +213,10 @@ class AdicionarMemoriaViewController: UIViewController{
                 contadorBotoesSelecionados += 1
                 if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
                     buttonRaiva.setImage(UIImage(named: "imagemBotaoRaivaClicadaCinza"), for: .normal)
-                } else {
+                } else if UserDefaults.standard.string(forKey: "tema") == "Original" {
                     buttonRaiva.setImage(UIImage(named: "imagemBotaoRaivaClicada"), for: .normal)
+                } else if UserDefaults.standard.string(forKey: "tema") == "Cores pastéis" {
+                    buttonRaiva.setImage(UIImage(named: "imagemBotaoRaivaClicadaPastel"), for: .normal)
                 }
             }
         } else {
@@ -205,8 +227,11 @@ class AdicionarMemoriaViewController: UIViewController{
             contadorBotoesSelecionados -= 1
             if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
                 buttonRaiva.setImage(UIImage(named: "imagemBotaoRaivaCinza"), for: .normal)
-            } else {
-                buttonRaiva.setImage(UIImage(named: "imagemBotaoRaiva"), for: .normal)            }
+            } else if UserDefaults.standard.string(forKey: "tema") == "Original" {
+                buttonRaiva.setImage(UIImage(named: "imagemBotaoRaiva"), for: .normal)
+            } else if UserDefaults.standard.string(forKey: "tema") == "Cores pastéis" {
+                buttonRaiva.setImage(UIImage(named: "imagemBotaoRaivaPastel"), for: .normal)
+            }
             
         }
         mudarImg()
@@ -223,8 +248,10 @@ class AdicionarMemoriaViewController: UIViewController{
                 buttonMedo.setImage(UIImage(named: "imagemBotaoMedoClicada"), for: .normal)
                 if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
                     buttonMedo.setImage(UIImage(named: "imagemBotaoMedoClicadaCinza"), for: .normal)
-                } else {
+                } else if UserDefaults.standard.string(forKey: "tema") == "Original" {
                     buttonMedo.setImage(UIImage(named: "imagemBotaoMedoClicada"), for: .normal)
+                } else if UserDefaults.standard.string(forKey: "tema") == "Cores pastéis" {
+                    buttonMedo.setImage(UIImage(named: "imagemBotaoMedoClicadaPastel"), for: .normal)
                 }
             }
         } else {
@@ -236,8 +263,10 @@ class AdicionarMemoriaViewController: UIViewController{
             
             if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
                 buttonMedo.setImage(UIImage(named: "imagemBotaoMedoCinza"), for: .normal)
-            } else {
+            } else if UserDefaults.standard.string(forKey: "tema") == "Original" {
                 buttonMedo.setImage(UIImage(named: "imagemBotaoMedo"), for: .normal)
+            } else if UserDefaults.standard.string(forKey: "tema") == "Cores pastéis" {
+                buttonMedo.setImage(UIImage(named: "imagemBotaoMedoPastel"), for: .normal)
             }
         }
         mudarImg()
@@ -253,8 +282,10 @@ class AdicionarMemoriaViewController: UIViewController{
                 
                 if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
                     buttonAversao.setImage(UIImage(named: "imagemBotaoAversaoClicadaCinza"), for: .normal)
-                } else {
+                } else if UserDefaults.standard.string(forKey: "tema") == "Original" {
                     buttonAversao.setImage(UIImage(named: "imagemBotaoAversaoClicada"), for: .normal)
+                } else if UserDefaults.standard.string(forKey: "tema") == "Cores pastéis" {
+                    buttonAversao.setImage(UIImage(named: "imagemBotaoAversaoClicadaPastel"), for: .normal)
                 }
             }
         } else {
@@ -266,8 +297,10 @@ class AdicionarMemoriaViewController: UIViewController{
             
             if UserDefaults.standard.string(forKey: "tema") == "Escala de cinza" {
                 buttonAversao.setImage(UIImage(named: "imagemBotaoAversaoCinza"), for: .normal)
-            } else {
+            } else if UserDefaults.standard.string(forKey: "tema") == "Original" {
                 buttonAversao.setImage(UIImage(named: "imagemBotaoAversao"), for: .normal)
+            } else if UserDefaults.standard.string(forKey: "tema") == "Cores pastéis" {
+                buttonAversao.setImage(UIImage(named: "imagemBotaoAversaoPastel"), for: .normal)
             }
         }
         mudarImg()
@@ -448,6 +481,86 @@ class AdicionarMemoriaViewController: UIViewController{
             
             else {
                 titulo = "vazioCinza"
+            }
+        }
+        else if UserDefaults.standard.string(forKey: "tema") == "Cores pastéis" {
+            //Mudar imagem quando alegria é clicado
+            if sentimentos.firstIndex(of: "alegria") != nil{
+                if sentimentos.firstIndex(of: "tristeza") != nil{
+                    titulo = "alegriaTristezaPastel"
+                } else if sentimentos.firstIndex(of: "raiva") != nil {
+                    titulo = "alegriaRaivaPastel"
+                } else if sentimentos.firstIndex(of: "medo") != nil {
+                    titulo = "alegriaMedoPastel"
+                } else if sentimentos.firstIndex(of: "aversao") != nil {
+                    titulo = "alegriaAversaoPastel"
+                } else {
+                    titulo = "alegriaPastel"
+                }
+            }
+            
+            // Mudar imagem quando Tristeza é clicado
+            else if sentimentos.firstIndex(of: "tristeza") != nil{
+                if sentimentos.firstIndex(of: "alegria") != nil{
+                    titulo = "alegriaTristezaPastel"
+                } else if sentimentos.firstIndex(of: "raiva") != nil {
+                    titulo = "tristezaRaivaPastel"
+                } else if sentimentos.firstIndex(of: "medo") != nil {
+                    titulo = "tristezaMedoPastel"
+                } else if sentimentos.firstIndex(of: "aversao") != nil {
+                    titulo = "tristezaAversaoPastel"
+                } else {
+                    titulo = "tristezaPastel"
+                }
+            }
+            
+            // Mudar imagem quando raiva é clicada
+            else if let index = sentimentos.firstIndex(of: "raiva") {
+                if sentimentos.firstIndex(of: "alegria") != nil{
+                    titulo = "alegriaRaivaPastel"
+                } else if sentimentos.firstIndex(of: "tristeza") != nil {
+                    titulo = "tristezaRaivaPastel"
+                } else if sentimentos.firstIndex(of: "medo") != nil {
+                    titulo = "raivaMedoPastel"
+                } else if sentimentos.firstIndex(of: "aversao") != nil {
+                    titulo = "raivaAversaoPastel"
+                } else {
+                    titulo = "raivaPastel"
+                }
+            }
+            
+            // Mudar imagem quando medo é clicada
+            else if let index = sentimentos.firstIndex(of: "medo"){
+                if sentimentos.firstIndex(of: "alegria") != nil{
+                    titulo = "alegriaMedoPastel"
+                } else if sentimentos.firstIndex(of: "tristeza") != nil {
+                    titulo = "tristezaMedoPastel"
+                } else if sentimentos.firstIndex(of: "raiva") != nil {
+                    titulo = "raivaMedoPastel"
+                } else if sentimentos.firstIndex(of: "aversao") != nil {
+                    titulo = "medoAversaoPastel"
+                } else {
+                    titulo = "medoPastel"
+                }
+            }
+            
+            // Mudar imagem quando aversao é clicada
+            else if let index = sentimentos.firstIndex(of: "aversao"){
+                if sentimentos.firstIndex(of: "alegria") != nil{
+                    titulo = "alegriaAversaoPastel"
+                } else if sentimentos.firstIndex(of: "tristeza") != nil {
+                    titulo = "tristezaAversaoPastel"
+                } else if sentimentos.firstIndex(of: "medo") != nil {
+                    titulo = "medoAversaoPastel"
+                } else if sentimentos.firstIndex(of: "raiva") != nil {
+                    titulo = "raivaAversaoPastel"
+                } else {
+                    titulo = "aversaoPastel"
+                }
+            }
+            
+            else {
+                titulo = "vazioPastel"
             }
         }
         
