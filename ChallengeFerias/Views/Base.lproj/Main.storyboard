@@ -311,14 +311,14 @@
                                             </variation>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tarraxinhaOriginal" translatesAutoresizingMaskIntoConstraints="NO" id="doY-DT-00o">
-                                            <rect key="frame" x="86.5" y="4" width="42" height="42.000000000000057"/>
+                                            <rect key="frame" x="86.5" y="4" width="42" height="42"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="41.999999999999943" id="K6y-wt-Xqt"/>
                                                 <constraint firstAttribute="width" constant="42" id="wmW-ao-eb3"/>
                                             </constraints>
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tarraxinhaOriginal" translatesAutoresizingMaskIntoConstraints="NO" id="GHz-a6-xUk">
-                                            <rect key="frame" x="285.5" y="4" width="42" height="42.000000000000057"/>
+                                            <rect key="frame" x="285.5" y="4" width="42" height="42"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="42" id="Qv2-QI-mWG"/>
                                                 <constraint firstAttribute="height" constant="42" id="aRj-RX-BRM"/>
@@ -352,7 +352,7 @@
                             <outlet property="delegate" destination="nNh-Tc-IMl" id="Ap6-6m-A46"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Timeline" id="bye-gW-2tp">
+                    <navigationItem key="navigationItem" title="Linha do Tempo" id="bye-gW-2tp">
                         <barButtonItem key="leftBarButtonItem" title="Ajustes" id="hNO-3t-JYc">
                             <connections>
                                 <segue destination="xB2-0H-Yoo" kind="show" id="aNZ-ec-S6o"/>
