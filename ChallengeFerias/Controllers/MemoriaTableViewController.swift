@@ -26,6 +26,54 @@ class MemoriaTableViewController: UITableViewController {
     
     var imagemBackground:UIImage = UIImage(named: "backgroundClaro.jpg") ?? UIImage()
     
+    var dicionarioNomesOriginal: [String:String] = ["alegria": "Alegria",
+                                                    "tristeza": "Tristeza",
+                                                    "raiva": "Raiva",
+                                                    "medo": "Medo",
+                                                    "aversao": "Aversão",
+                                                    "alegriaTristeza": "Alegria e Tristeza",
+                                                    "alegriaRaiva": "Alegria e Raiva",
+                                                    "alegriaMedo": "Alegria e Medo",
+                                                    "alegriaAversao": "Alegria e Aversão",
+                                                    "tristezaRaiva": "Tristeza e Raiva",
+                                                    "tristezaMedo": "Tristeza e Medo",
+                                                    "tristezaAversao": "Tristeza e Aversão",
+                                                    "raivaMedo": "Raiva e Medo",
+                                                    "raivaAversao": "Raiva e Aversão",
+                                                    "medoAversao": "Medo e Aversão",
+                                                    "alegriaCinza": "Alegria",
+                                                    "tristezaCinza": "Tristeza",
+                                                    "raivaCinza": "Raiva",
+                                                    "medoCinza": "Medo",
+                                                    "aversaoCinza": "Aversão",
+                                                    "alegriaTristezaCinza": "Alegria e Tristeza",
+                                                    "alegriaRaivaCinza": "Alegria e Raiva",
+                                                    "alegriaMedoCinza": "Alegria e Medo",
+                                                    "alegriaAversaoCinza": "Alegria e Aversão",
+                                                    "tristezaRaivaCinza": "Tristeza e Raiva",
+                                                    "tristezaMedoCinza": "Tristeza e Medo",
+                                                    "tristezaAversaoCinza": "Tristeza e Aversão",
+                                                    "raivaMedoCinza": "Raiva e Medo",
+                                                    "raivaAversaoCinza": "Raiva e Aversão",
+                                                    "medoAversaoCinza": "Medo e Aversão",
+                                                    "alegriaPastel": "Alegria",
+                                                    "tristezaPastel": "Tristeza",
+                                                    "raivaPastel": "Raiva",
+                                                    "medoPastel": "Medo",
+                                                    "aversaoPastel": "Aversão",
+                                                    "alegriaTristezaPastel": "Alegria e Tristeza",
+                                                    "alegriaRaivaPastel": "Alegria e Raiva",
+                                                    "alegriaMedoPastel": "Alegria e Medo",
+                                                    "alegriaAversaoPastel": "Alegria e Aversão",
+                                                    "tristezaRaivaPastel": "Tristeza e Raiva",
+                                                    "tristezaMedoPastel": "Tristeza e Medo",
+                                                    "tristezaAversaoPastel": "Tristeza e Aversão",
+                                                    "raivaMedoPastel": "Raiva e Medo",
+                                                    "raivaAversaoPastel": "Raiva e Aversão",
+                                                    "medoAversaoPastel": "Medo e Aversão"]
+    
+    let arrayNomesOriginal = ["alegria", "tristeza", "raiva", "medo", "aversao", "alegriaTristeza", "alegriaRaiva", "alegriaMedo", "alegriaAversao", "tristezaRaiva", "tristezaMedo", "tristezaAversao", "raivaMedo", "raivaAversao", "medoAversao", "alegriaCinza", "tristezaCinza", "raivaCinza", "medoCinza", "aversaoCinza", "alegriaTristezaCinza", "alegriaRaivaCinza", "alegriaMedoCinza", "alegriaAversaoCinza", "tristezaRaivaCinza", "tristezaMedoCinza", "tristezaAversaoCinza", "raivaMedoCinza", "raivaAversaoCinza", "medoAversaoCinza", "alegriaPastel", "tristezaPastel", "raivaPastel", "medoPastel", "aversaoPastel", "alegriaTristezaPastel", "alegriaRaivaPastel", "alegriaMedoPastel", "alegriaAversaoPastel", "tristezaRaivaPastel", "tristezaMedoPastel", "tristezaAversaoPastel", "raivaMedoPastel", "raivaAversaoPastel", "medoAversaoPastel"]
+    
 //    var imagemBackgroundCinza:UIImage = UIImage(named: "backgroundClaroCinza.jpg") ?? UIImage()
     
     override func viewDidLoad() {
@@ -127,10 +175,24 @@ class MemoriaTableViewController: UITableViewController {
     func carregarImgMemoria(){
         imagemMemoria.image = UIImage(named: memoria?.titulo ?? "vazio")
         tituloFoto.text = memoria?.titulo
+        formatarNomeImg()
         if memoria?.data != nil {
             dataText.text = formatarData(date: memoria?.data as! Date)
         } else{
             dataText.text = "Sem data"
+        }
+    }
+    
+    func formatarNomeImg() {
+        
+        for nome in arrayNomesOriginal {
+            if let titulo = dicionarioNomesOriginal[nome]{
+                if memoria?.titulo == nome {
+                    tituloFoto.text = titulo
+                }
+            } else {
+                print("error")
+            }
         }
     }
     
