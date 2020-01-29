@@ -98,6 +98,17 @@ class AdicionarMemoriaViewController: UIViewController{
             buttonRaiva.setImage(UIImage(named: "imagemBotaoRaiva"), for: .normal)
             buttonMedo.setImage(UIImage(named: "imagemBotaoMedo"), for: .normal)
             buttonAversao.setImage(UIImage(named: "imagemBotaoAversao"), for: .normal)
+        } else if UserDefaults.standard.string(forKey: "tema") == "Cores pastéis" {
+            lblButtonAlegria.textColor = #colorLiteral(red: 0.968627451, green: 0.8705882353, blue: 0.05490196078, alpha: 1)
+            lblButtonTristeza.textColor = #colorLiteral(red: 0.2588235294, green: 0.6745098039, blue: 0.9803921569, alpha: 1)
+            lblButtonRaiva.textColor = #colorLiteral(red: 0.9568627451, green: 0.3137254902, blue: 0.3137254902, alpha: 1)
+            lblButtonMedo.textColor = #colorLiteral(red: 0.9882352941, green: 0.6274509804, blue: 0.2705882353, alpha: 1)
+            lblButtonAversao.textColor = #colorLiteral(red: 0.5607843137, green: 0.7568627451, blue: 0.4549019608, alpha: 1)
+            buttonAlegria.setImage(UIImage(named: "imagemBotaoAlegriaPastel"), for: .normal)
+            buttonTristeza.setImage(UIImage(named: "imagemBotaoTristezaPastel"), for: .normal)
+            buttonRaiva.setImage(UIImage(named: "imagemBotaoRaivaPastel"), for: .normal)
+            buttonMedo.setImage(UIImage(named: "imagemBotaoMedoPastel"), for: .normal)
+            buttonAversao.setImage(UIImage(named: "imagemBotaoAversaoPastel"), for: .normal)
         }
     }
     
@@ -240,7 +251,7 @@ class AdicionarMemoriaViewController: UIViewController{
                 } else if UserDefaults.standard.string(forKey: "tema") == "Original" {
                     buttonMedo.setImage(UIImage(named: "imagemBotaoMedoClicada"), for: .normal)
                 } else if UserDefaults.standard.string(forKey: "tema") == "Cores pastéis" {
-                    buttonMedo.setImage(UIImage(named: "imagemBotaoMedoClidadaPastel"), for: .normal)
+                    buttonMedo.setImage(UIImage(named: "imagemBotaoMedoClicadaPastel"), for: .normal)
                 }
             }
         } else {
@@ -473,85 +484,83 @@ class AdicionarMemoriaViewController: UIViewController{
             }
         }
         else if UserDefaults.standard.string(forKey: "tema") == "Cores pastéis" {
-            //escala de cinza
-            
             //Mudar imagem quando alegria é clicado
             if sentimentos.firstIndex(of: "alegria") != nil{
                 if sentimentos.firstIndex(of: "tristeza") != nil{
-                    titulo = "alegriaTristezaCinza"
+                    titulo = "alegriaTristezaPastel"
                 } else if sentimentos.firstIndex(of: "raiva") != nil {
-                    titulo = "alegriaRaivaCinza"
+                    titulo = "alegriaRaivaPastel"
                 } else if sentimentos.firstIndex(of: "medo") != nil {
-                    titulo = "alegriaMedoCinza"
+                    titulo = "alegriaMedoPastel"
                 } else if sentimentos.firstIndex(of: "aversao") != nil {
-                    titulo = "alegriaAversaoCinza"
+                    titulo = "alegriaAversaoPastel"
                 } else {
-                    titulo = "alegriaCinza"
+                    titulo = "alegriaPastel"
                 }
             }
             
             // Mudar imagem quando Tristeza é clicado
             else if sentimentos.firstIndex(of: "tristeza") != nil{
                 if sentimentos.firstIndex(of: "alegria") != nil{
-                    titulo = "alegriaTristezaCinza"
+                    titulo = "alegriaTristezaPastel"
                 } else if sentimentos.firstIndex(of: "raiva") != nil {
-                    titulo = "tristezaRaivaCinza"
+                    titulo = "tristezaRaivaPastel"
                 } else if sentimentos.firstIndex(of: "medo") != nil {
-                    titulo = "tristezaMedoCinza"
+                    titulo = "tristezaMedoPastel"
                 } else if sentimentos.firstIndex(of: "aversao") != nil {
-                    titulo = "tristezaAversaoCinza"
+                    titulo = "tristezaAversaoPastel"
                 } else {
-                    titulo = "tristezaCinza"
+                    titulo = "tristezaPastel"
                 }
             }
             
             // Mudar imagem quando raiva é clicada
             else if let index = sentimentos.firstIndex(of: "raiva") {
                 if sentimentos.firstIndex(of: "alegria") != nil{
-                    titulo = "alegriaRaivaCinza"
+                    titulo = "alegriaRaivaPastel"
                 } else if sentimentos.firstIndex(of: "tristeza") != nil {
-                    titulo = "tristezaRaivaCinza"
+                    titulo = "tristezaRaivaPastel"
                 } else if sentimentos.firstIndex(of: "medo") != nil {
-                    titulo = "raivaMedoCinza"
+                    titulo = "raivaMedoPastel"
                 } else if sentimentos.firstIndex(of: "aversao") != nil {
-                    titulo = "raivaAversaoCinza"
+                    titulo = "raivaAversaoPastel"
                 } else {
-                    titulo = "raivaCinza"
+                    titulo = "raivaPastel"
                 }
             }
             
             // Mudar imagem quando medo é clicada
             else if let index = sentimentos.firstIndex(of: "medo"){
                 if sentimentos.firstIndex(of: "alegria") != nil{
-                    titulo = "alegriaMedoCinza"
+                    titulo = "alegriaMedoPastel"
                 } else if sentimentos.firstIndex(of: "tristeza") != nil {
-                    titulo = "tristezaMedoCinza"
+                    titulo = "tristezaMedoPastel"
                 } else if sentimentos.firstIndex(of: "raiva") != nil {
-                    titulo = "raivaMedoCinza"
+                    titulo = "raivaMedoPastel"
                 } else if sentimentos.firstIndex(of: "aversao") != nil {
-                    titulo = "medoAversaoCinza"
+                    titulo = "medoAversaoPastel"
                 } else {
-                    titulo = "medoCinza"
+                    titulo = "medoPastel"
                 }
             }
             
             // Mudar imagem quando aversao é clicada
             else if let index = sentimentos.firstIndex(of: "aversao"){
                 if sentimentos.firstIndex(of: "alegria") != nil{
-                    titulo = "alegriaAversaoCinza"
+                    titulo = "alegriaAversaoPastel"
                 } else if sentimentos.firstIndex(of: "tristeza") != nil {
-                    titulo = "tristezaAversaoCinza"
+                    titulo = "tristezaAversaoPastel"
                 } else if sentimentos.firstIndex(of: "medo") != nil {
-                    titulo = "medoAversaoCinza"
+                    titulo = "medoAversaoPastel"
                 } else if sentimentos.firstIndex(of: "raiva") != nil {
-                    titulo = "raivaAversaoCinza"
+                    titulo = "raivaAversaoPastel"
                 } else {
-                    titulo = "aversaoCinza"
+                    titulo = "aversaoPastel"
                 }
             }
             
             else {
-                titulo = "vazioCinza"
+                titulo = "vazioPastel"
             }
         }
         
