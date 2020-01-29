@@ -64,6 +64,12 @@ class EditarSituacaoController:UIViewController, UITextViewDelegate{
         
     }
 
+    /**
+    *Definir como a textView irá parecer antes de ser editada*
+     - Parameters:
+      - textView: textView que está na tela
+     - Returns: Nada
+     */
     func textViewDidBeginEditing(_ textView: UITextView) {
         if situacaoTextField.text == "Escreva aqui..."{
             situacaoTextField.text = ""
@@ -71,7 +77,11 @@ class EditarSituacaoController:UIViewController, UITextViewDelegate{
         }
     }
 
-
+    /**
+    *Verificar se a textView está vazia após edição*
+     - Parameters: Nada
+     - Returns: Nada
+     */
     func textViewDidEndEditing(_ textView: UITextView) {
         if situacaoTextField.text.isEmpty{
             situacaoTextField.text = "Escreva aqui..."
@@ -79,7 +89,13 @@ class EditarSituacaoController:UIViewController, UITextViewDelegate{
         }
     }
 
-    
+    /**
+    *Executar a segue recebida*
+    - Parameters:
+     - identifier: string que representa o id da tela que será apresentada
+     - sender: gatilho do storyboard
+    - Returns: Valor booleano
+    */
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if situacaoTextField.text != nil,
             situacaoTextField.text!.count > 0 {
