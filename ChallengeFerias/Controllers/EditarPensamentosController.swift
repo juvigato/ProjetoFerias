@@ -35,6 +35,8 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
         super.viewDidLoad()
         pensamentosTextField.layer.borderWidth = 1
         pensamentosTextField.layer.borderColor = UIColor.lightGray.cgColor
+        pensamentosTextField.layer.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        pensamentosTextField.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         pensamentosTextField.delegate = self
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         self.view.backgroundColor = UIColor(patternImage: imagemBackground)

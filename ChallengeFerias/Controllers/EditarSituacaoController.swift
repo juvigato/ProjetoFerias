@@ -39,6 +39,8 @@ class EditarSituacaoController:UIViewController, UITextViewDelegate{
         situacaoTextField.layer.borderWidth = 1
         situacaoTextField.layer.borderColor = UIColor.lightGray.cgColor
         situacaoTextField.delegate = self
+        situacaoTextField.layer.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        situacaoTextField.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         self.view.backgroundColor = UIColor(patternImage: imagemBackground)
 
         context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
