@@ -75,6 +75,13 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
         }
     }
     
+    /**
+    *Executar a segue recebida*
+    - Parameters:
+     - identifier: string que representa o id da tela que será apresentada
+     - sender: gatilho do storyboard
+    - Returns: Valor booleano
+    */
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if pensamentosTextField.text != nil, pensamentosTextField.text!.count > 0{
             pensamentosText = pensamentosTextField.text
@@ -93,6 +100,12 @@ class EditarPensamentosController:UIViewController, UITextViewDelegate{
         return false
     }
     
+    /**
+    *Executar a segue recebida*
+    - Parameters:
+     - view: uma view do tipo UIView
+    - Returns: Nada
+    */
     func degrede(view: UIView){
         let gradient = CAGradientLayer()
         gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
