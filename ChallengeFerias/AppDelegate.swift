@@ -9,11 +9,13 @@
 import UIKit
 import CoreData
 import UserNotifications
+import LocalAuthentication
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var theViewController = TimelineMemoriasController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -39,6 +41,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        print("hello there!.. You have clicked the touch ID")
+        
+        let myContext = LAContext()
+        let myLocalizedReasonString = "Biometric Authntication testing !! "
+        
+        
+        
+        var authError: NSError?
+        if #available(iOS 8.0, macOS 10.12.1, *) {
+            if myContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authError) {
+                myContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: myLocalizedReasonString) { success, evaluateError in
+                    
+                    DispatchQueue.main.async {
+                        if success {
+                            // User authenticated successfully, take appropriate action
+                            print("Awesome!!... User authenticated successfully")
+                        } else {
+                            // User did not authenticate successfully, look at error and take appropriate action
+                            print("Sorry!!... User did not authenticate successfully")
+                        }
+                    }
+                }
+            } else {
+                // Could not evaluate policy; look at authError and present an appropriate message to user
+                print("Sorry!!.. Could not evaluate policy.")
+            }
+        } else {
+            // Fallback on earlier versions
+            print("Ooops!!.. This feature is not supported.")
+        }
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

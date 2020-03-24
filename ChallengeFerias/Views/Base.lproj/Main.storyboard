@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yK9-VG-gV8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yK9-VG-gV8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -641,7 +641,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KPG-HX-95e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Jca-Oj-Sji" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1101" y="-1572"/>
+            <point key="canvasLocation" x="726" y="-1572"/>
         </scene>
         <!--Temas-->
         <scene sceneID="oUM-Bm-F82">
@@ -681,7 +681,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3BA-m7-uaj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1931.8840579710147" y="-1572.3214285714284"/>
+            <point key="canvasLocation" x="1558" y="-1572"/>
         </scene>
         <!--Nova Memória-->
         <scene sceneID="u3y-0m-B9z">
@@ -1230,6 +1230,21 @@
             </objects>
             <point key="canvasLocation" x="3731.884057971015" y="-804.24107142857144"/>
         </scene>
+        <!--Launching Auth Controller-->
+        <scene sceneID="zIb-kR-bbN">
+            <objects>
+                <viewController storyboardIdentifier="LauchAuth" id="c7j-LN-Tf9" customClass="LaunchingAuthController" customModule="ChallengeFerias" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7St-IX-WlJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="r0v-oa-310"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mno-MI-gqu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2480" y="-1572"/>
+        </scene>
         <!--Ajustes-->
         <scene sceneID="pRF-V1-Ahl">
             <objects>
@@ -1309,7 +1324,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbs-DF-zs0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="H4z-vp-ANi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1100" y="-2336"/>
+            <point key="canvasLocation" x="725" y="-2336"/>
         </scene>
     </scenes>
     <resources>

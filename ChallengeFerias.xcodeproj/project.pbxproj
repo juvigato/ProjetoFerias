@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0D62BF242A9CC300AF9F93 /* LaunchingAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0D62BE242A9CC300AF9F93 /* LaunchingAuthController.swift */; };
 		0F0EC4D122D8D4CA001118AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4D022D8D4CA001118AA /* AppDelegate.swift */; };
 		0F0EC4D322D8D4CA001118AA /* MemoriaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EC4D222D8D4CA001118AA /* MemoriaTableViewController.swift */; };
 		0F0EC4D622D8D4CA001118AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F0EC4D422D8D4CA001118AA /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F0D62BE242A9CC300AF9F93 /* LaunchingAuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchingAuthController.swift; sourceTree = "<group>"; };
 		0F0EC4CD22D8D4CA001118AA /* ChallengeFerias.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeFerias.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F0EC4D022D8D4CA001118AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F0EC4D222D8D4CA001118AA /* MemoriaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriaTableViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				0F0EC51022D8FA02001118AA /* ProgressCircleViewController.swift */,
 				0F27384923DE5AEF00CD37BD /* TemaTableViewController.swift */,
 				0F27384B23DFBB1F00CD37BD /* AjustesTableViewController.swift */,
+				0F0D62BE242A9CC300AF9F93 /* LaunchingAuthController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				0F37FF4D22EAA61D002BFE02 /* EditarAtitudeController.swift in Sources */,
 				0FDFCB8622F37D4C005CF198 /* Sentimento+CoreDataProperties.swift in Sources */,
 				0F0EC50F22D8F8A1001118AA /* ProgressCircleView.swift in Sources */,
+				0F0D62BF242A9CC300AF9F93 /* LaunchingAuthController.swift in Sources */,
 				0FDFCB8522F37D4C005CF198 /* Sentimento+CoreDataClass.swift in Sources */,
 				0F58042422E7A2730013EC62 /* EditarSituacaoController.swift in Sources */,
 				0F27384C23DFBB1F00CD37BD /* AjustesTableViewController.swift in Sources */,
