@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yK9-VG-gV8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yK9-VG-gV8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -578,7 +578,13 @@
                             <outlet property="delegate" destination="vu5-Vp-2Xl" id="l8q-HV-7Kb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Memória" id="MZ4-eA-oLh"/>
+                    <navigationItem key="navigationItem" title="Memória" id="MZ4-eA-oLh">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.arrow.up" catalog="system" id="Cpk-ee-SJI">
+                            <connections>
+                                <action selector="btnCompartilhar:" destination="vu5-Vp-2Xl" id="Fif-Ff-ykT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dataText" destination="NqY-3m-UXt" id="8ma-8W-WbL"/>
@@ -1318,6 +1324,7 @@
         <image name="imagemBotaoMedo" width="113" height="126"/>
         <image name="imagemBotaoRaiva" width="113" height="126"/>
         <image name="imagemBotaoTristeza" width="113" height="126"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="tarraxinhaOriginal" width="178" height="249"/>
         <image name="vazio" width="703" height="653"/>
     </resources>

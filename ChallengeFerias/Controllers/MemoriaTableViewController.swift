@@ -222,16 +222,81 @@ class MemoriaTableViewController: UITableViewController {
         }
     }
     
+    func retornarNome() -> String {
+        for nome in arrayNomesOriginal {
+            if let titulo = dicionarioNomesOriginal[nome]{
+                if memoria?.titulo == nome {
+                    return titulo
+                }
+            } else {
+                print("error")
+            }
+        }
+        return ""
+    }
+    
     /**
     *Formatar data*
      - Parameters:
       - date: data em formato Date
      - Returns:data em formato de String
      */
-    func formatarData(date:Date) -> String{
+    func formatarData(date:Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         let dataAtual = formatter.string(from: date)
         return dataAtual
     }
+    
+    func criarPDF() {
+        
+        let pdfMetaData = [
+            kCGPDFContextCreator: "Memórias",
+            kCGPDFContextAuthor: "DiárioDeEmoções"
+        ]
+        
+        let format = UIGraphicsPDFRendererFormat()
+        format.documentInfo = pdfMetaData as [String: Any]
+
+        let pageRect = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        
+        let renderer = UIGraphicsPDFRenderer(bounds: pageRect, format: format)
+        
+        let data = renderer.pdfData { (context) in
+            
+            context.beginPage()
+            
+            let titleAttributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 25)]
+            
+            let textAttributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
+            
+            let textDetails = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)]
+            
+            let imagem = imagemMemoria.image
+            let imagemRect = CGRect(x: 20, y: 0, width:300, height: 230)
+            imagem?.draw(in: imagemRect)
+            
+            formatarNomeImg()
+            let title = retornarNome()
+            title.draw(at: CGPoint(x: 15, y: 200), withAttributes: titleAttributes)
+                
+            let titleSituacao = "Situação"
+            titleSituacao.draw(at: CGPoint(x: 15, y: 250), withAttributes: textAttributes)
+
+            if memoria?.situacao != nil {
+                let situacaoDetail = memoria?.situacao
+                situacaoDetail?.draw(at: CGPoint(x: 15, y: 275), withAttributes: textDetails)
+            } else {
+                let situacaoDetail = "Não há observações"
+                situacaoDetail.draw(at: CGPoint(x: 15, y: 275), withAttributes: textDetails)
+            }
+        }
+        let vc = UIActivityViewController(activityItems: [data],applicationActivities:[])
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func btnCompartilhar(_ sender: Any) {
+        criarPDF()
+    }
+
 }
